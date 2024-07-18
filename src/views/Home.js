@@ -1,4 +1,6 @@
 import { navigateTo } from '../router.js';
+import { filterData, sortData, metricsData } from '../lib/dataFunctions.js';
+import { data } from '../data/dataset.js';
 
 export const Home = (props) => {
   const el = document.createElement('div');
@@ -9,6 +11,7 @@ export const Home = (props) => {
   button.textContent = 'Go to About';
   button.addEventListener('click', () => navigateTo('/about', { name: 'Xochitl' }));
 
- 
+
   return el;
 };
+
