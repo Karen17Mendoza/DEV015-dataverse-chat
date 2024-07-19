@@ -1,4 +1,6 @@
 import { navigateTo } from '../router.js';
+import { filterData, sortData, metricsData } from '../lib/dataFunctions.js';
+import { data } from '../data/dataset.js';
 
 export const Home = (props) => {
   const el = document.createElement('div');
