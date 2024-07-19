@@ -9,6 +9,7 @@ export const Home = (props) => {
   button.textContent = 'Go to About';
   button.addEventListener('click', () => navigateTo('/about', { name: 'Xochitl' }));
 
- 
+  el.appendChild(button);
   return el;
 };
+  
