@@ -2,7 +2,7 @@ import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 import { Home } from './views/Home.js';
 import { About } from './views/About.js';
 
-// Define your routes and their associated views
+// Definición de rutas
 const routes = {
   '/': Home,
   '/about': About,
@@ -13,21 +13,21 @@ const routes = {
   }
 };
 
-// Assign the routes
+// llamando a la función setRoutes y pasándole el objeto routes
 setRoutes(routes);
 
-// Handle initial URL load
+// Manejador de eventos para la carga inicial de la URL
 window.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById('root');
   setRootEl(rootElement);
-  onURLChange(window.location); // Invoke the router to render the correct view on initial load
+  onURLChange(window.location); // Invocar el enrutador para mostrar la vista correcta en la carga inicial
 
-  // Attach event listener to the button
+  // Adjuntar detector de eventos al botón
   const aboutButton = document.getElementById('about-btn');
   aboutButton.addEventListener('click', () => navigateTo('/about', { name: 'Xochitl' }));
 });
 
-// Handle URL changes
+// Manejador de eventos para cambios de URL (historial)
 window.addEventListener('popstate', () => {
   onURLChange(window.location);
 });
