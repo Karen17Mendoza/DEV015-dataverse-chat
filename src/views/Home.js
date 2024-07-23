@@ -1,33 +1,15 @@
 import { navigateTo } from '../router.js';
 import data from '../data/dataset.js';
 import { filterData, sortData, metricsData, computeStats } from '../lib/dataFunctions.js';
+import { renderItem } from './components/Cards.js';
+import { createHeader } from './components/Header.js';
 
-const renderItem = (item) => {
-  const liElement = document.createElement("li");
-  liElement.classList.add("cardli");
-  liElement.setAttribute("itemscope", "");
-  liElement.setAttribute("itemtype", "https://schema.org/CreativeWork");
-  liElement.setAttribute("data-id", item.id);
-
-  liElement.innerHTML = `
-    <div class="card">
-      <h2 class="card__title" itemprop="name">${item.name}</h2>
-      <img class="card_image" src="${item.imageUrl}" alt="${item.name}" itemprop="image" />
-      <p class="card__description" itemprop="description">${item.shortDescription}</p>
-      <div class="card__list">
-        <p class="card__gender"><strong>Género:</strong> <span itemprop="gender">${item.facts.gender}</span></p>
-        <p class="card__year"><strong>Año:</strong> <span itemprop="datePublished">${item.facts.year}</span></p>
-        <p class="card__chapters"><strong>Número de capítulos:</strong> <span itemprop="numberOfEpisodes">${item.facts.chapters}</span></p>
-      </div>
-    </div>
-  `;
-
-  const imageElement = liElement.querySelector('.card');
-  imageElement.addEventListener('click', () => {
-    navigateTo(`/details/${item.id}`, { item });
-  });
-
-  return liElement;
+export const Home = () => {
+  const mainElement = document.createElement('div');
+  const ulElement = renderItems(data);
+  mainElement.appendChild(createHeader());
+  mainElement.appendChild(ulElement);
+  return mainElement;
 };
 
 const renderItems = (data) => {
@@ -45,14 +27,13 @@ const renderItems = (data) => {
   return ulElement;
 };
 
-export const Home = () => {
-  const mainElement = document.createElement('div');
-  const ulElement = renderItems(data);
-  mainElement.appendChild(ulElement);
-  return mainElement;
-};
-
 document.addEventListener("DOMContentLoaded", () => {
+  const rootElement = document.getElementById("root");
+
+  // Crear e insertar el encabezado
+  const header = createHeader();
+  rootElement.prepend(header);
+
   const mainElement = document.getElementById("root");
   let ulElement = renderItems(data);
   mainElement.appendChild(ulElement);
