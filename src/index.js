@@ -1,16 +1,10 @@
-import { setRootEl, setRoutes, onURLChange, navigateTo } from './router.js';
 import { Home } from './views/Home.js';
-import { About } from './views/About.js';
+import { setRootEl, setRoutes, onURLChange } from './router.js';
 
-// Definición de rutas
+// Define tus rutas
 const routes = {
   '/': Home,
-  '/about': About,
-  '/error': () => {
-    const container = document.createElement('div');
-    container.innerHTML = '<h1>Error</h1><p>Page not found</p>';
-    return container;
-  }
+  
 };
 
 // llamando a la función setRoutes y pasándole el objeto routes
@@ -22,9 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
   setRootEl(rootElement);
   onURLChange(window.location); // Invocar el enrutador para mostrar la vista correcta en la carga inicial
 
-  // Adjuntar detector de eventos al botón
-  const aboutButton = document.getElementById('about-btn');
-  aboutButton.addEventListener('click', () => navigateTo('/about', { name: 'Xochitl' }));
 });
 
 // Manejador de eventos para cambios de URL (historial)

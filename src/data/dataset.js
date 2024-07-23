@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
       "id": "coffee-prince",
       "name": "Coffee Prince",
@@ -382,7 +382,7 @@ export default [
       "extraInfo": {
         "imageSource": ""
       }
-    }
+    },
     ];
-    
+    export default data;
     

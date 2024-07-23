@@ -14,14 +14,17 @@ export const setRootEl = (el) => {
 //Toma un objeto routes y lo asigna a la variable ROUTES
 export const setRoutes = (routes) => {
   if (typeof routes !== 'object') {
-    throw new Error('Routes must be an object');
+    throw new Error('Routes should be an object');
   }
   if (!routes['/error']) {
-    throw new Error('Routes must define an /error route');
+    routes['/error'] = () => {
+      const view = document.createElement('div');
+      view.textContent = 'Error: Page not found';
+      return view;
+    };
   }
   ROUTES = routes;
 };
-
 //toma una cadena de consulta (query string) y la convierte en un objeto.
 const queryStringToObject = (queryString) => {
   const params = new URLSearchParams(queryString);
@@ -47,3 +50,7 @@ export const onURLChange = (location) => {
   const searchParams = queryStringToObject(search);
   renderView(pathname, searchParams);
 };
+
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
+});
