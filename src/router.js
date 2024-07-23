@@ -1,6 +1,12 @@
+//objeto vacío que almacenará las rutas de la aplicación y 
+//sus vistas asociadas
 let ROUTES = {};
+//variable que almacenará el elemento raíz 
+//donde se renderizarán las vistas.
 let rootEl;
 
+// Esta función exportada toma un elemento el y 
+//lo asigna a la variable rootEl. 
 export const setRootEl = (el) => {
   rootEl = el;
 };
@@ -18,11 +24,18 @@ export const setRoutes = (routes) => {
   }
   ROUTES = routes;
 };
+//toma una cadena de consulta (query string) y la convierte en un objeto.
+const queryStringToObject = (queryString) => {
+  const params = new URLSearchParams(queryString);
+  return Object.fromEntries(params.entries());
+};
 
 const renderView = (pathname, props = {}) => {
+  if (!rootEl) {
+    throw new Error('Root element is not set. Please call setRootEl first.');
+  }
   rootEl.innerHTML = '';
-  const route = Object.keys(ROUTES).find(route => new RegExp(`^${route.replace(/:\w+/g, '\\w+')}$`).test(pathname));
-  const view = ROUTES[route] || ROUTES['/error'];
+  const view = ROUTES[pathname] || ROUTES['/error'];
   rootEl.appendChild(view(props));
 };
 
@@ -32,8 +45,9 @@ export const navigateTo = (pathname, props = {}) => {
 };
 
 export const onURLChange = (location) => {
-  const pathname = location.pathname;
-  renderView(pathname);
+  const { pathname, search } = location;
+  const searchParams = queryStringToObject(search);
+  renderView(pathname, searchParams);
 };
 
 window.addEventListener('popstate', () => {

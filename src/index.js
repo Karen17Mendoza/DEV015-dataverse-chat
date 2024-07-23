@@ -4,18 +4,21 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define tus rutas
 const routes = {
   '/': Home,
-  // Asegúrate de definir la ruta de detalles si la necesitas en el futuro
+  
 };
 
-// Asigna las rutas
+// llamando a la función setRoutes y pasándole el objeto routes
 setRoutes(routes);
 
+// Manejador de eventos para la carga inicial de la URL
 window.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById('root');
   setRootEl(rootElement);
-  onURLChange(window.location);
+  onURLChange(window.location); // Invocar el enrutador para mostrar la vista correcta en la carga inicial
+
 });
 
+// Manejador de eventos para cambios de URL (historial)
 window.addEventListener('popstate', () => {
   onURLChange(window.location);
 });

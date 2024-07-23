@@ -21,6 +21,11 @@ const renderItem = (item) => {
     </div>
   `;
 
+  const imageElement = liElement.querySelector('.card_image');
+  imageElement.addEventListener('click', () => {
+    navigateTo(`/details/${item.id}`, { item });
+  });
+
   return liElement;
 };
 
