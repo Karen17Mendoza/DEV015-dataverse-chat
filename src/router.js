@@ -7,25 +7,22 @@ export const setRootEl = (el) => {
 
 export const setRoutes = (routes) => {
   if (typeof routes !== 'object') {
-    throw new Error('Routes must be an object');
+    throw new Error('Routes should be an object');
   }
   if (!routes['/error']) {
-    throw new Error('Routes must define an /error route');
+    routes['/error'] = () => {
+      const view = document.createElement('div');
+      view.textContent = 'Error: Page not found';
+      return view;
+    };
   }
   ROUTES = routes;
 };
 
-const queryStringToObject = (queryString) => {
-  const params = new URLSearchParams(queryString);
-  return Object.fromEntries(params.entries());
-};
-
 const renderView = (pathname, props = {}) => {
-  if (!rootEl) {
-    throw new Error('Root element is not set. Please call setRootEl first.');
-  }
   rootEl.innerHTML = '';
-  const view = ROUTES[pathname] || ROUTES['/error'];
+  const route = Object.keys(ROUTES).find(route => new RegExp(`^${route.replace(/:\w+/g, '\\w+')}$`).test(pathname));
+  const view = ROUTES[route] || ROUTES['/error'];
   rootEl.appendChild(view(props));
 };
 
@@ -35,7 +32,10 @@ export const navigateTo = (pathname, props = {}) => {
 };
 
 export const onURLChange = (location) => {
-  const { pathname, search } = location;
-  const searchParams = queryStringToObject(search);
-  renderView(pathname, searchParams);
+  const pathname = location.pathname;
+  renderView(pathname);
 };
+
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
+});
