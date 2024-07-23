@@ -11,6 +11,7 @@ export const setRootEl = (el) => {
   rootEl = el;
 };
 
+//Toma un objeto routes y lo asigna a la variable ROUTES
 export const setRoutes = (routes) => {
   if (typeof routes !== 'object') {
     throw new Error('Routes should be an object');
