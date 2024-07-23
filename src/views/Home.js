@@ -1,5 +1,8 @@
 import { navigateTo } from '../router.js';
 import data from '../data/dataset.js';
+import { filterData } from './dataFunctions.js';
+
+ 
 
 const renderItem = (item) => {
   const liElement = document.createElement("li");
@@ -44,9 +47,13 @@ const renderItems = (data) => {
   return ulElement;
 };
 
-export const Home = () => {
+// Vista Home
+export const Home = (props) => {
   const mainElement = document.createElement('div');
-  const ulElement = renderItems(data);
-  mainElement.appendChild(ulElement);
+
+  // Aplicar filtros si existen
+  const filteredData = filterData(data, props.filterBy, props.value);
+
+  mainElement.appendChild(renderItems(filteredData));
   return mainElement;
 };
