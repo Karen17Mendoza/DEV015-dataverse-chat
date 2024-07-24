@@ -2,7 +2,7 @@ export const Header = () => {
     const headerEl = document.createElement('header');
     headerEl.setAttribute('role', 'banner');
     headerEl.innerHTML = `
-      <h1>Kdrama Database</h1>
+      <h1>Kdrama Chat</h1>
       <p class="header__description">
         ¡Hola! ¿Estás buscando el Kdrama perfecto para maratonear este fin de
         semana? ¡No busques más! En Kdrama Database, te ofrecemos una vasta
