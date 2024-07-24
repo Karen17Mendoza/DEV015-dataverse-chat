@@ -1,137 +1,122 @@
 import { navigateTo } from '../router.js';
-import data from '../data/dataset.js';
+import { data } from "../data/dataset.js";
 import { filterData, sortData, metricsData, computeStats } from '../lib/dataFunctions.js';
-import { renderItem } from './components/Cards.js';
+import { renderItems } from './components/Cards.js';
 import { createHeader } from './components/Header.js';
 
-export const Home = () => {
-  const mainElement = document.createElement('div');
-  const ulElement = renderItems(data);
-  mainElement.appendChild(createHeader());
-  mainElement.appendChild(ulElement);
-  return mainElement;
-};
-
-const renderItems = (data) => {
-  if (!data || !Array.isArray(data)) {
-    return document.createElement("ul");
-  }
-
-  const ulElement = document.createElement("ul");
-
-  data.forEach(item => {
-    const liElement = renderItem(item);
-    ulElement.appendChild(liElement);
-  });
-
-  return ulElement;
-};
-
-document.addEventListener("DOMContentLoaded", () => {
+export function Home() {
   const rootElement = document.getElementById("root");
-
-  // Crear e insertar el encabezado
-  const header = createHeader();
-  rootElement.prepend(header);
-
-  const mainElement = document.getElementById("root");
-  let ulElement = renderItems(data);
-  mainElement.appendChild(ulElement);
-
-  let filteredData = data; // Inicialmente, los datos filtrados son todos los datos
-
-  function resetSelectIndex(selectElement) {
-    selectElement.selectedIndex = 0;
+  
+  if (!rootElement) {
+    throw new Error("No se pudo encontrar el elemento root");
   }
 
-  function displayCards(filteredData) {
-    mainElement.removeChild(ulElement);
-    ulElement = renderItems(filteredData);
-    mainElement.appendChild(ulElement);
+  rootElement.innerHTML = "";
+  rootElement.appendChild(createHeader());
+
+  function displayCards(data) {
+    console.log("Displaying cards with data:", data);
+
+    rootElement.innerHTML = "";
+    rootElement.appendChild(createHeader());
+    const ulElement = renderItems(data);
+    rootElement.appendChild(ulElement);
+
+    ulElement.querySelectorAll('li').forEach((card, index) => {
+      card.addEventListener('click', () => navigateTo('/ChatIndividual', { id: data[index].id }));
+    });
   }
 
-  const filterSelectGender = document.querySelector('#filter-gender');
-  const filterSelectYear = document.querySelector("#filter-year");
-  const filterSelectChapters = document.querySelector("#filter-chapters");
-  const orderSelect = document.querySelector("#order-select");
-  const clearButton = document.querySelector('[data-testid="button-clear"]');
-  const metricsButton = document.querySelector(".metrics");
-  const calculateButton = document.querySelector("#button-calculate");
-  const averageContainer = document.querySelector("#average-container");
-  const averageContainer1 = document.querySelector("#average-container1");
-  const averageContainer2 = document.querySelector("#average-container2");
+  function resetSelectIndex(...selectElements) {
+    selectElements.forEach((selectElement) => {
+      selectElement.selectedIndex = 0;
+    });
+  }
 
-  filterSelectGender.addEventListener("change", (event) => {
-    const selectedValueGender = event.target.value;
-    filteredData = filterData(data, "gender", selectedValueGender);
-    resetSelectIndex(filterSelectYear);
-    resetSelectIndex(filterSelectChapters);
-    resetSelectIndex(orderSelect);
-    displayCards(filteredData);
-  });
+  const setupEventListeners = () => {
+    const filterSelectGender = document.querySelector('#filter-gender');
+    const filterSelectYear = document.querySelector("#filter-year");
+    const filterSelectChapters = document.querySelector("#filter-chapters");
+    const orderSelect = document.querySelector("#order-select");
+    const clearButton = document.querySelector('[data-testid="button-clear"]');
+    const metricsButton = document.querySelector(".metrics");
+    const calculateButton = document.querySelector("#button-calculate");
+    const averageContainer = document.querySelector("#average-container");
+    const averageContainer1 = document.querySelector("#average-container1");
+    const averageContainer2 = document.querySelector("#average-container2");
 
-  filterSelectYear.addEventListener("change", (event) => {
-    const selectedValueYear = event.target.value;
-    filteredData = filterData(data, "year", selectedValueYear);
-    resetSelectIndex(filterSelectGender);
-    resetSelectIndex(filterSelectChapters);
-    resetSelectIndex(orderSelect);
-    displayCards(filteredData);
-  });
+    if (!filterSelectGender || !filterSelectYear || !filterSelectChapters || !orderSelect || !clearButton || !metricsButton || !calculateButton || !averageContainer || !averageContainer1 || !averageContainer2) {
+      console.error("Algunos elementos del DOM no se encontraron");
+      return;
+    }
 
-  filterSelectChapters.addEventListener("change", (event) => {
-    const selectedValueChapters = event.target.value;
-    filteredData = filterData(data, "chapters", selectedValueChapters);
-    resetSelectIndex(filterSelectGender);
-    resetSelectIndex(filterSelectYear);
-    resetSelectIndex(orderSelect);
-    displayCards(filteredData);
-  });
+    filterSelectGender.addEventListener("change", (event) => {
+      const selectedValueGender = event.target.value;
+      const filteredData = filterData(data, "gender", selectedValueGender);
+      resetSelectIndex(filterSelectYear, filterSelectChapters, orderSelect);
+      displayCards(filteredData);
+    });
 
-  orderSelect.addEventListener("change", (event) => {
-    const selectedValueOrder = event.target.value;
-    filteredData = sortData(filteredData, "name", selectedValueOrder); // Ajusta "name" según el campo que deseas ordenar
-    resetSelectIndex(filterSelectGender);
-    resetSelectIndex(filterSelectChapters);
-    resetSelectIndex(filterSelectYear);
-    displayCards(filteredData);
-  });
+    filterSelectYear.addEventListener("change", (event) => {
+      const selectedValueYear = event.target.value;
+      const filteredData = filterData(data, "year", selectedValueYear);
+      resetSelectIndex(filterSelectGender, filterSelectChapters, orderSelect);
+      displayCards(filteredData);
+    });
 
-  clearButton.addEventListener("click", () => {
-    filterSelectGender.value = 'all';
-    filterSelectYear.value = 'all';
-    filterSelectChapters.value = 'all';
-    orderSelect.value = 'all';
-    filteredData = data; // Reiniciar datos filtrados a todos los datos originales
-    displayCards(filteredData);
-    averageContainer.classList.remove('show');
-    averageContainer1.classList.remove('show1');
-    averageContainer2.classList.remove('show2');
-  });
+    filterSelectChapters.addEventListener("change", (event) => {
+      const selectedValueChapters = event.target.value;
+      const filteredData = filterData(data, "chapters", selectedValueChapters);
+      resetSelectIndex(filterSelectGender, filterSelectYear, orderSelect);
+      displayCards(filteredData);
+    });
 
-  metricsButton.addEventListener("click", () => {
-    const metricsItems = metricsData(filteredData);
-    displayCards(metricsItems);
-  });
+    orderSelect.addEventListener("change", (event) => {
+      const selectedValueOrder = event.target.value;
+      const filteredData = sortData(data, "name", selectedValueOrder);
+      resetSelectIndex(filterSelectGender, filterSelectChapters, filterSelectYear);
+      displayCards(filteredData);
+    });
 
-  calculateButton.addEventListener("click", () => {
-    const stats = computeStats(filteredData);
-    const { minValue, mostCommonGenre, highestAudienceDorama } = stats;
+    clearButton.addEventListener("click", () => {
+      filterSelectGender.value = 'all';
+      filterSelectYear.value = 'all';
+      filterSelectChapters.value = 'all';
+      orderSelect.value = 'all';
+      displayCards(data);
+      averageContainer.classList.remove('show');
+      averageContainer1.classList.remove('show1');
+      averageContainer2.classList.remove('show2');
+    });
 
-    averageContainer.innerHTML = `
-      <p>Promedio de capítulos de los Kdramas: ${minValue}</p>
-    `;
-    averageContainer.classList.add('show');
+    metricsButton.addEventListener("click", () => {
+      const metricsItems = metricsData(data);
+      displayCards(metricsItems);
+    });
 
-    averageContainer1.innerHTML = `
-      <p>Género más promocionado: ${mostCommonGenre}</p>
-    `;
-    averageContainer1.classList.add('show1');
+    calculateButton.addEventListener("click", () => {
+      const stats = computeStats(data);
+      const { minValue, mostCommonGenre, highestAudienceDorama } = stats;
 
-    averageContainer2.innerHTML = `
-      <p>Kdrama con mayor audiencia: ${highestAudienceDorama.name} (${highestAudienceDorama.facts.audiencePercentage}%)</p>
-    `;
-    averageContainer2.classList.add('show2');
-  });
+      averageContainer.innerHTML = `
+        <p>Promedio de capítulos de los Kdramas: ${minValue}</p>
+      `;
+      averageContainer.classList.add('show');
 
-});
+      averageContainer1.innerHTML = `
+        <p>Género más promocionado: ${mostCommonGenre}</p>
+      `;
+      averageContainer1.classList.add('show1');
+
+      averageContainer2.innerHTML = `
+        <p>Kdrama con mayor audiencia: ${highestAudienceDorama.name} (${highestAudienceDorama.facts.audiencePercentage}%)</p>
+      `;
+      averageContainer2.classList.add('show2');
+    });
+  };
+
+  displayCards(data);
+  setupEventListeners();
+
+  return rootElement;
+}

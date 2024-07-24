@@ -1,8 +1,13 @@
 export const createHeader = () => {
-    const header = document.createElement('header');
-    header.setAttribute('role', 'banner');
+  let headerElement;
+  if (document.querySelector("header")) {
+    headerElement = document.querySelector("header");
+    return headerElement;
+  }
+
+  headerElement = document.createElement("header");
   
-    header.innerHTML = `
+  headerElement.innerHTML = `
       <h1>Kdrama Database</h1>
       <p class="header__description">
         ¡Hola! ¿Estás buscando el Kdrama perfecto para maratonear este fin de
@@ -97,5 +102,5 @@ export const createHeader = () => {
       </nav>
     `;
   
-    return header;
+    return headerElement;
   };

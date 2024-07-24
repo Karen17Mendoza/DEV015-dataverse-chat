@@ -11,10 +11,10 @@ export const setRootEl = (el) => {
   rootEl = el;
 };
 
-//Toma un objeto routes y lo asigna a la variable ROUTES
+// Toma un objeto routes y lo asigna a la variable ROUTES
 export const setRoutes = (routes) => {
-  if (typeof routes !== 'object') {
-    throw new Error('Routes should be an object');
+  if (typeof routes !== 'object' || routes === null) {
+    throw new Error('Routes should be a non-null object');
   }
   if (!routes['/error']) {
     routes['/error'] = () => {
@@ -25,12 +25,14 @@ export const setRoutes = (routes) => {
   }
   ROUTES = routes;
 };
-//toma una cadena de consulta (query string) y la convierte en un objeto.
+
+// Convierte una cadena de consulta (query string) en un objeto
 const queryStringToObject = (queryString) => {
   const params = new URLSearchParams(queryString);
   return Object.fromEntries(params.entries());
 };
 
+// Renderiza la vista correspondiente al pathname con los props proporcionados
 const renderView = (pathname, props = {}) => {
   if (!rootEl) {
     throw new Error('Root element is not set. Please call setRootEl first.');
@@ -40,17 +42,20 @@ const renderView = (pathname, props = {}) => {
   rootEl.appendChild(view(props));
 };
 
+// Navega a la ruta especificada y renderiza la vista correspondiente
 export const navigateTo = (pathname, props = {}) => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
   renderView(pathname, props);
 };
 
+// Maneja los cambios en la URL y renderiza la vista correspondiente
 export const onURLChange = (location) => {
   const { pathname, search } = location;
   const searchParams = queryStringToObject(search);
   renderView(pathname, searchParams);
 };
 
+// Escucha el evento 'popstate' para manejar la navegación hacia atrás y adelante
 window.addEventListener('popstate', () => {
   onURLChange(window.location);
 });

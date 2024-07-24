@@ -1,10 +1,17 @@
-export const renderItem = (item) => {
+import { navigateTo } from "../router.js";
+import { data } from "../data/dataset.js";
+
+export function renderItems() {
+  const ulElement = document.createElement("ul");
+
+  data.forEach(item => {
     const liElement = document.createElement("li");
     liElement.classList.add("cardli");
     liElement.setAttribute("itemscope", "");
     liElement.setAttribute("itemtype", "https://schema.org/CreativeWork");
     liElement.setAttribute("data-id", item.id);
-  
+    liElement.setAttribute("role", "listitem");
+
     liElement.innerHTML = `
       <div class="card">
         <h2 class="card__title" itemprop="name">${item.name}</h2>
@@ -17,12 +24,19 @@ export const renderItem = (item) => {
         </div>
       </div>
     `;
-  
-    const imageElement = liElement.querySelector('.card');
-    imageElement.addEventListener('click', () => {
-      navigateTo(`/ChatIndividual/${item.id}`, { item });
-    });
-  
-    return liElement;
-  };
+
+    // Asegúrate de que el elemento de la imagen se haya creado antes de añadir el event listener
+    const imageElement = liElement.querySelector('.card_image'); 
+    if (imageElement) {
+      imageElement.addEventListener('click', () => {
+        navigateTo('/ChatIndividual', { id: item.id });
+      });
+    }
+
+    ulElement.appendChild(liElement);
+  });
+
+  return ulElement;
+}
+
   
