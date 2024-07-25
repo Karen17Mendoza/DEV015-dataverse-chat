@@ -1,10 +1,4 @@
-import { navigateTo } from "../router.js";
-import { data } from "../data/dataset.js";
-
-export function renderItems() {
-  const ulElement = document.createElement("ul");
-
-  data.forEach(item => {
+export const Cards = (item) => {
     const liElement = document.createElement("li");
     liElement.classList.add("cardli");
     liElement.setAttribute("itemscope", "");
@@ -25,18 +19,7 @@ export function renderItems() {
       </div>
     `;
 
-    // Asegúrate de que el elemento de la imagen se haya creado antes de añadir el event listener
-    const imageElement = liElement.querySelector('.card_image'); 
-    if (imageElement) {
-      imageElement.addEventListener('click', () => {
-        navigateTo('/ChatIndividual', { id: item.id });
-      });
-    }
-
-    ulElement.appendChild(liElement);
-  });
-
-  return ulElement;
+  return liElement;
 }
 
   

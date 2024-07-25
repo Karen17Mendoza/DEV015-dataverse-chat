@@ -1,5 +1,5 @@
 export function ChatIndividual(props) {
-  const viewEl = document.createElement("div");
+  /*const viewEl = document.createElement("div");
   viewEl.classList.add("chat-container");
 
   const headerEl = document.createElement("h1");
@@ -49,7 +49,7 @@ export function ChatIndividual(props) {
 
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
-  });
+  });*/
 
   return viewEl;
 }
