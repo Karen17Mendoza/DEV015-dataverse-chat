@@ -10,10 +10,10 @@ const routes = {
 setRoutes(routes);
 
 // Manejador de eventos para la carga inicial de la URL
-window.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById('root');
-  setRootEl(rootElement);
-  onURLChange(window.location); // Invocar el enrutador para mostrar la vista correcta en la carga inicial
+document.addEventListener('DOMContentLoaded', () => {
+  const appElement = document.getElementById('root');
+  appElement.innerHTML = ''; // Limpia el contenido del contenedor 'app'
+  appElement.appendChild(Home());
 });
 
 window.addEventListener("popstate", () => {
