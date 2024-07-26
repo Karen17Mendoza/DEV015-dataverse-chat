@@ -1,7 +1,7 @@
 import data from '../data/dataset.js';
 import { Card } from '../componentes/Card.js'
 import { Header } from '../componentes/Header.js'
-import { filterData, sortData, computeStats  } from '../lib/dataFunctions.js'
+import { filterData, sortData, computeStats, metricsData  } from '../lib/dataFunctions.js'
 
 // Definimos la funcion principal Home 
 export const Home = () => {
@@ -13,7 +13,7 @@ export const Home = () => {
   let currentFilters = { 
     filterBy: 'all',
     value: 'all', 
-    orderBy: 'all' 
+    orderBy: 'all',
   };
 
   // Funcion para crear las tarjetas
@@ -41,6 +41,15 @@ export const Home = () => {
     // Aplica la ordenación si hay un orden seleccionado
     if (currentFilters.orderBy !== 'all') {
       filteredData = sortData(filteredData, 'name', currentFilters.orderBy);
+    }
+
+    if (currentFilters.showMetrics) {
+      const top3 = metricsData(filteredData);
+      const cardContainer = mainElement.querySelector('#card-container');
+      cardContainer.innerHTML = '';
+      cardContainer.appendChild(renderItems(top3));
+      currentFilters.showMetrics = false;
+      return;
     }
 
     if (currentFilters.showAverage) {

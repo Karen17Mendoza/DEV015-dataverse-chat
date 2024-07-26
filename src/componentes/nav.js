@@ -1,4 +1,4 @@
-import { filterData, sortData, metricsData, computeStats } from '../lib/dataFunctions.js';
+/*import { filterData, sortData, metricsData, computeStats } from '../lib/dataFunctions.js';
 
 // Función para configurar los elementos del DOM
 const createNav = () => {
@@ -175,4 +175,4 @@ const setupEventListeners = (nav) => {
 };
 
 // Exporta la función createNav
-export { createNav };
+export { createNav };*/
