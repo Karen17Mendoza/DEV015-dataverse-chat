@@ -1,4 +1,4 @@
-export const Cards = (item) => {
+export const Card = (item) => {
     const liElement = document.createElement("li");
     liElement.classList.add("cardli");
     liElement.setAttribute("itemscope", "");
