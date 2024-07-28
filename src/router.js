@@ -38,7 +38,29 @@ const renderView = (pathname, props = {}) => {
     throw new Error('Root element is not set. Please call setRootEl first.');
   }
   rootEl.innerHTML = '';
-  const view = ROUTES[pathname] || ROUTES['/error'];
+  /*const view = ROUTES[pathname] || ROUTES['/error'];
+  rootEl.appendChild(view(props));*/
+  /*Agregamos enrutamientos dinamico apartir de aqui: */
+  let view = ROUTES[pathname];
+
+  // Handle dynamic routes
+  if (!view) {
+    const dynamicRoute = Object.keys(ROUTES).find(route => {
+      const routeRegex = new RegExp(`^${route.replace(/:\w+/g, '(\\w+)')}$`);
+      return routeRegex.test(pathname);
+    });
+
+    if (dynamicRoute) {
+      const routeRegex = new RegExp(`^${dynamicRoute.replace(/:\w+/g, '(\\w+)')}$`);
+      const match = pathname.match(routeRegex);
+      if (match) {
+        const params = match.slice(1);
+        view = () => ROUTES[dynamicRoute](...params, props);
+      }
+    }
+  }
+
+  view = view || ROUTES['/error'];
   rootEl.appendChild(view(props));
 };
 

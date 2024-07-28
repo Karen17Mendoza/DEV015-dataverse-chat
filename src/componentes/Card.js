@@ -1,3 +1,5 @@
+import { navigateTo } from '../router.js';
+
 export const Card = (item) => {
   const liElement = document.createElement("li");
   liElement.classList.add("cardli");
@@ -17,6 +19,10 @@ export const Card = (item) => {
       </div>
     </div>
   `;
+
+  liElement.addEventListener('click', () => {
+    navigateTo(`/chatIndividual/${item.name}`);
+  });
 
   return liElement;
 };

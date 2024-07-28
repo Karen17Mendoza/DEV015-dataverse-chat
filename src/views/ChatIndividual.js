@@ -1,55 +1,20 @@
-export function ChatIndividual(props) {
-  /*const viewEl = document.createElement("div");
-  viewEl.classList.add("chat-container");
+import data from '../data/dataset.js';
 
-  const headerEl = document.createElement("h1");
-  headerEl.textContent = `Chat sobre Kdrama ${props.id}`;
-  headerEl.classList.add("chat-header");
+export const ChatIndividual = (name) => {
+  const item = data.find(item => item.name === name);
+  
+  if (!item) {
+    const errorElement = document.createElement('div');
+    errorElement.innerHTML = '<h2>Item not found</h2>';
+    return errorElement;
+  }
 
-  const messagesEl = document.createElement("div");
-  messagesEl.classList.add("chat-messages");
+  const chatElement = document.createElement('div');
+  chatElement.innerHTML = `
+    <h2>Chat with ${item.name}</h2>
+    <p>${item.description}</p>
+    <!-- Aquí va el contenido del chat -->
+  `;
 
-  const inputContainerEl = document.createElement("div");
-  inputContainerEl.classList.add("chat-input-container");
-
-  const inputEl = document.createElement("input");
-  inputEl.type = "text";
-  inputEl.placeholder = "Escribe un mensaje...";
-  inputEl.classList.add("chat-input");
-
-  const sendButtonEl = document.createElement("button");
-  sendButtonEl.textContent = "Enviar";
-  sendButtonEl.classList.add("chat-send-button");
-
-  inputContainerEl.appendChild(inputEl);
-  inputContainerEl.appendChild(sendButtonEl);
-
-  viewEl.appendChild(headerEl);
-  viewEl.appendChild(messagesEl);
-  viewEl.appendChild(inputContainerEl);
-
-  // Event listener para enviar mensajes
-  sendButtonEl.addEventListener("click", () => {
-    const messageText = inputEl.value.trim();
-    if (messageText !== "") {
-      const messageEl = document.createElement("div");
-      messageEl.classList.add("chat-message", "chat-message-sent");
-      messageEl.textContent = messageText;
-      messagesEl.appendChild(messageEl);
-      inputEl.value = "";
-
-      // Simulación de respuesta automática
-      setTimeout(() => {
-        const replyEl = document.createElement("div");
-        replyEl.classList.add("chat-message", "chat-message-received");
-        replyEl.textContent = "¡Gracias por tu mensaje! ¿En qué puedo ayudarte?";
-        messagesEl.appendChild(replyEl);
-        messagesEl.scrollTop = messagesEl.scrollHeight;
-      }, 1000);
-
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-    }
-  });*/
-
-  return viewEl;
-}
+  return chatElement;
+};
