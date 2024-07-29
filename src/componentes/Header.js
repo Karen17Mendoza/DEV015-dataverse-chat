@@ -83,6 +83,8 @@ export const Header = (updateView) => {
         <div class="button-row">
           <!--Botón 1: Limpiar contenedor-->
           <button class="button-clear" data-testid="button-clear">Limpiar</button>
+          <!--Botón 2: Métricas Ranking-->
+          <button class="metrics">Ranking 3ro°</button>          
           <!--Botón 3: Calcular promedio de capitulos-->
           <button class="button-average" id="button-calculate" data-testid="button-calculate">Curiosidades</button>
         </div>
@@ -127,8 +129,11 @@ export const Header = (updateView) => {
   });
   headerEl.querySelector('.button-average').addEventListener('click', () => {
     updateView({ showAverage: true });
-
   });
+  headerEl.querySelector('.metrics').addEventListener('click', () => {
+    updateView({ showMetrics: true });
+  });
+
 
   return headerEl;
 };

@@ -1,23 +1,26 @@
 import { Home } from './views/Home.js';
-import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { ChatIndividual } from './views/ChatIndividual.js';
+import { setRootEl, setRoutes, navigateTo } from './router.js';
 
 // Define tus rutas
 const routes = {
   '/': Home,
-  
+  '/chat/:id': ChatIndividual,
 };
 
-// llamando a la función setRoutes y pasándole el objeto routes
+// Configura el elemento raíz
+const rootElement = document.getElementById('root');
+setRootEl(rootElement);
+
+// Configura las rutas
 setRoutes(routes);
 
 // Manejador de eventos para la carga inicial de la URL
 document.addEventListener('DOMContentLoaded', () => {
-  const appElement = document.getElementById('root');
-  appElement.innerHTML = ''; // Limpia el contenido del contenedor 'app'
-  appElement.appendChild(Home());
+  navigateTo(window.location.pathname);
 });
 
 // Manejador de eventos para cambios de URL (historial)
 window.addEventListener('popstate', () => {
-  onURLChange(window.location);
+  navigateTo(window.location.pathname);
 });

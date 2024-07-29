@@ -18,5 +18,7 @@ export const Card = (item) => {
     </div>
   `;
 
+
+
   return liElement;
 };
