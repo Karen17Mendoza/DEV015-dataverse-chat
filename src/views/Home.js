@@ -2,7 +2,6 @@ import data from '../data/dataset.js';
 import { Card } from '../componentes/Card.js'
 import { Header } from '../componentes/Header.js'
 import { filterData, sortData, computeStats, metricsData  } from '../lib/dataFunctions.js'
-import { navigateTo } from '../router.js';
 
 // Definimos la funcion principal Home 
 export const Home = () => {
@@ -14,19 +13,16 @@ export const Home = () => {
   let currentFilters = { 
     filterBy: 'all',
     value: 'all', 
-    orderBy: 'all' 
+    orderBy: 'all',
   };
 
   // Funcion para crear las tarjetas
   const renderItems = (data) => {
     const ulElement = document.createElement('ul');
-    data.forEach(item => {
-      const card = Card(item);
-      card.addEventListener('click', () => {
-        navigateTo(`/chat/${item.id}`);
-      });
-      ulElement.appendChild(card);
-    });
+
+    data.forEach(item => 
+    ulElement.appendChild(Card(item))
+    );
     return ulElement;
   };
 
@@ -47,6 +43,15 @@ export const Home = () => {
       filteredData = sortData(filteredData, 'name', currentFilters.orderBy);
     }
 
+    if (currentFilters.showMetrics) {
+      const top3 = metricsData(filteredData);
+      const cardContainer = mainElement.querySelector('#card-container');
+      cardContainer.innerHTML = '';
+      cardContainer.appendChild(renderItems(top3));
+      currentFilters.showMetrics = false;
+      return;
+    }
+
     if (currentFilters.showAverage) {
       const stats = computeStats(filteredData);
       document.getElementById('average-container').innerText = `Promedio de capítulos: ${stats.minValue}`;
@@ -56,14 +61,6 @@ export const Home = () => {
       document.getElementById('average-container1').classList.add('show1');
       document.getElementById('average-container2').classList.add('show2');
       currentFilters.showAverage = false;
-    }
-    if (currentFilters.showMetrics) {
-      const top3 = metricsData(filteredData);
-      const cardContainer = mainElement.querySelector('#card-container');
-      cardContainer.innerHTML = '';
-      cardContainer.appendChild(renderItems(top3));
-      currentFilters.showMetrics = false;
-      return;
     }
 
     // Limpiar el contenedor de tarjetas y añadir los elementos filtrados y/o ordenados

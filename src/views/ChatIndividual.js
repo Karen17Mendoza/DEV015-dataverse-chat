@@ -1,14 +1,20 @@
 import data from '../data/dataset.js';
 
-export const ChatIndividual = (id) => {
-  const mainElement = document.createElement('div');
-  const item = data.find(d => d.id === id);
+export const ChatIndividual = (name) => {
+  const item = data.find(item => item.name === name);
+  
+  if (!item) {
+    const errorElement = document.createElement('div');
+    errorElement.innerHTML = '<h2>Item not found</h2>';
+    return errorElement;
+  }
 
-  mainElement.innerHTML = `
-    <h1>${item.name}</h1>
-    <img src="${item.imageUrl}" alt="${item.name}" />
+  const chatElement = document.createElement('div');
+  chatElement.innerHTML = `
+    <h2>Chat with ${item.name}</h2>
     <p>${item.description}</p>
+    <!-- Aquí va el contenido del chat -->
   `;
 
-  return mainElement;
+  return chatElement;
 };

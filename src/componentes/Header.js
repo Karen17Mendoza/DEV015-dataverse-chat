@@ -84,7 +84,7 @@ export const Header = (updateView) => {
           <!--Botón 1: Limpiar contenedor-->
           <button class="button-clear" data-testid="button-clear">Limpiar</button>
           <!--Botón 2: Métricas Ranking-->
-          <button class="metrics">Ranking 3ro°</button>          
+          <button class="metrics">Ranking 3ro°</button>
           <!--Botón 3: Calcular promedio de capitulos-->
           <button class="button-average" id="button-calculate" data-testid="button-calculate">Curiosidades</button>
         </div>
@@ -96,20 +96,29 @@ export const Header = (updateView) => {
       </nav>
   `;
 
+  const resetSelectIndex = (exceptSelectId) => {
+    const selects = ['filter-gender', 'filter-year', 'filter-chapters'];
+    selects.forEach(id => {
+      if (id !== exceptSelectId) {
+        document.getElementById(id).value = 'all';
+      }
+    });
+  };
+
   // Añadir manejador de eventos para el filtro de género
   headerEl.querySelector('#filter-gender').addEventListener('change', (event) => {
     updateView({ filterBy: 'gender', value: event.target.value });
-
+    resetSelectIndex('filter-gender');
   });
   // Añadir manejador de eventos para el filtro de year
   headerEl.querySelector('#filter-year').addEventListener('change', (event) => {
     updateView({ filterBy: 'year', value: event.target.value });
-
+    resetSelectIndex('filter-year');
   });
   // Añadir manejador de eventos para el filtro de chapters
   headerEl.querySelector('#filter-chapters').addEventListener('change', (event) => {
     updateView({ filterBy: 'chapters', value: event.target.value });
-
+    resetSelectIndex('filter-chapters');
   });
   // Manejar el evento de cambio en el selector de orden
   headerEl.querySelector('#order-select').addEventListener('change', (event) => {
@@ -118,22 +127,21 @@ export const Header = (updateView) => {
   // Agregar eventos para los botones
   headerEl.querySelector('.button-clear').addEventListener('click', () => {
     updateView({ filterBy: 'all', value: 'all', orderBy: 'all' });
-    document.getElementById('filter-gender').value = 'all';
-    document.getElementById('filter-year').value = 'all';
-    document.getElementById('filter-chapters').value = 'all';
+    resetSelectIndex(); // No pasar ningún argumento para restablecer todos los selects
     document.getElementById('order-select').value = 'all';
     document.getElementById('average-container').classList.remove('show');
     document.getElementById('average-container1').classList.remove('show1');
     document.getElementById('average-container2').classList.remove('show2');
 
   });
+
   headerEl.querySelector('.button-average').addEventListener('click', () => {
     updateView({ showAverage: true });
   });
+
   headerEl.querySelector('.metrics').addEventListener('click', () => {
     updateView({ showMetrics: true });
   });
-
 
   return headerEl;
 };
