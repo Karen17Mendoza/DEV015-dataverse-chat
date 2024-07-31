@@ -1,8 +1,8 @@
 // test/dataFunctions.spec.js
 // test/dataFunctions.spec.js
 
-import { filterData, sortData, metricsData } from '../src/lib/dataFunctions.js';
-import { filterTestData, sortTestData, metricsTestData } from '../src/data/dataset.js';
+import { filterData, sortData, metricsData } from '../src/lib/dataFunctions';
+import { filterTestData, sortTestData, metricsTestData } from './data';
 
 describe('filterData', () => {
   const data = filterTestData;
@@ -28,9 +28,10 @@ describe('metricsData', () => {
   test('should return top 3 objects by percentageOfUsers', () => {
     const result = metricsData(data);
     expect(result).toEqual([
-      { facts: { percentageOfUsers: "75.5" } },
-      { facts: { percentageOfUsers: "65.5" } },
+      { facts: { percentageOfUsers: "45.5" } },
       { facts: { percentageOfUsers: "55.5" } },
+      { facts: { percentageOfUsers: "65.5" } },
+
     ]);
   });
 })

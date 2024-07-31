@@ -19,21 +19,19 @@ export const Home = () => {
   // Funcion para crear las tarjetas
   const renderItems = (data) => {
     const ulElement = document.createElement('ul');
-
     data.forEach(item => 
-    ulElement.appendChild(Card(item))
+      ulElement.appendChild(Card(item))
     );
     return ulElement;
   };
 
   // Manejador de eventos para actualizar la vista cuando se aplique un filtro
   const updateView = (filters) => {
-
     // Actualizar los filtros actuales con los nuevos
     currentFilters = { 
       ...currentFilters,
       ...filters 
-      };
+    };
 
     // Filtrar los datos en función de los filtros actuales
     let filteredData = filterData(data, currentFilters.filterBy, currentFilters.value);
