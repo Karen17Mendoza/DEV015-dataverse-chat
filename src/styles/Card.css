@@ -1,0 +1,97 @@
+h2 {
+    color: #511f52; /* Títulos y Encabezados */
+    font-family: 'Montserrat', sans-serif;
+  }
+
+/*Estilo de las cartas*/
+.card-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .cardli {
+    list-style-type: none;
+    background-color: #f9edf9; /* Fondo de las Tarjetas */
+    border: 4px solid #a987ab; /* Borde de las Tarjetas */
+    padding: 20px;
+    border-radius: 20px;
+    width: 470px;
+    max-width: 100%;
+    margin: 0px;
+    box-shadow: 0 4px 8px rgba(239, 236, 241, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    height:630px;
+    max-height: 100%;
+  }
+  
+  .card__title {
+    color: #33102E; /* Color del Título de la Tarjeta */
+    margin-bottom: 10px;
+  }
+  
+  .card__description {
+    color: #662962; /* Color del Texto de Descripción */
+    margin-top: 10px;
+  }
+  
+  .card__list p {
+    margin: 5px 0;
+  }
+  
+  .card__gender strong, .card__year strong, .card__chapters strong {
+    color: #8F4898; /* Color de los Títulos de los Datos */
+  }
+  
+  .card__gender span, .card__year span, .card__chapters span {
+    color: #33102E; /* Color de los Datos */
+  }
+  
+  .card_image {
+    max-width: 100%;
+    width: 270px;
+    border-radius: 10px;
+    max-height: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  /*sombrear la tarjeta al pasar el mouse */
+  .cardli:hover{
+    background:#cfb3d3;;
+  }
+  
+  /*Modo responsive*/
+  /* Para tablets */
+  @media (min-width: 501px) and (max-width: 768px) {
+    .card-container ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .cardli {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+  
+  /* Para móviles */
+  @media (max-width: 500px) {
+    .card-container ul {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  
+    .cardli {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+    }
+  }

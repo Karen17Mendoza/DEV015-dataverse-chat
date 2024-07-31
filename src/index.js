@@ -5,7 +5,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define tus rutas
 const routes = {
   "/": Home,
-  "/ChatIndividual/id": ChatIndividual,
+  "/ChatIndividual/:id": ChatIndividual,
 };
 
 // llamando a la función setRoutes y pasándole el objeto routes
