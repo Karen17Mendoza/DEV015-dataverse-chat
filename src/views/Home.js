@@ -1,52 +1,83 @@
-import { navigateTo } from '../router.js';
 import data from '../data/dataset.js';
+import { Card } from '../componentes/Card.js'
+import { Header } from '../componentes/Header.js'
+import { filterData, sortData, computeStats, metricsData  } from '../lib/dataFunctions.js'
 
-const renderItem = (item) => {
-  const liElement = document.createElement("li");
-  liElement.classList.add("cardli");
-  liElement.setAttribute("itemscope", "");
-  liElement.setAttribute("itemtype", "https://schema.org/CreativeWork");
-  liElement.setAttribute("data-id", item.id);
-
-  liElement.innerHTML = `
-    <div class="card">
-      <h2 class="card__title" itemprop="name">${item.name}</h2>
-      <img class="card_image" src="${item.imageUrl}" alt="${item.name}" itemprop="image" />
-      <p class="card__description" itemprop="description">${item.shortDescription}</p>
-      <div class="card__list">
-        <p class="card__gender"><strong>Género:</strong> <span itemprop="gender">${item.facts.gender}</span></p>
-        <p class="card__year"><strong>Año:</strong> <span itemprop="datePublished">${item.facts.year}</span></p>
-        <p class="card__chapters"><strong>Número de capítulos:</strong> <span itemprop="numberOfEpisodes">${item.facts.chapters}</span></p>
-      </div>
-    </div>
-  `;
-
-  const imageElement = liElement.querySelector('.card_image');
-  imageElement.addEventListener('click', () => {
-    navigateTo(`/details/${item.id}`, { item });
-  });
-
-  return liElement;
-};
-
-const renderItems = (data) => {
-  if (!data || !Array.isArray(data)) {
-    return document.createElement("ul");
-  }
-
-  const ulElement = document.createElement("ul");
-
-  data.forEach(item => {
-    const liElement = renderItem(item);
-    ulElement.appendChild(liElement);
-  });
-
-  return ulElement;
-};
-
+// Definimos la funcion principal Home 
 export const Home = () => {
+
+  // Creamos el elemento principal
   const mainElement = document.createElement('div');
-  const ulElement = renderItems(data);
-  mainElement.appendChild(ulElement);
+
+  // Definimos los filtros iniciales
+  let currentFilters = { 
+    filterBy: 'all',
+    value: 'all', 
+    orderBy: 'all',
+  };
+
+  // Funcion para crear las tarjetas
+  const renderItems = (data) => {
+    const ulElement = document.createElement('ul');
+
+    data.forEach(item => 
+    ulElement.appendChild(Card(item))
+    );
+    return ulElement;
+  };
+
+  // Manejador de eventos para actualizar la vista cuando se aplique un filtro
+  const updateView = (filters) => {
+
+    // Actualizar los filtros actuales con los nuevos
+    currentFilters = { 
+      ...currentFilters,
+      ...filters 
+      };
+
+    // Filtrar los datos en función de los filtros actuales
+    let filteredData = filterData(data, currentFilters.filterBy, currentFilters.value);
+
+    // Aplica la ordenación si hay un orden seleccionado
+    if (currentFilters.orderBy !== 'all') {
+      filteredData = sortData(filteredData, 'name', currentFilters.orderBy);
+    }
+
+    if (currentFilters.showMetrics) {
+      const top3 = metricsData(filteredData);
+      const cardContainer = mainElement.querySelector('#card-container');
+      cardContainer.innerHTML = '';
+      cardContainer.appendChild(renderItems(top3));
+      currentFilters.showMetrics = false;
+      return;
+    }
+
+    if (currentFilters.showAverage) {
+      const stats = computeStats(filteredData);
+      document.getElementById('average-container').innerText = `Promedio de capítulos: ${stats.minValue}`;
+      document.getElementById('average-container1').innerText = `Género más común: ${stats.mostCommonGenre}`;
+      document.getElementById('average-container2').innerText = `Mayor audiencia: ${stats.highestAudienceDorama.title} (${stats.highestAudienceDorama.facts.audiencePercentage}%)`;
+      document.getElementById('average-container').classList.add('show');
+      document.getElementById('average-container1').classList.add('show1');
+      document.getElementById('average-container2').classList.add('show2');
+      currentFilters.showAverage = false;
+    }
+
+    // Limpiar el contenedor de tarjetas y añadir los elementos filtrados y/o ordenados
+    const cardContainer = mainElement.querySelector('#card-container');
+    cardContainer.innerHTML = ''; 
+    cardContainer.appendChild(renderItems(filteredData));
+  };
+
+  // Añadir el encabezado con el manejador de eventos
+  mainElement.appendChild(Header(updateView));
+
+  // Añadir contenedor de tarjetas con el ID card-container
+  const cardContainer = document.createElement('div');
+  cardContainer.id = 'card-container';
+  cardContainer.appendChild(renderItems(data));
+  mainElement.appendChild(cardContainer);
+
+  // Devolvemos el elemento principal
   return mainElement;
 };

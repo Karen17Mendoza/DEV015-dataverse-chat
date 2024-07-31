@@ -1,24 +1,25 @@
 import { Home } from './views/Home.js';
+import { ChatIndividual } from './views/ChatIndividual.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
 // Define tus rutas
 const routes = {
-  '/': Home,
-  
+  "/": Home,
+  "/ChatIndividual/id": ChatIndividual,
 };
 
 // llamando a la función setRoutes y pasándole el objeto routes
 setRoutes(routes);
 
 // Manejador de eventos para la carga inicial de la URL
-window.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById('root');
-  setRootEl(rootElement);
-  onURLChange(window.location); // Invocar el enrutador para mostrar la vista correcta en la carga inicial
-
+document.addEventListener('DOMContentLoaded', () => {
+  const appElement = document.getElementById('root');
+  appElement.innerHTML = ''; // Limpia el contenido del contenedor 'app'
+  appElement.appendChild(Home());
+  /* Agregue esto*/
+  setRootEl(appElement);
 });
 
-// Manejador de eventos para cambios de URL (historial)
-window.addEventListener('popstate', () => {
-  onURLChange(window.location);
+window.addEventListener("popstate", () => {
+  onURLChange();
 });
