@@ -21,7 +21,7 @@ export const Card = (item) => {
   `;
 
   liElement.addEventListener('click', () => {
-    navigateTo(`/chatIndividual/${item.name}`);
+    navigateTo(`/ChatIndividual/${item.id}`);
   });
 
   return liElement;

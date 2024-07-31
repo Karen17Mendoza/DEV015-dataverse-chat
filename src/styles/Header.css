@@ -1,0 +1,50 @@
+/*Estilo del header*/
+header {
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  
+  h1{
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 100px;
+    color: #511f52;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .header__description{
+    font-size: 1.2em;
+    line-height: 30px;
+    color: #000000;
+    margin: 10px auto;
+  
+  }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    h1 {
+      font-size: 50px;
+      line-height: 46px;
+    }
+  
+    .header__description {
+      display: none; /* Ocultar descripción en pantallas pequeñas */
+    }
+  }
+  
+  /* Para móviles */
+  @media (max-width: 500px) {
+    .header__description {
+      display: none; /* Ocultar descripción en pantallas pequeñas */
+    }
+  
+    h1 {
+      width: 100%;
+      font-size: 45px;
+      line-height: 40px;
+    }
+
+  }

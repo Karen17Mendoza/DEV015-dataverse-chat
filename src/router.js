@@ -38,8 +38,7 @@ const renderView = (pathname, props = {}) => {
     throw new Error('Root element is not set. Please call setRootEl first.');
   }
   rootEl.innerHTML = '';
-  /*const view = ROUTES[pathname] || ROUTES['/error'];
-  rootEl.appendChild(view(props));*/
+  
   /*Agregamos enrutamientos dinamico apartir de aqui: */
   let view = ROUTES[pathname];
 
