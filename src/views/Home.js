@@ -21,7 +21,7 @@ export const Home = () => {
     const ulElement = document.createElement('ul');
 
     data.forEach(item => 
-    ulElement.appendChild(Card(item))
+      ulElement.appendChild(Card(item))
     );
     return ulElement;
   };
@@ -33,7 +33,7 @@ export const Home = () => {
     currentFilters = { 
       ...currentFilters,
       ...filters 
-      };
+    };
 
     // Filtrar los datos en función de los filtros actuales
     let filteredData = filterData(data, currentFilters.filterBy, currentFilters.value);
