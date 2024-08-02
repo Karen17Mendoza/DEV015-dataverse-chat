@@ -9,7 +9,10 @@
   box-sizing: border-box;
   
 }
-
+.maincontainer{
+  display: flex;
+  height: 100vh; 
+}
 
 body {
   background-color: #ecd4ea;
