@@ -1,25 +1,30 @@
+import { setRootEl, setRoutes, onURLChange} from './router.js';
 import { Home } from './views/Home.js';
-import { ChatIndividual } from './views/ChatIndividual.js';
-import { setRootEl, setRoutes, onURLChange } from './router.js';
+import { ChatIndividual } from './views/ChatIndividual.js'
 
-// Define tus rutas
+// Define your routes and their associated views
 const routes = {
-  "/": Home,
-  "/ChatIndividual/:id": ChatIndividual,
+  '/': Home,
+  '/ChatIndividual/': ChatIndividual,
+  '/error': () => {
+    const container = document.createElement('div');
+    container.innerHTML = '<p>Error Page not found</p>';
+    return container;
+  }
 };
 
-// llamando a la función setRoutes y pasándole el objeto routes
+// Assign the routes
 setRoutes(routes);
 
-// Manejador de eventos para la carga inicial de la URL
-document.addEventListener('DOMContentLoaded', () => {
-  const appElement = document.getElementById('root');
-  appElement.innerHTML = ''; // Limpia el contenido del contenedor 'app'
-  appElement.appendChild(Home());
-  /* Agregue esto*/
-  setRootEl(appElement);
+// Handle initial URL load
+window.addEventListener("DOMContentLoaded", () => {
+  const rootElement = document.getElementById('root');
+  setRootEl(rootElement);
+  onURLChange(window.location); // Invoke the router to render the correct view on initial load
+
 });
 
-window.addEventListener("popstate", () => {
-  onURLChange();
+// Handle URL changes
+window.addEventListener('popstate', () => {
+  onURLChange(window.location);
 });
