@@ -6,6 +6,8 @@ header {
     padding: 20px;
     text-align: center;
     padding-bottom: 0px;
+    flex-grow: 1;
+    
   }
   
   h1{

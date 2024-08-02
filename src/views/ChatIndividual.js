@@ -11,7 +11,6 @@ export const ChatIndividual = (props) => {
   const chatElement = document.createElement('div');
 
   if (item) {
-
     chatElement.innerHTML = `
     <h2>Chat con ${item.name}</h2>
     <!-- Aquí va el contenido del chat -->

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .sidebar {
+  --darkBackground: #333333;
   background-color: var(--darkBackground);
   padding: 56px 48px;
   display: flex;
@@ -13,6 +14,7 @@
   transition: all 0.3s ease;
   left: 0;
 }
+
 
 .sidebar__button {
   position: absolute;
@@ -41,6 +43,7 @@
 }
 
 .nav {
+ 
   display: flex;
   flex-direction: column;
 }

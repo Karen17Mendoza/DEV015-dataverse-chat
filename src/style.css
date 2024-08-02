@@ -7,7 +7,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
+
 
 body {
   background-color: #ecd4ea;
@@ -18,4 +20,5 @@ body {
   max-height: 1600px;
   min-width: 1100px;
   max-width: 1600px;
+  
 }
