@@ -1,5 +1,5 @@
 export const createSidebar = () => {
-  const sidebar = document.createElement('header');
+  const sidebar = document.createElement('div');
   sidebar.classList.add('sidebar');
     
   sidebar.innerHTML = `

@@ -1,0 +1,162 @@
+export const createSidebar = (updateView) => {
+  const sidebar = document.createElement('header');
+  sidebar.classList.add('sidebar');
+    
+  sidebar.innerHTML = `
+    <button class="material-icons sidebar__button">close</button>
+    <div>
+      <h1 class="sidebar__title">F&K.</h1>
+      <nav class="nav sidebar__nav-links">
+        <a href="./Home.js" class="sidebar__link">Home</a>
+        <a href="#" class="sidebar__link">Chat Grupal</a>
+        <a href="#" class="sidebar__link">Api Key</a>
+        <a href="#" class="sidebar__link">Contact</a>
+      </nav>
+    </div>
+    <div>
+    <!--Nav-->
+      <nav class="filter-container" id="filter-container" role="navigation">
+        <div class="filter-row">
+          <!--Sección 1: Filtra por género-->
+          <div class="filter-container__gender">
+            <label for="filter-gender">Filtrar por género:</label>
+            <select id="filter-gender" data-testid="select-filter" name="gender">
+              <option value="all">Todos</option>
+              <option value="Comedia Romántica">Comedia Romántica</option>
+              <option value="Drama">Drama</option>
+              <option value="Romance">Romance</option>
+              <option value="Fantasía">Fantasía</option>
+              <option value="Ciencia ficción">Ciencia ficción</option>
+              <option value="Acción">Acción</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Crimen">Crimen</option>
+              <option value="Histórico">Histórico</option>
+              <option value="Familiar">Familiar</option>
+            </select>
+          </div>
+
+          <!--Sección 2: Selección de año-->
+          <div class="filter-container__year">
+            <label for="filter-year">Seleccionar por Año:</label>
+            <select name="year" id="filter-year" data-testid="select-filter-2">
+              <option value="all">Todos</option>
+              <option value="2007">2007</option>
+              <option value="2009">2009</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+          </div>
+
+          <!--Sección 3: Selección de Cápitulos-->
+          <div class="filter-container__chapters">
+            <label for="filter-chapters">Seleccionar por Cápitulos:</label>
+            <select name="chapters" id="filter-chapters" data-testid="select-filter-3">
+              <option value="all">Todos</option>
+              <option value="9">9</option>
+              <option value="12">12</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="20">20</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+            </select>
+          </div>
+
+          <!--Sección 4: Selección de Orden-->
+          <div class="filter-container__order">
+            <label for="order-select">Ordenar por: </label>
+            <select name="name" id="order-select" data-testid="sort-order">
+              <option value="all">Orden</option>
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option> 
+            </select>
+          </div>
+        </div>
+        <div class="button-row">
+          <!--Botón 1: Limpiar contenedor-->
+          <button class="button-clear" data-testid="button-clear">Limpiar</button>
+          <!--Botón 2: Métricas Ranking-->
+          <button class="metrics">Ranking 3ro°</button>
+          <!--Botón 3: Calcular promedio de capitulos-->
+          <button class="button-average" id="button-calculate" data-testid="button-calculate">Curiosidades</button>
+        </div>
+        <div class="block-average">
+          <div id="average-container" class="average-container"></div>
+          <div id="average-container1" class="average-container"></div>
+          <div id="average-container2" class="average-container"></div>
+        </div>
+      </nav>
+
+    </div>
+    <div>
+      <nav class="nav sidebar__nav-social">
+        <a href="#" class="nav__social">
+          <i data-lucide="Linkedln"></i>
+        </a>
+        <a href="#" class="nav__social">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="#" class="nav__social">
+          <i data-lucide="github"></i>
+        </a>
+      </nav>
+      <p class="sidebar__copyright">Copyright ©2024 Karen Mendoza & Fatima Zelaya.</p>
+    </div>
+  `;
+  
+  const resetSelectIndex = (exceptSelectId) => {
+    const selects = ['filter-gender', 'filter-year', 'filter-chapters'];
+    selects.forEach(id => {
+      if (id !== exceptSelectId) {
+        document.getElementById(id).value = 'all';
+      }
+    });
+  };
+
+  // Añadir manejador de eventos para el filtro de género
+  sidebar.querySelector('#filter-gender').addEventListener('change', (event) => {
+    updateView({ filterBy: 'gender', value: event.target.value });
+    resetSelectIndex('filter-gender');
+  });
+  // Añadir manejador de eventos para el filtro de year
+  sidebar.querySelector('#filter-year').addEventListener('change', (event) => {
+    updateView({ filterBy: 'year', value: event.target.value });
+    resetSelectIndex('filter-year');
+  });
+  // Añadir manejador de eventos para el filtro de chapters
+  sidebar.querySelector('#filter-chapters').addEventListener('change', (event) => {
+    updateView({ filterBy: 'chapters', value: event.target.value });
+    resetSelectIndex('filter-chapters');
+  });
+  // Manejar el evento de cambio en el selector de orden
+  sidebar.querySelector('#order-select').addEventListener('change', (event) => {
+    updateView({ orderBy: event.target.value });
+  });
+  // Agregar eventos para los botones
+  sidebar.querySelector('.button-clear').addEventListener('click', () => {
+    updateView({ filterBy: 'all', value: 'all', orderBy: 'all' });
+    resetSelectIndex(); // No pasar ningún argumento para restablecer todos los selects
+    document.getElementById('order-select').value = 'all';
+    document.getElementById('average-container').classList.remove('show');
+    document.getElementById('average-container1').classList.remove('show1');
+    document.getElementById('average-container2').classList.remove('show2');
+
+  });
+
+  sidebar.querySelector('.button-average').addEventListener('click', () => {
+    updateView({ showAverage: true });
+  });
+
+  sidebar.querySelector('.metrics').addEventListener('click', () => {
+    updateView({ showMetrics: true });
+  });
+  return sidebar;
+};

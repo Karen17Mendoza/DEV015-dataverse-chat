@@ -14,7 +14,6 @@ export const ChatIndividual = (props) => {
 
     chatElement.innerHTML = `
     <h2>Chat with ${item.name}</h2>
-    <p>${item.description}</p>
     <!-- Aquí va el contenido del chat -->
   `;
   } else {

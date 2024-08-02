@@ -1,6 +1,7 @@
 import data from '../data/dataset.js';
 import { Card } from '../componentes/Card.js'
 import { Header } from '../componentes/Header.js'
+import { createSidebar } from '../componentes/nav-sidebar.js';
 import { filterData, sortData, computeStats, metricsData  } from '../lib/dataFunctions.js'
 
 // Definimos la funcion principal Home 
@@ -14,7 +15,7 @@ export const Home = () => {
     filterBy: 'all',
     value: 'all', 
     orderBy: 'all',
-  };
+  };  
 
   // Funcion para crear las tarjetas
   const renderItems = (data) => {
@@ -68,7 +69,9 @@ export const Home = () => {
   };
 
   // Añadir el encabezado con el manejador de eventos
-  mainElement.appendChild(Header(updateView));
+  mainElement.appendChild(Header());
+  mainElement.appendChild(createSidebar(updateView));
+
 
   // Añadir contenedor de tarjetas con el ID card-container
   const cardContainer = document.createElement('div');
