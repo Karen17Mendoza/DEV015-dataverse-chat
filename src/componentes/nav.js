@@ -19,6 +19,9 @@ export const createSidebar = () => {
           <i data-lucide="Linkedln"></i>
         </a>
         <a href="#" class="nav__social">
+          <i data-lucide="Linkedln"></i>
+        </a>
+        <a href="#" class="nav__social">
           <i data-lucide="github"></i>
         </a>
         <a href="#" class="nav__social">
