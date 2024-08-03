@@ -16,7 +16,7 @@
 }
 
 
-.sidebar__button {
+/*.sidebar__button {
   position: absolute;
   top: 62px;
   left: 24px;
@@ -24,9 +24,8 @@
   border: none;
   outline: none;
   padding: 0;
-  color: white;
   display: none;
-}
+}*/
 
 .sidebar__copyright,
 .sidebar__title {
@@ -34,12 +33,13 @@
 }
 
 .sidebar__title {
-  margin-bottom: 181px;
+  margin-bottom: 20px;
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 39px;
+  color: white;
 }
 
 .nav {
@@ -113,39 +113,3 @@
     display: block;
   }
 }
-
-/*Estilos para el footer*/
-.footer {
-    background-color: #33102E;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer__copyright {
-    margin: 0;
-    color: #fff;
-  }
-  
-  .footer__copyright a {
-    color: #1e90ff;
-    text-decoration: none;
-  }
-  
-  .footer__copyright a:hover {
-    text-decoration: underline;
-  }
-
-  .footer a {
-    color: #eab8b9; /* Enlaces y Llamadas a la Acción */
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    color: #efc5e9; /* Color de los Enlaces al Pasar el Ratón */
-  }
-
-  @media (max-width: 500px) {
-    .footer {
-      font-size: 14px;
-    }
-  }

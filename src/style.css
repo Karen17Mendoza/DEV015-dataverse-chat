@@ -2,13 +2,15 @@
 @import "./styles/Filters.css";
 @import "./styles/Nav.css";
 @import "./styles/Header.css";
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
+
 .maincontainer{
   display: flex;
   height: 100vh; 
