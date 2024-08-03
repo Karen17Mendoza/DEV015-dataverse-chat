@@ -1,8 +1,8 @@
 /* Material Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.sidebar {
-  --darkBackground: #33102e;
+.navSidebar {
+  --darkBackground: #945087;
   background-color: var(--darkBackground);
   padding: 56px 48px;
   display: flex;

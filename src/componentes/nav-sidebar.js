@@ -1,6 +1,6 @@
 export const createSidebar = (updateView) => {
-  const sidebar = document.createElement('header');
-  sidebar.classList.add('sidebar');
+  const sidebar = document.createElement('nav');
+  sidebar.classList.add('navSidebar');
     
   sidebar.innerHTML = `
     <div>

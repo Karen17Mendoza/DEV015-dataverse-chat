@@ -1,6 +1,6 @@
-export const createSidebar = () => {
-  const sidebar = document.createElement('div');
-  sidebar.classList.add('sidebar');
+export const createSidebarnav = () => {
+  const sidebar = document.createElement('nav');
+  sidebar.classList.add('chat-sidebar');
     
   sidebar.innerHTML = `
     <button class="material-icons sidebar__button">close</button>

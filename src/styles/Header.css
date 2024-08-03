@@ -12,6 +12,14 @@ header {
   flex-grow: 1;
 }
   
+ h1{
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 100px;
+    color: #511f52;
+    font-family: 'Poppins', sans-serif;
+ }
+  
 h1{
   font-size: 96px;
   font-weight: 900;

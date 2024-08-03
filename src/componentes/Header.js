@@ -1,12 +1,9 @@
-import { createSidebar } from './nav.js';
-
 export const Header = () => {
   const headerEl = document.createElement('header');
   headerEl.setAttribute('role', 'banner');
   headerEl.classList.add('header');
 
-  const sidebar = createSidebar();
-  headerEl.appendChild(sidebar);
+
 
   headerEl.innerHTML = `
   <button class="material-icons header__button">menu</button>
