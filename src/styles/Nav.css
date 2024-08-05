@@ -16,7 +16,19 @@
   height: 100%;
   z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
 }
-
+.chat-sidebar{
+  background-color: #521447;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 285px;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
 
 .sidebar__button {
   position: absolute;
@@ -108,7 +120,24 @@
 /*RESPONSIVO*/
 
 /* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+/* 768px */
+@media screen and (width < 768px) {
+  .navSidebar {
+    padding: 28px 24px;
+    max-width: 200px;
+  }
+
+  .sidebar__nav-social {
+    flex-direction: column;
+  }
+
+  .sidebar__button {
+    display: block;
+  }
+}
+
+/* 480px */
+@media screen and (width < 480px) {
   .navSidebar {
     position: fixed;
     height: 100dvh;
