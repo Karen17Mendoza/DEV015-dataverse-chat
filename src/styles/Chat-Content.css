@@ -25,7 +25,7 @@
   /* Contenedor de contenido del chat */
   .chat-content {
     flex: 1;
-    padding: 20px;
+    padding: 0px;
     overflow-y: auto;
     box-sizing: border-box;
     margin-left: 320px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */

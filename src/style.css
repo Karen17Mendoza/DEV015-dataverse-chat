@@ -3,8 +3,10 @@
 @import "./styles/Nav.css";
 @import "./styles/Header.css";
 @import "./styles/Chat-Content.css";
+@import "./styles/ChatIndividual.css";
 
 
+/*@import "./styles/ChatIndividual.css";*/
 /* Material Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -17,7 +19,7 @@
 .maincontainer{
   display: flex;
 }
-.chat-container{
+.chatIndividual-container{
   display: flex;
   height: 100vh;
 
