@@ -13,7 +13,6 @@
 
 .maincontainer{
   display: flex;
-  height: 100vh; 
 }
 
 body {
@@ -22,8 +21,5 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   margin: auto;
-  max-height: 1600px;
-  min-width: 1100px;
-  max-width: 1600px;
-  
+  max-width: 100%;
 }
