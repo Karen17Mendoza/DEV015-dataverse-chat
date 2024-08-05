@@ -7,6 +7,7 @@ export const createSidebar = (updateView) => {
       <button class="material-icons sidebar__button">
       close
       </button>
+      <button class="material-icons header__button">menu</button>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
         <a href="./Home.js" class="sidebar__link">Home</a>
@@ -39,7 +40,7 @@ export const createSidebar = (updateView) => {
 
           <!--Sección 2: Selección de año-->
           <div class="filter-container__year">
-            <label for="filter-year">Seleccionar por Año:</label>
+            <label for="filter-year">Filtrar por Año:</label>
             <select name="year" id="filter-year" data-testid="select-filter-2">
               <option value="all">Todos</option>
               <option value="2007">2007</option>
@@ -59,7 +60,7 @@ export const createSidebar = (updateView) => {
 
           <!--Sección 3: Selección de Cápitulos-->
           <div class="filter-container__chapters">
-            <label for="filter-chapters">Seleccionar por Cápitulos:</label>
+            <label for="filter-chapters">Filtrar por Capítulos:</label>
             <select name="chapters" id="filter-chapters" data-testid="select-filter-3">
               <option value="all">Todos</option>
               <option value="9">9</option>

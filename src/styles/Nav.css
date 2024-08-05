@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .navSidebar {
-  --darkBackground: #945087;
-  background-color: var(--darkBackground);
+  background-color: #521447;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
@@ -13,19 +12,52 @@
   color: white;
   transition: all 0.3s ease;
   left: 0;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
+.chat-sidebar{
+  background-color: #521447;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 285px;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
 }
 
-
-/*.sidebar__button {
+.sidebar__button {
   position: absolute;
-  top: 62px;
-  left: 24px;
+  top: 16px;
+  left: 16px;
   background-color: transparent;
   border: none;
   outline: none;
   padding: 0;
   display: none;
-}*/
+  font-size: 26px; /* Aumenta el tamaño del icono para mayor visibilidad */
+  cursor: pointer;
+  color: white;
+}
+
+.header__button {
+  position: fixed; /* Fijado para que esté fuera de la barra lateral */
+  top: 0px;
+  left: 285px; /* Posicionado en la esquina superior derecha */
+  border: none;
+  background-color: #521447;
+  outline: none;
+  padding: 16px;
+  color: white;
+  font-size: 26px; /* Tamaño del icono */
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  z-index: 1001; /* Asegura que el botón esté siempre encima de la barra lateral */
+}
 
 .sidebar__copyright,
 .sidebar__title {
@@ -34,7 +66,7 @@
 
 .sidebar__title {
   margin-bottom: 20px;
-  font-family: 'IBM Plex Serif';
+  font-family: 'IBM Plex Serif', serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -43,7 +75,6 @@
 }
 
 .nav {
- 
   display: flex;
   flex-direction: column;
 }
@@ -83,14 +114,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--darkBackground);
+  color: #33102E; /* Ajusta el color de acuerdo a tu paleta */
 }
-
 
 /* 768px */
 @media screen and (width < 768px) {
-
-  .sidebar {
+  .navSidebar {
     padding: 28px 24px;
     max-width: 200px;
   }
@@ -98,15 +127,20 @@
   .sidebar__nav-social {
     flex-direction: column;
   }
+
+  .sidebar__button {
+    display: block;
+  }
 }
 
 
 /* 480px */
 @media screen and (width < 480px) {
-  .sidebar {
+  .navSidebar {
     position: fixed;
     height: 100dvh;
     left: -100%;
+    transition: left 0.3s ease;
   }
 
   .sidebar__button {

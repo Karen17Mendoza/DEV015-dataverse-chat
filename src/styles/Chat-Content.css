@@ -1,0 +1,32 @@
+/* Contenedor de contenido general */
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-left: 220px; /* Desplaza el contenido a la derecha de la barra lateral */
+  }
+  
+  /* Contenedor de imagen y descripción */
+  .image-description {
+    background-color: white;
+    width: 400px; /* Ajusta el ancho según tus necesidades */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 220px; /* Ajusta el margen izquierdo para que no se superponga con la barra lateral */
+  }
+  
+  .item-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%;
+
+  }
+  
+  /* Contenedor de contenido del chat */
+  .chat-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-left: 320px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */
+  }

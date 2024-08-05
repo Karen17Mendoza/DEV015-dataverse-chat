@@ -2,7 +2,6 @@ import data from '../data/dataset.js';
 import { createSidebarnav } from '../componentes/nav.js';
 
 // Función para obtener un item por ID
-
 const getItemById = (id) => {
   return data.find(item => item.id === id);
 };
@@ -11,36 +10,44 @@ export const ChatIndividual = (props) => {
   const { id } = props;
   const item = getItemById(id);
   const chatElement = document.createElement('div');
-
-  // Crear el contenedor principal con flexbox
-  chatElement.classList.add('container');
+  chatElement.classList.add('chat-container');
 
   // Crear y añadir la barra lateral
   const sidebar = createSidebarnav();
   chatElement.appendChild(sidebar);
-
-  // Crear el contenedor de contenido principal
-  const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
+  // Creamos el contenedor para la imagen y descripcion
+  const imagAndDescription = document.createElement('div');
+  imagAndDescription.classList.add('image-description');
 
   if (item) {
-    chatElement.innerHTML = `
-    <h2>Chat con ${item.name}</h2>
-    <!-- Aquí va el contenido del chat -->
-  `;
+    imagAndDescription.innerHTML = `
+      <img src="${item.imageUrl}" alt="${item.name}" class="item-image" />
+      <h2 class="card__title" itemprop="name">${item.name}</h2>
+      <p>${item.description}</p>
+      `;
   } else {
-    chatElement.textContent = 'Item not found';
+    imagAndDescription.textContent = 'Item not found';
   }
-  // Añadir el contenido principal al contenedor principal
-  chatElement.appendChild(mainContent);
+  // Creamos el contenedor del chat 
+  const chatContent = document.createElement('div');
+  chatContent.classList.add('chat-content');
+  
+  if (item) {
+    chatContent.innerHTML = `
+      <h2>Chat con ${item.name}</h2>
+      <!-- Aquí va el contenido del chat -->
+    `;
+  } else {
+    chatContent.textContent = 'Item not found';
+  }
+
+  // Crear un contenedor para la imagen y el chat
+  const contentContainer = document.createElement('div');
+  contentContainer.classList.add('content-container');
+  contentContainer.append(chatContent, imagAndDescription);
+
+  // Añadir el contenedor de contenido al contenedor principal
+  chatElement.appendChild(contentContainer);
+
   return chatElement;
 };
-
-/*export function ChatIndividual(props) {
-  const viewEl = document.createElement('div');
-  viewEl.innerHTML = `
-    <h1>Chat Individual</h1>
-    <p>ID: ${props.id}</p>
-  `;
-  return viewEl;
-}*/

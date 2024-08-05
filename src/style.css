@@ -2,6 +2,9 @@
 @import "./styles/Filters.css";
 @import "./styles/Nav.css";
 @import "./styles/Header.css";
+@import "./styles/Chat-Content.css";
+
+
 /* Material Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -13,8 +16,13 @@
 
 .maincontainer{
   display: flex;
-  height: 100vh; 
 }
+.chat-container{
+  display: flex;
+  height: 100vh;
+
+}
+
 
 body {
   background-color: #ecd4ea;
@@ -22,8 +30,5 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   margin: auto;
-  max-height: 1600px;
-  min-width: 1100px;
-  max-width: 1600px;
-  
+  max-width: 100%;
 }

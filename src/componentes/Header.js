@@ -6,11 +6,11 @@ export const Header = () => {
 
 
   headerEl.innerHTML = `
-  <button class="material-icons header__button">menu</button>
   <h1>Kdrama Chat</h1>
       <p class="header__description">
-        ¡Hola! ¿Estás buscando el Kdrama perfecto para maratonear este fin de semana? 
-        
+        ¡Hola! 🌸 ¿Buscas el Kdrama perfecto para maratonear? En Kdrama Chat, explora una amplia colección filtrada por género, año y episodios. 
+        Interactúa con cada Kdrama y chatea con todos los Kdramas. 
+        ¡Recomendaciones personalizadas para todos los gustos! ¡Descubre tu próximo Kdrama favorito con nosotros!
       </p>
     
       
