@@ -68,35 +68,47 @@ h2 {
   }
 
   /*Modo responsive*/
-  /* Para tablets */
-  @media (min-width: 501px) and (max-width: 768px) {
-    .card-container ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin-left: 0; /* Asegura que las cartas estén centradas */
-    }
-  
-    .cardli {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      max-height: 100%;
-    }
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 0; /* Asegura que las cartas estén centradas */
+  }
 
+  .cardli {
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
   }
-  
-  /* Para móviles */
-  @media (max-width: 500px) {
-    .card-container ul {
-      display: grid;
-      grid-template-columns: 1fr;
-      margin-left: 0; /* Asegura que las cartas estén centradas */
-    }
-  
-    .cardli {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      max-height: 100%;
-    }
+}
+
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0; /* Asegura que las cartas estén centradas */
   }
+
+  .cardli {
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+  }
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
+  }
+
+  .cardli {
+    width: 270px;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+  }
+}
