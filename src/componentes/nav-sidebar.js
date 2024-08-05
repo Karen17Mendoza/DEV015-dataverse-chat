@@ -83,19 +83,7 @@ export const createSidebar = (updateView) => {
             </select>
           </div>
         </div>
-        <div class="button-row">
-          <!--Botón 1: Limpiar contenedor-->
-          <button class="button-clear" data-testid="button-clear">Limpiar</button>
-          <!--Botón 2: Métricas Ranking-->
-          <button class="metrics">Ranking 3ro°</button>
-          <!--Botón 3: Calcular promedio de capitulos-->
-          <button class="button-average" id="button-calculate" data-testid="button-calculate">Curiosidades</button>
-        </div>
-        <div class="block-average">
-          <div id="average-container" class="average-container"></div>
-          <div id="average-container1" class="average-container"></div>
-          <div id="average-container2" class="average-container"></div>
-        </div>
+
       </nav>
     </div>
     <div>
@@ -145,23 +133,6 @@ export const createSidebar = (updateView) => {
   sidebar.querySelector('#order-select').addEventListener('change', (event) => {
     updateView({ orderBy: event.target.value });
   });
-  // Agregar eventos para los botones
-  sidebar.querySelector('.button-clear').addEventListener('click', () => {
-    updateView({ filterBy: 'all', value: 'all', orderBy: 'all' });
-    resetSelectIndex(); // No pasar ningún argumento para restablecer todos los selects
-    document.getElementById('order-select').value = 'all';
-    document.getElementById('average-container').classList.remove('show');
-    document.getElementById('average-container1').classList.remove('show1');
-    document.getElementById('average-container2').classList.remove('show2');
 
-  });
-
-  sidebar.querySelector('.button-average').addEventListener('click', () => {
-    updateView({ showAverage: true });
-  });
-
-  sidebar.querySelector('.metrics').addEventListener('click', () => {
-    updateView({ showMetrics: true });
-  });
   return sidebar;
 };

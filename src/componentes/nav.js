@@ -31,6 +31,6 @@ export const createSidebarnav = () => {
       <p class="sidebar__copyright">Copyright ©2024 Karen Mendoza & Fatima Zelaya.</p>
     </div>
   `;
-  
+
   return sidebarNav;
 };
