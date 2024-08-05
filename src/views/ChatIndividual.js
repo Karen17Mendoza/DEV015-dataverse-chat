@@ -1,4 +1,6 @@
 import data from '../data/dataset.js';
+import { createSidebarnav } from '../componentes/nav.js';
+
 // Función para obtener un item por ID
 
 const getItemById = (id) => {
@@ -10,6 +12,17 @@ export const ChatIndividual = (props) => {
   const item = getItemById(id);
   const chatElement = document.createElement('div');
 
+  // Crear el contenedor principal con flexbox
+  chatElement.classList.add('container');
+
+  // Crear y añadir la barra lateral
+  const sidebar = createSidebarnav();
+  chatElement.appendChild(sidebar);
+
+  // Crear el contenedor de contenido principal
+  const mainContent = document.createElement('div');
+  mainContent.classList.add('main-content');
+
   if (item) {
     chatElement.innerHTML = `
     <h2>Chat con ${item.name}</h2>
@@ -18,6 +31,8 @@ export const ChatIndividual = (props) => {
   } else {
     chatElement.textContent = 'Item not found';
   }
+  // Añadir el contenido principal al contenedor principal
+  chatElement.appendChild(mainContent);
   return chatElement;
 };
 
