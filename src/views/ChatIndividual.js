@@ -16,8 +16,8 @@ export const ChatIndividual = (props) => {
   chatElement.setAttribute("data-id", item.id);
 
   // Crear y añadir la barra lateral
-  const sidebar = createSidebarnav();
-  chatElement.appendChild(sidebar);
+  const sidebarNav = createSidebarnav();
+  chatElement.appendChild(sidebarNav);
   // Creamos el contenedor para la imagen y descripcion
   const imagAndDescription = document.createElement('div');
   imagAndDescription.classList.add('image-description');
@@ -26,7 +26,14 @@ export const ChatIndividual = (props) => {
     imagAndDescription.innerHTML = `
       <img src="${item.imageUrl}" alt="${item.name}" class="item-image" />
       <h2 class="card__title" itemprop="name">${item.name}</h2>
-      <p>${item.description}</p>
+      <p class="card__description" itemprop="description">${item.shortDescription}</p>
+      <div class="card__list">
+        <p class="card__gender"><strong>Género:</strong> <span itemprop="gender">${item.facts.gender}</span></p>
+        <p class="card__year"><strong>Año:</strong> <span itemprop="datePublished">${item.facts.year}</span></p>
+        <p class="card__chapters"><strong>Número de capítulos:</strong> <span itemprop="numberOfEpisodes">${item.facts.chapters}</span></p>
+      </div>
+
+
       `;
   } else {
     imagAndDescription.textContent = 'Item not found';
@@ -60,7 +67,7 @@ export const ChatIndividual = (props) => {
   // Crear un contenedor para la imagen y el chat
   const contentContainer = document.createElement('div');
   contentContainer.classList.add('content-container');
-  contentContainer.append(chatContent, imagAndDescription);
+  contentContainer.append(sidebarNav, chatContent, imagAndDescription);
 
   // Añadir el contenedor de contenido al contenedor principal
   chatElement.appendChild(contentContainer);

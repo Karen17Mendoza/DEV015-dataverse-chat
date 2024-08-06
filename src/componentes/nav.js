@@ -1,5 +1,5 @@
 export const createSidebarnav = () => {
-  const sidebarNav = document.createElement('nav');
+  const sidebarNav = document.createElement('div');
   sidebarNav.classList.add('chat-sidebar');
     
   sidebarNav.innerHTML = `

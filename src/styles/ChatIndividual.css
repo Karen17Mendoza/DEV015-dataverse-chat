@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.chat-container {
+.chat-content {
     width: 400px;
     max-width: 100%;
-    height: 600px;
+    height: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    padding: 50px;
+    box-sizing: border-box;
+    margin-left: 50px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */
+    
 }
 
 .chat-header {

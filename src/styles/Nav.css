@@ -25,6 +25,8 @@
   max-width: 285px;
   box-sizing: border-box;
   color: white;
+  transition: all 0.3s ease;
+  left: 0;
   position: fixed;
   height: 100%;
   z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
