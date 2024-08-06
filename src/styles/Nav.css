@@ -93,17 +93,17 @@
   text-transform: uppercase;
 }
 
+.sidebar__link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
 .sidebar__nav-social {
   gap: 12px;
   margin-bottom: 30px;
   flex-direction: row;
   transition: all 0.3s ease;
-}
-
-.sidebar__link {
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease;
 }
 
 .nav__social {
@@ -117,6 +117,9 @@
   color: #33102E; /* Ajusta el color de acuerdo a tu paleta */
 }
 
+/*RESPONSIVO*/
+
+/* Pantallas pequeñas (móviles) */
 /* 768px */
 @media screen and (width < 768px) {
   .navSidebar {
@@ -133,7 +136,6 @@
   }
 }
 
-
 /* 480px */
 @media screen and (width < 480px) {
   .navSidebar {
@@ -143,7 +145,52 @@
     transition: left 0.3s ease;
   }
 
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
+  }
+
   .sidebar__button {
     display: block;
+  }
+}
+
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navSidebar {
+    padding: 28px 24px;
+    max-width: 200px;
+  }
+  .sidebar__button {
+    display: block;
+  }
+  .sidebar__nav-social {
+    flex-direction: column;
+  }
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navSidebar {
+    padding: 28px;
+    max-width: 285px;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
+  }
+}
+
+/* Pantallas extra grandes (laptops grandes y desktops) */
+@media (min-width: 1025px) {
+  .navSidebar {
+    padding: 56px;
+    max-width: 285px;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
   }
 }
