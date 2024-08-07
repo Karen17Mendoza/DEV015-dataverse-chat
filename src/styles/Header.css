@@ -26,6 +26,12 @@ h1{
   color: #000000;
   margin: 10px auto;
 }
+.header-logo {
+  width: 500px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
 
   @media (min-width: 501px) and (max-width: 768px) {
     h1 {

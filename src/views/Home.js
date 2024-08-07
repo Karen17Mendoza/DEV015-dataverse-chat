@@ -72,12 +72,13 @@ export const Home = () => {
   const navSidebar = createSidebar(updateView);
   const container = document.createElement('div');
   container.classList.add('container');
-  const header = Header();
+  const header = Header(updateView);
   
   // Añadir contenedor de tarjetas con el ID card-container
   const cardContainer = document.createElement('div');
   cardContainer.id = 'card-container';
   cardContainer.appendChild(renderItems(data));
+
   // Almacenar en un nuevo container el header y carcontainer
   container.append(header,cardContainer);
   mainElement.append(navSidebar,container);
