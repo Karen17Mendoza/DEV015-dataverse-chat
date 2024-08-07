@@ -1,8 +1,8 @@
 /* Material Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.sidebar {
-  background-color: var(--darkBackground);
+.navSidebar {
+  background-color: #521447;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
@@ -12,18 +12,52 @@
   color: white;
   transition: all 0.3s ease;
   left: 0;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
+.chat-sidebar{
+  background-color: #521447;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 260px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.3s ease;
+  left: 0;
+  position: fixed;
+  height: 100%;
 }
 
 .sidebar__button {
   position: absolute;
-  top: 62px;
-  left: 24px;
+  top: 16px;
+  left: 16px;
   background-color: transparent;
   border: none;
   outline: none;
   padding: 0;
-  color: white;
   display: none;
+  font-size: 26px; /* Aumenta el tamaño del icono para mayor visibilidad */
+  cursor: pointer;
+  color: white;
+}
+
+.header__button {
+  position: fixed; /* Fijado para que esté fuera de la barra lateral */
+  top: 0px;
+  left: 285px; /* Posicionado en la esquina superior derecha */
+  border: none;
+  background-color: #521447;
+  outline: none;
+  padding: 16px;
+  color: white;
+  font-size: 26px; /* Tamaño del icono */
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  z-index: 1001; /* Asegura que el botón esté siempre encima de la barra lateral */
 }
 
 .sidebar__copyright,
@@ -32,12 +66,13 @@
 }
 
 .sidebar__title {
-  margin-bottom: 181px;
-  font-family: 'IBM Plex Serif';
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Serif', serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 39px;
+  color: white;
 }
 
 .nav {
@@ -59,17 +94,17 @@
   text-transform: uppercase;
 }
 
+.sidebar__link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
 .sidebar__nav-social {
   gap: 12px;
   margin-bottom: 30px;
   flex-direction: row;
   transition: all 0.3s ease;
-}
-
-.sidebar__link {
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease;
 }
 
 .nav__social {
@@ -80,14 +115,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--darkBackground);
+  color: #33102E; /* Ajusta el color de acuerdo a tu paleta */
 }
 
+/*RESPONSIVO*/
 
+/* Pantallas pequeñas (móviles) */
 /* 768px */
 @media screen and (width < 768px) {
-
-  .sidebar {
+  .navSidebar {
     padding: 28px 24px;
     max-width: 200px;
   }
@@ -95,15 +131,24 @@
   .sidebar__nav-social {
     flex-direction: column;
   }
-}
 
+  .sidebar__button {
+    display: block;
+  }
+}
 
 /* 480px */
 @media screen and (width < 480px) {
-  .sidebar {
+  .navSidebar {
     position: fixed;
     height: 100dvh;
     left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
   }
 
   .sidebar__button {
@@ -111,38 +156,42 @@
   }
 }
 
-/*Estilos para el footer*/
-.footer {
-    background-color: #33102E;
-    padding: 20px 0;
-    text-align: center;
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navSidebar {
+    padding: 28px 24px;
+    max-width: 200px;
   }
-  
-  .footer__copyright {
-    margin: 0;
-    color: #fff;
+  .sidebar__button {
+    display: block;
   }
-  
-  .footer__copyright a {
-    color: #1e90ff;
-    text-decoration: none;
+  .sidebar__nav-social {
+    flex-direction: column;
   }
-  
-  .footer__copyright a:hover {
-    text-decoration: underline;
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navSidebar {
+    padding: 28px;
+    max-width: 285px;
   }
 
-  .footer a {
-    color: #eab8b9; /* Enlaces y Llamadas a la Acción */
-    text-decoration: none;
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
   }
-  
-  .footer a:hover {
-    color: #efc5e9; /* Color de los Enlaces al Pasar el Ratón */
+}
+
+/* Pantallas extra grandes (laptops grandes y desktops) */
+@media (min-width: 1025px) {
+  .navSidebar {
+    padding: 56px;
+    max-width: 285px;
   }
 
-  @media (max-width: 500px) {
-    .footer {
-      font-size: 14px;
-    }
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
   }
+}

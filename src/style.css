@@ -2,6 +2,13 @@
 @import "./styles/Filters.css";
 @import "./styles/Nav.css";
 @import "./styles/Header.css";
+@import "./styles/Chat-Content.css";
+@import "./styles/ChatIndividual.css";
+
+
+/*@import "./styles/ChatIndividual.css";*/
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 *{
   margin: 0;
@@ -9,13 +16,22 @@
   box-sizing: border-box;
 }
 
+.maincontainer{
+  display: flex;
+}
+.chatIndividual-container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+}
+
+
 body {
   background-color: #ecd4ea;
   color: #662962;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   margin: auto;
-  max-height: 1600px;
-  min-width: 1100px;
-  max-width: 1600px;
+  max-width: 100%;
 }

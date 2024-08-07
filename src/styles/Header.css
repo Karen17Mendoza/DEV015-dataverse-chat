@@ -1,33 +1,45 @@
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 /*Estilo del header*/
 header {
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    padding-bottom: 0px;
-  }
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  padding-bottom: 0px;
+  flex-grow: 1;
+  margin-left: 300px;
+}
   
-  h1{
-    font-size: 96px;
-    font-weight: 900;
-    line-height: 100px;
-    color: #511f52;
-    font-family: 'Poppins', sans-serif;
-  }
+h1{
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 100px;
+  color: #511f52;
+  font-family: 'Poppins', sans-serif;
+}
   
-  .header__description{
-    font-size: 1.2em;
-    line-height: 30px;
-    color: #000000;
-    margin: 10px auto;
-  
-  }
+.header__description{
+  font-size: 1.2em;
+  line-height: 30px;
+  color: #000000;
+  margin: 10px auto;
+}
+.header-logo {
+  width: 500px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
 
   @media (min-width: 501px) and (max-width: 768px) {
     h1 {
-      font-size: 50px;
-      line-height: 46px;
+      font-size: 70px;
+      line-height: 60px;
+      width: auto;
+      max-width: 100%;
     }
   
     .header__description {
@@ -42,7 +54,7 @@ header {
     }
   
     h1 {
-      width: 100%;
+      max-width: 100%;
       font-size: 45px;
       line-height: 40px;
     }

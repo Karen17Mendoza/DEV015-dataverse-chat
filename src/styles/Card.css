@@ -2,7 +2,6 @@ h2 {
     color: #511f52; /* Títulos y Encabezados */
     font-family: 'Montserrat', sans-serif;
   }
-
 /*Estilo de las cartas*/
 .card-container ul{
     display: flex;
@@ -11,6 +10,7 @@ h2 {
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
+    margin-left: 300px; /* Asegura que las cartas no sean tapadas por la barra lateral */
   }
   
   .cardli {
@@ -19,14 +19,15 @@ h2 {
     border: 4px solid #a987ab; /* Borde de las Tarjetas */
     padding: 20px;
     border-radius: 20px;
-    width: 470px;
+    width: 380px; /* Ancho fijo para mantener el tamaño consistente */
+    max-width: 100%;
+    height: 670px;
     max-width: 100%;
     margin: 0px;
     box-shadow: 0 4px 8px rgba(239, 236, 241, 0.1);
     text-align: center;
     box-sizing: border-box;
-    height:630px;
-    max-height: 100%;
+    transition: width 0.5s ease, height 0.5s ease; /* Transición solo en ancho y alto */
   }
   
   .card__title {
@@ -41,6 +42,7 @@ h2 {
   
   .card__list p {
     margin: 5px 0;
+    text-align: left; /* Alineación a la izquierda */
   }
   
   .card__gender strong, .card__year strong, .card__chapters strong {
@@ -64,34 +66,49 @@ h2 {
   .cardli:hover{
     background:#cfb3d3;;
   }
-  
+
   /*Modo responsive*/
-  /* Para tablets */
-  @media (min-width: 501px) and (max-width: 768px) {
-    .card-container ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .cardli {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      max-height: 100%;
-    }
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 0; /* Asegura que las cartas estén centradas */
   }
-  
-  /* Para móviles */
-  @media (max-width: 500px) {
-    .card-container ul {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-  
-    .cardli {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      max-height: 100%;
-    }
+
+  .cardli {
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
   }
+}
+
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0; /* Asegura que las cartas estén centradas */
+  }
+
+  .cardli {
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+  }
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
+  }
+
+  .cardli {
+    width: 270px;
+    height: auto;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+  }
+}

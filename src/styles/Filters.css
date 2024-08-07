@@ -1,5 +1,4 @@
 /*Estilos de contenedores option, select, button*/
-
 .filter-container {
     display: flex;
     flex-direction: column;
@@ -8,6 +7,7 @@
   
   .button-row {
     display: flex;
+    flex-direction: wrap;
     justify-content: center;
     gap: 10px;
   }
@@ -16,6 +16,7 @@
     max-width: 100%;
     width: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
   }
@@ -23,10 +24,9 @@
   .filter-container select {
     padding: 5px;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #f9edf9;
-    color: rgb(0, 0, 0);
-    border: 1px solid #ccc;
+    background-color: #D9A9E3; /* Fondo del select */
+    color: #33102E; /* Texto del select */
+    border: 1px solid #AB65AD;
     border-radius: 5px;
     margin:auto;
     width: 150px;
@@ -38,7 +38,7 @@
   .filter-container label {
     margin-bottom: 5px;
     font-weight: bold;
-    color: #511f52; /* Color de las Etiquetas */
+    color: #AB65AD; /* Color de las Etiquetas */
   }
   
   .button-average {
@@ -47,18 +47,19 @@
     margin: 10px;
     border: none;
     border-radius: 10px;
-    color: #000000; /* Color del Texto del Botón */
-    background-color: #ae7eae;
+    color: #ffffff; /* Color del Texto del Botón */
+    background-color: #8F4898; /* Fondo del Botón */
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
   }
   
   .button-clear:hover, .metrics:hover, .button-average:hover{
-    background-color: #d6a4d0; /* Color del Botón al Pasar el Ratón */
+    background-color: #D9A9E3; /* Color del Botón al Pasar el Ratón */
   }
   
   .block-average{
     display: flex;
+    flex-direction: wrap;
     justify-content: center; /* Espacio entre los contenedores */
     align-items: center; /* Alineación central de los contenedores */
     gap: 20px; /* Espacio entre los contenedores */
@@ -70,9 +71,9 @@
   .average-container {
     display: none;
     padding: 20px;
-    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background: linear-gradient(to top, #D9A9E3 0%, #8F4898 100%); /* Gradiente usando los colores de la paleta */
     border-radius: 15px;
-    color: #000000;
+    color: #33102E;
     margin: auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,31 +88,15 @@
    }
   
   /* Estilos cuando se muestra el contenedor */
-  .average-container.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    width: auto;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .average-container.show1 {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    width: auto;
-    max-width: 100%;
-    height: auto;
-  }
-  
+  .average-container.show,
+  .average-container.show1,
   .average-container.show2 {
     display: block;
     opacity: 1;
     transform: translateY(0);
     width: auto;
-    height: auto;
     max-width: 100%;
+    height: auto;
   }
   
   .button-clear, .metrics, .button-average {
@@ -121,8 +106,8 @@
     border: none;
     border-radius: 10px;
     border: 1px solid #ffffff;
-    background-color: #ae7eae;
-    color: #000000; /* Color del Texto del Botón */
+    background-color: #8F4898; /* Fondo del Botón */
+    color: #ffffff; /* Color del Texto del Botón */
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
   }
@@ -141,16 +126,8 @@
       max-width: 100%;
     }
   
-    .average-container.show {
-      width: auto;
-      max-width: 100%;
-    }
-  
-    .average-container.show1 {
-      width: auto;
-      max-width: 100%;
-    }
-  
+    .average-container.show,
+    .average-container.show1,
     .average-container.show2 {
       width: auto;
       max-width: 100%;
@@ -189,16 +166,8 @@
       margin: auto;
     }
   
-    .average-container.show {
-      width: auto;
-      max-width: 100%;
-    }
-  
-    .average-container.show1 {
-      width: auto;
-      max-width: 100%;
-    }
-  
+    .average-container.show,
+    .average-container.show1,
     .average-container.show2 {
       width: auto;
       max-width: 100%;
