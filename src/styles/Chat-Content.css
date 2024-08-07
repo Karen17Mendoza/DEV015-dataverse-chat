@@ -2,13 +2,14 @@
 .content-container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     flex: 1;
     margin-left: 220px; /* Desplaza el contenido a la derecha de la barra lateral */
   }
   
   /* Contenedor de imagen y descripción */
   .image-description {
-    background-color: white;
+    background-color: #ecd4ea;
     width: 350px; /* Ajusta el ancho según tus necesidades */
     padding: 56px 48px;
     box-sizing: border-box;
@@ -20,10 +21,19 @@
 }
   
   .item-image {
-    max-width: 100%;
-    height: 100%;
-    border-radius: 10%;
-    margin-bottom: 20px; /* Añade espacio debajo de la imagen */
 
+    width: 280px; /* Ajusta el tamaño según tus necesidades */
+    height: 280px;
+    border-radius: 50%;
+    object-fit: fill;
+    border: 4px solid #fff; /* Color del borde */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  .card__title__chat{
+    padding: 30px;
+    font-size: 30px;
+    
   }
+
   
