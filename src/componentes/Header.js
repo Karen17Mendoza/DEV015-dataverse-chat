@@ -12,7 +12,6 @@ export const Header = () => {
         Interactúa con cada Kdrama y chatea con todos los Kdramas. 
         ¡Recomendaciones personalizadas para todos los gustos! ¡Descubre tu próximo Kdrama favorito con nosotros!
       </p>
-    
       
   `;
 
