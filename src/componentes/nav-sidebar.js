@@ -12,9 +12,9 @@ export const createSidebar = (updateView) => {
       <button class="material-icons header__button">menu</button>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
-        <a href="./Home.js" class="sidebar__link">Home</a>
+        <a id="homeButton" class="sidebar__link">Home</a>
         <a href="#" class="sidebar__link">Chat Grupal</a>
-        <a id="apiKeyButton">API Key</a>
+        <a id="apiKeyButton" class="sidebar__link">API Key</a>
         <a href="#" class="sidebar__link">Contact</a>
       </nav>
     </div>
@@ -143,6 +143,14 @@ export const createSidebar = (updateView) => {
   apiKeyButton.addEventListener('click', () => {
   // Llama a la función navigateTo para redirigir a la vista de Api Key
     navigateTo('/apiKey/');
+  });
+
+  // Selecciona el botón usando su ID
+  const homeButton = sidebar.querySelector('#homeButton');
+  // Agrega un event listener para el clic
+  homeButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/');
   });
 
   return sidebar;
