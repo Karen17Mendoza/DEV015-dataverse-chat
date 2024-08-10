@@ -1,3 +1,5 @@
+import { navigateTo } from '../router.js';
+
 export const createSidebarnav = () => {
   const sidebarNav = document.createElement('div');
   sidebarNav.classList.add('chat-sidebar');
@@ -7,10 +9,10 @@ export const createSidebarnav = () => {
     <div>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
-        <a href="./Home.js" class="sidebar__link">Home</a>
-        <a href="#" class="sidebar__link">Chat Grupal</a>
-        <a href="#" class="sidebar__link">Api Key</a>
-        <a href="#" class="sidebar__link">Contact</a>
+        <a href="/home" class="sidebar__link">Home</a>
+        <a href="/chat-grupal" class="sidebar__link">Chat Grupal</a>
+        <a href="/apikey" class="sidebar__link">Api Key</a>
+        <a href="/contact" class="sidebar__link">Contáctanos</a>
       </nav>
     </div>
     <div>
@@ -31,6 +33,16 @@ export const createSidebarnav = () => {
       <p class="sidebar__copyright">Copyright ©2024 Karen Mendoza & Fatima Zelaya.</p>
     </div>
   `;
+
+  // Interceptar clics en los enlaces de navegación
+  const links = sidebarNav.querySelectorAll('.sidebar__link');
+  links.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const path = event.currentTarget.getAttribute('href');
+      navigateTo(path);
+    });
+  });
 
   return sidebarNav;
 };

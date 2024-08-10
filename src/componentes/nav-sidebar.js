@@ -1,3 +1,5 @@
+import { navigateTo } from '../router.js';
+
 export const createSidebar = (updateView) => {
   const sidebar = document.createElement('nav');
   sidebar.classList.add('navSidebar');
@@ -10,10 +12,10 @@ export const createSidebar = (updateView) => {
       <button class="material-icons header__button">menu</button>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
-        <a href="./Home.js" class="sidebar__link">Home</a>
-        <a href="#" class="sidebar__link">Chat Grupal</a>
-        <a href="#" class="sidebar__link">Api Key</a>
-        <a href="#" class="sidebar__link">Contact</a>
+        <a href="/home" class="sidebar__link">Home</a>
+        <a href="/chat-grupal" class="sidebar__link">Chat Grupal</a>
+        <a href="/apikey" id="apiKeyButton" class="sidebar__link">Api Key</a>
+        <a href="/contact" class="sidebar__link">Contáctanos</a>
       </nav>
     </div>
     <div>
@@ -132,6 +134,15 @@ export const createSidebar = (updateView) => {
   // Manejar el evento de cambio en el selector de orden
   sidebar.querySelector('#order-select').addEventListener('change', (event) => {
     updateView({ orderBy: event.target.value });
+  });
+
+  // Selecciona el botón usando su ID
+  const apiKeyButton = sidebar.querySelector('#apiKeyButton');
+
+  // Agrega un event listener para el click
+  apiKeyButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/apiKey/');
   });
 
   return sidebar;
