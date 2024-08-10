@@ -1,3 +1,5 @@
+import { navigateTo } from "../router.js";
+
 export const createSidebarnav = () => {
   const sidebarNav = document.createElement('div');
   sidebarNav.classList.add('chat-sidebar');
@@ -7,9 +9,9 @@ export const createSidebarnav = () => {
     <div>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
-        <a href="./Home.js" class="sidebar__link">Home</a>
+        <a id="homeButton" class="sidebar__link">Home</a>
         <a href="#" class="sidebar__link">Chat Grupal</a>
-        <a href="#" class="sidebar__link">Api Key</a>
+        <a id="apiKeyButton" class="sidebar__link">API Key</a>
         <a href="#" class="sidebar__link">Contact</a>
       </nav>
     </div>
@@ -31,6 +33,25 @@ export const createSidebarnav = () => {
       <p class="sidebar__copyright">Copyright ©2024 Karen Mendoza & Fatima Zelaya.</p>
     </div>
   `;
+  // Selecciona el botón usando su ID
+  const apiKeyButton = sidebarNav.querySelector('#apiKeyButton');
+
+  // Agrega un event listener para el clic
+  apiKeyButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/apiKey/');
+  });
+
+  // Selecciona el botón usando su ID
+  const homeButton = sidebarNav.querySelector('#homeButton');
+  // Agrega un event listener para el clic
+  homeButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/');
+  });  
+  
+
+
 
   return sidebarNav;
 };

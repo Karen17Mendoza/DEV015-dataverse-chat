@@ -4,6 +4,8 @@
 @import "./styles/Header.css";
 @import "./styles/Chat-Content.css";
 @import "./styles/ChatIndividual.css";
+@import "./styles/apiKey.css";
+
 
 
 /*@import "./styles/ChatIndividual.css";*/
@@ -28,8 +30,8 @@
 
 
 body {
-  background-color: #ecd4ea;
-  color: #662962;
+  background-color: #eceaea;
+  color: #87255b;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   margin: auto;
