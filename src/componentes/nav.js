@@ -11,7 +11,7 @@ export const createSidebarnav = () => {
       <nav class="nav sidebar__nav-links">
         <a href="/home" class="sidebar__link">Home</a>
         <a href="/chat-grupal" class="sidebar__link">Chat Grupal</a>
-        <a href="/apikey" class="sidebar__link">Api Key</a>
+        <a href="/apikey" id="apiKeyButton" class="sidebar__link">Api Key</a>
         <a href="/contact" class="sidebar__link">Contáctanos</a>
       </nav>
     </div>
@@ -34,7 +34,7 @@ export const createSidebarnav = () => {
     </div>
   `;
 
-  // Interceptar clics en los enlaces de navegación
+  // Interceptar clicks en los enlaces de navegación
   const links = sidebarNav.querySelectorAll('.sidebar__link');
   links.forEach(link => {
     link.addEventListener('click', (event) => {

@@ -7,7 +7,6 @@ import { apiKeyView } from './views/apiKeyView.js';
 const routes = {
   '/': Home,
   '/ChatIndividual/': ChatIndividual,
-  '/apikey': apiKeyView,
   '/error': () => {
     const container = document.createElement('div');
     container.innerHTML = '<p>Error Page not found</p>';
