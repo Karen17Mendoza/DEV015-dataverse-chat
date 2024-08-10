@@ -9,17 +9,21 @@ export function apiKeyView() {
   container.appendChild(sidebarNav);
 
   // Crear el contenedor de la API key
-  const apiContainer = document.createElement('div');
-  apiContainer.className = 'api-key-container';
+  const apiElement = document.createElement('div');
+  apiElement.className = 'api-key-container';
   
-  apiContainer.innerHTML = `
-      <h1>Enter your User ID</h1>
-      <input type="text" id="userIdInput" placeholder="Enter your user ID">
-      <button id="submitButton">Submit</button>
+  apiElement.innerHTML = `
+      <div class="api">
+        <h2 class="api__title">Api Key Admin</h2>
+        <p class="api__subtitle">Desde aquí puedes administrar la API Key a utilizar</p>
+        <input type="text" id="userIdInput" name="api-key" class="api__input" placeholder="API KEY" required="">        
+        <button class="api__button">Guardar</button>
+      </div>
     `;
 
   // Añadir el contenedor de la API key al contenedor principal
-  container.appendChild(apiContainer);
+  container.appendChild(apiElement);
   
   return container;
+
 }
