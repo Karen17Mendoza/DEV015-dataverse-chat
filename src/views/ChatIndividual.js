@@ -13,7 +13,7 @@ export const ChatIndividual = (props) => {
   chatElement.classList.add('chatIndividual-container');
   chatElement.setAttribute("itemscope", "");
   chatElement.setAttribute("itemtype", "https://schema.org/CreativeWork");
-  chatElement.setAttribute("data-id", item.id);
+
 
   // Crear y añadir la barra lateral
   const sidebarNav = createSidebarnav();
@@ -44,7 +44,6 @@ export const ChatIndividual = (props) => {
   
   if (item) {
     chatContent.innerHTML = `
-    <h2>Chat con ${item.name}</h2>
     <div class="chat-header">
       <img src="${item.imageUrl}" alt="${item.name}" class="profile-pic" itemprop="image">
       <div class="chat-header-info">
