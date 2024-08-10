@@ -12,10 +12,10 @@ export const createSidebar = (updateView) => {
       <button class="material-icons header__button">menu</button>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
-        <a href="./Home.js" class="sidebar__link">Home</a>
-        <a href="#" class="sidebar__link">Chat Grupal</a>
-        <a href="#" class="sidebar__link">Api Key</a>
-        <a href="#" class="sidebar__link">Contact</a>
+        <a href="/home" class="sidebar__link">Home</a>
+        <a href="/chat-grupal" class="sidebar__link">Chat Grupal</a>
+        <a href="/apikey" id="apiKeyButton" class="sidebar__link">Api Key</a>
+        <a href="/contact" class="sidebar__link">Contáctanos</a>
       </nav>
     </div>
     <div>
