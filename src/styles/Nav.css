@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .navSidebar {
-  background-color: #521447;
+  background-color: #a3b2ef;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 285px;
   box-sizing: border-box;
-  color: white;
+  color: black;
   transition: all 0.3s ease;
   left: 0;
   position: fixed;
@@ -40,9 +40,9 @@
   outline: none;
   padding: 0;
   display: none;
-  font-size: 26px; /* Aumenta el tamaño del icono para mayor visibilidad */
+  font-size: 29px; /* Aumenta el tamaño del icono para mayor visibilidad */
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 .header__button {
@@ -50,10 +50,9 @@
   top: 0px;
   left: 285px; /* Posicionado en la esquina superior derecha */
   border: none;
-  background-color: #521447;
+  background-color: #c3c3e6;
   outline: none;
   padding: 16px;
-  color: white;
   font-size: 26px; /* Tamaño del icono */
   cursor: pointer;
   display: none; /* Oculto por defecto */
@@ -72,7 +71,7 @@
   font-weight: 700;
   font-size: 30px;
   line-height: 39px;
-  color: white;
+  color: black;
 }
 
 .nav {
@@ -95,7 +94,7 @@
 }
 
 .sidebar__link {
-  color: white;
+  color: black;
   text-decoration: none;
   transition: all 0.2s ease;
 }

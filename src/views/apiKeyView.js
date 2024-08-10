@@ -1,13 +1,14 @@
 export function apiKeyView() {
-  const container = document.createElement('div');
-  container.className = 'api-key-container';
-    
-  container.innerHTML = `
-      <h1>Enter your User ID</h1>
-      <input type="text" id="userIdInput" placeholder="Enter your user ID">
-      <button id="submitButton">Submit</button>
+  const apiElement = document.createElement("div");
+  apiElement.className = 'api-key-container';
+  
+  apiElement.innerHTML = `
+      <div class="api">
+        <h2 class="api__title">Api Key Admin</h2>
+        <p class="api__subtitle">Desde aquí puedes administrar la API Key a utilizar</p>
+        <input type="text" id="userIdInput" name="api-key" class="api__input" placeholder="API KEY" required="">        
+        <button class="api__button">Guardar</button>
+      </div>
     `;
-  
-  
-  return container;
+  return apiElement;
 }
