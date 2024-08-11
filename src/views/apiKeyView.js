@@ -1,5 +1,15 @@
+import { createSidebarnav } from '../componentes/nav.js';
+
 export function apiKeyView() {
-  const apiElement = document.createElement("div");
+  const container = document.createElement('div');
+  container.className = 'api-key-view-container';
+
+  // Crear y añadir la barra lateral
+  const sidebarNav = createSidebarnav();
+  container.appendChild(sidebarNav);
+
+  // Crear el contenedor de la API key
+  const apiElement = document.createElement('div');
   apiElement.className = 'api-key-container';
   
   apiElement.innerHTML = `
@@ -10,5 +20,10 @@ export function apiKeyView() {
         <button class="api__button">Guardar</button>
       </div>
     `;
-  return apiElement;
+
+  // Añadir el contenedor de la API key al contenedor principal
+  container.appendChild(apiElement);
+  
+  return container;
+
 }
