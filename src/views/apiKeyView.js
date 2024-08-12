@@ -1,4 +1,5 @@
 import { createSidebarnav } from '../componentes/nav.js';
+import { setApiKey } from '../lib/apiKey.js';  // Importa la función para guardar la API key
 
 export function apiKeyView() {
   const container = document.createElement('div');
@@ -23,7 +24,23 @@ export function apiKeyView() {
 
   // Añadir el contenedor de la API key al contenedor principal
   container.appendChild(apiElement);
-  
-  return container;
 
+  // Aquí agregamos la funcionalidad para guardar la API key
+  const saveButton = container.querySelector('.api__button');
+  saveButton.addEventListener('click', () => {
+    const apiKeyInput = container.querySelector('#userIdInput');
+    const apiKeyValue = apiKeyInput.value;
+    
+    if (apiKeyValue) {
+      setApiKey(apiKeyValue);
+      alert('API Key guardada correctamente.');
+      // Resetea el botón de guardar y vacía el input
+      saveButton.textContent = 'Guardar';
+      apiKeyInput.value = ''; // Vacía el input
+    } else {
+      alert('Por favor, ingrese una API Key.');
+    }
+  });
+
+  return container;
 }
