@@ -110,3 +110,61 @@
 .send-button .material-icons {
     font-size: 18px;
 }
+/* Contenedor de la imagen y el indicador de estado */
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Imagen de perfil */
+  .profile-pic {
+    border-radius: 50%;
+    width: 50px; /* Ajusta este valor según el tamaño de la imagen */
+    height: 50px; /* Ajusta este valor según el tamaño de la imagen */
+  }
+  
+  /* Indicador de estado (punto verde) */
+  .status-indicator {
+    position: absolute;
+    top: 100;
+    bottom: 0; /* Posiciona el punto verde en la parte inferior */
+    right: 100; /* Posiciona el punto verde en la parte derecha */
+    width: 15px; /* Tamaño del punto verde */
+    height: 15px; /* Tamaño del punto verde */
+    background-color: #4CAF50; /* Color verde */
+    border: 2px solid white; /* Borde blanco para separarlo de la imagen */
+    border-radius: 50%; /* Para hacer el punto verde redondo */
+  }
+  /* Estilo base para todos los mensajes */
+  .message {
+    max-width: 60%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+    word-wrap: break-word;
+    font-size: 18px; /* Ajusta el tamaño de la fuente aquí */
+  }
+  
+  /* Estilo para los mensajes del usuario */
+  .user-message {
+    background-color: #c3c9e0;
+    color: rgb(0, 0, 0);
+    align-self: flex-end; /* Alinea el mensaje del usuario a la derecha */
+    border-radius: 10px;
+  }
+  
+  /* Estilo para los mensajes de la IA */
+  .ai-message {
+    background-color: #c3c9e0;
+    color: #000000;
+    align-self: flex-start; /* Alinea el mensaje de la IA a la izquierda */
+    border-radius: 10px;
+
+  }
+  
+  /* Estilo para el contenedor de los mensajes */
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }

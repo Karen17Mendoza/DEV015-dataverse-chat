@@ -2,6 +2,7 @@ import { setRootEl, setRoutes, onURLChange} from './router.js';
 import { Home } from './views/Home.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 import { apiKeyView } from './views/apiKeyView.js';
+import { setApiKey, getApiKey } from './lib/apiKey.js';
 
 // Define your routes and their associated views
 const routes = {
@@ -26,3 +27,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// Establecer API Key (esto solo debe hacerse una vez)

@@ -24,7 +24,7 @@
   .filter-container select {
     padding: 5px;
     border-radius: 4px;
-    background-color: #D9A9E3; /* Fondo del select */
+    background-color: #ffffff; /* Fondo del select */
     color: #33102E; /* Texto del select */
     border: 1px solid #AB65AD;
     border-radius: 5px;
@@ -48,7 +48,7 @@
     border: none;
     border-radius: 10px;
     color: black; /* Color del Texto del Botón */
-    background-color: #8F4898; /* Fondo del Botón */
+    background-color: #bcb58d; /* Fondo del Botón */
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
   }
@@ -105,9 +105,9 @@
     margin: 0px;
     border: none;
     border-radius: 10px;
-    border: 1px solid #ffffff;
-    background-color: #8F4898; /* Fondo del Botón */
-    color: #ffffff; /* Color del Texto del Botón */
+    border: 1px solid #9e5583;
+    background-color: #bcbad8; /* Fondo del Botón */
+    color: #000000; /* Color del Texto del Botón */
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
   }

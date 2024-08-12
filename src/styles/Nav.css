@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .navSidebar {
-  background-color: #a3b2ef;
+  background-color: #55939e;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
 }
 .chat-sidebar{
-  background-color: #a3b2ef;
+  background-color: #55939e;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
