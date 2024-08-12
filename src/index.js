@@ -31,5 +31,4 @@ window.addEventListener("DOMContentLoaded", () => {
 setApiKey('sk-proj-X93RxeVUmX0YtWInMsWGT3BlbkFJkjox0BooBm4X4nY7l9LL');
 
 // Verificar API Key (esto debe estar en la función de inicialización o en un evento)
-console.log('API Key:', getApiKey());
-
+console.log('API Key:',getApiKey());

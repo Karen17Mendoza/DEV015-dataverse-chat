@@ -37,3 +37,19 @@ export const communicateWithOpenAI = (messages) => {
       throw error;
     });
 };
+export const interactWithCharacter = (characterName, userMessage, doramaDetails) => {
+  const messages = [
+    { role: 'system', content: `You are now speaking to ${characterName} from the dorama titled ${doramaDetails.name}. The story is about: ${doramaDetails.shortDescription}. Only respond with information relevant to this dorama.` },
+    { role: 'user', content: userMessage },
+  ];
+
+  // Llamar a la función para comunicarte con OpenAI
+  communicateWithOpenAI(messages)
+    .then((response) => {
+      console.log(`${characterName} responde:`, response);
+      // Aquí puedes manejar la respuesta, como mostrarla en la UI
+    })
+    .catch((error) => {
+      console.error('Error al interactuar con el personaje:', error);
+    });
+};
