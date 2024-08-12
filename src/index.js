@@ -2,7 +2,6 @@ import { setRootEl, setRoutes, onURLChange} from './router.js';
 import { Home } from './views/Home.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 import { apiKeyView } from './views/apiKeyView.js';
-import { setApiKey, getApiKey } from './lib/apiKey.js';
 
 // Define your routes and their associated views
 const routes = {
@@ -26,9 +25,3 @@ window.addEventListener("DOMContentLoaded", () => {
   onURLChange(window.location); // Invoke the router to render the correct view on initial load
 
 });
-
-// Establecer API Key (esto solo debe hacerse una vez)
-setApiKey('sk-proj-X93RxeVUmX0YtWInMsWGT3BlbkFJkjox0BooBm4X4nY7l9LL');
-
-// Verificar API Key (esto debe estar en la función de inicialización o en un evento)
-console.log('API Key:',getApiKey());

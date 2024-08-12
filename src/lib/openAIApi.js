@@ -20,17 +20,18 @@ export const communicateWithOpenAI = (messages) => {
     })
   })
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`Error en la solicitud: ${response.status} - ${response.statusText}`);
-      }
+      //if (!response.ok) {
+      //  throw new Error(`Error en la solicitud: ${response.status} - ${response.statusText}`);
+      //}
       return response.json();
     })
     .then(data => {
-      if (data && data.choices && data.choices.length > 0) {
-        return data.choices[0].message.content.trim();
-      } else {
-        throw new Error('No se obtuvo respuesta de OpenAI');
-      }
+      //if (data && data.choices && data.choices.length > 0) {
+      console.log(data.choices);
+      return data.choices[0].message.content;
+      //} else {
+      //  throw new Error('No se obtuvo respuesta de OpenAI');
+      //}
     })
     .catch(error => {
       console.error('Error al comunicarse con OpenAI:', error);
