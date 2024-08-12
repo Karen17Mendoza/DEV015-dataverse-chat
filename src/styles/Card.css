@@ -14,8 +14,8 @@ h2 {
   
   .cardli {
     list-style-type: none;
-    background-color: #e8b8e2; /* Fondo de las Tarjetas */
-    border: 4px solid #b370b0; /* Borde de las Tarjetas */
+    background-color: #efefdf; /* Fondo de las Tarjetas */
+    border: 4px solid #82b6a2; /* Borde de las Tarjetas */
     padding: 20px;
     border-radius: 20px;
     width: 380px; /* Ancho fijo para mantener el tamaño consistente */
@@ -63,7 +63,7 @@ h2 {
   
   /*sombrear la tarjeta al pasar el mouse */
   .cardli:hover{
-    background:#bba0ca;
+    background:#bde2c2;
   }
 
   /*Modo responsive*/
