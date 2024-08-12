@@ -26,3 +26,5 @@ window.addEventListener("DOMContentLoaded", () => {
   onURLChange(window.location); // Invoke the router to render the correct view on initial load
 
 });
+
+// Establecer API Key (esto solo debe hacerse una vez)
