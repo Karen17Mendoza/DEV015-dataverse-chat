@@ -5,6 +5,8 @@
 @import "./styles/Chat-Content.css";
 @import "./styles/ChatIndividual.css";
 @import "./styles/apiKey.css";
+@import "./styles/ChatGrupal.css";
+
 
 
 
@@ -27,6 +29,7 @@
   height: 100vh;
 
 }
+
 
 
 body {
