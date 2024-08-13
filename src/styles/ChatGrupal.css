@@ -104,11 +104,12 @@
   
   /* Imagen del dorama */
   .dorama-image {
-    border-radius: 50%; /* Imagen circular */
+    width: 60px; /* Ancho de la imagen */
+    height: 60px; /* Altura de la imagen */
+    border-radius: 50%; /* Mantiene la imagen circular */
     border: 2px solid #007bff; /* Borde azul alrededor de la imagen */
-    margin-right: 10px; /* Espacio entre imagen y texto */
-  }
-  
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+  }  
   /* Título del dorama */
   .dorama-title {
     font-size: 100px; /* Tamaño de fuente del título */

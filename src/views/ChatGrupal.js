@@ -29,7 +29,7 @@ export const ChatGrupal = () => {
     doramaItem.style.margin = '5px 0';
 
     doramaItem.innerHTML = `
-      <img src="${dorama.imageUrl}" alt="${dorama.name}" class="dorama-image" style="width: 40px; height: 40px;" />
+      <img src="${dorama.imageUrl}" alt="${dorama.name}" class="dorama-image" />
       <p class="dorama-title" style="margin-left: 20px; font-size: 17px;">${dorama.name}</p>
     `;
     doramaListContainer.appendChild(doramaItem);
