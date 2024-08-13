@@ -21,7 +21,7 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
-    background-color: #007bff;
+    background-color: #B370B0;
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -71,14 +71,14 @@
 }
 
 .message-content {
-    background-color: #e4e6eb;
+    background-color: #D1C8E1;
     padding: 10px;
     border-radius: 10px;
     max-width: 70%;
 }
 
 .user-message .message-content {
-    background-color: #007bff;
+    background-color: #87255B;
     color: white;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .send-button {
-    background-color: #007bff;
+    background-color: #BBA0CA;
     color: white;
     border: none;
     border-radius: 50%;
@@ -147,15 +147,15 @@
   
   /* Estilo para los mensajes del usuario */
   .user-message {
-    background-color: #c3c9e0;
-    color: rgb(0, 0, 0);
+    background-color: #B370B0;
+    color: black;
     align-self: flex-end; /* Alinea el mensaje del usuario a la derecha */
     border-radius: 10px;
   }
   
   /* Estilo para los mensajes de la IA */
   .ai-message {
-    background-color: #c3c9e0;
+    background-color: #C3C3E6;
     color: #000000;
     align-self: flex-start; /* Alinea el mensaje de la IA a la izquierda */
     border-radius: 10px;

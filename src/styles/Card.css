@@ -7,35 +7,36 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
     margin-left: 300px; /* Asegura que las cartas no sean tapadas por la barra lateral */
   }
   
   .cardli {
     list-style-type: none;
-    background-color: #efefdf; /* Fondo de las Tarjetas */
-    border: 4px solid #82b6a2; /* Borde de las Tarjetas */
+    background-color: #D1C8E1; /* Fondo de las Tarjetas */
+    border: 4px solid #B370B0; /* Borde de las Tarjetas */
     padding: 20px;
     border-radius: 20px;
     width: 380px; /* Ancho fijo para mantener el tamaño consistente */
-    max-width: 100%;
-    height: 700px;
-    max-width: 100%;
+    height: 750px;
     margin: 0px;
-    box-shadow: 0 4px 8px rgba(239, 236, 241, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     box-sizing: border-box;
-    transition: width 0.5s ease, height 0.5s ease; /* Transición solo en ancho y alto */
+    position: relative; /* Necesario para el botón */
+    overflow: hidden; /* Oculta elementos fuera de la tarjeta */
+    transition: all 0.3s ease; /* Transición suave para todo */  
   }
   
   .card__title {
     color: #33102E; /* Color del Título de la Tarjeta */
     margin-bottom: 10px;
+    font-size: 1.5rem; /* Tamaño del título */
   }
   
   .card__description {
-    color: #662962; /* Color del Texto de Descripción */
+    color: #87255B; /* Color del Texto de Descripción */
     margin-top: 10px;
   }
   
@@ -45,7 +46,7 @@ h2 {
   }
   
   .card__gender strong, .card__year strong, .card__chapters strong {
-    color: #8F4898; /* Color de los Títulos de los Datos */
+    color: #B370B0; /* Color de los Títulos de los Datos */
   }
   
   .card__gender span, .card__year span, .card__chapters span {
@@ -59,12 +60,44 @@ h2 {
     max-height: 100%;
     height: 400px;
     object-fit: cover;
+    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
   }
-  
-  /*sombrear la tarjeta al pasar el mouse */
-  .cardli:hover{
-    background:#bde2c2;
-  }
+
+  .card__details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+   }
+
+.card__button {
+    width: 80%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #87255B; /* Color del botón */
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: -50px; /* Inicialmente fuera de la vista, debajo de la tarjeta */
+    transform: translateX(-50%);
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-out, bottom 0.3s ease-out; /* Transición para la animación */
+    cursor: pointer;
+}
+
+.cardli:hover .card__button {
+    bottom: 20px; /* Mueve el botón hacia arriba al pasar el ratón */
+    opacity: 1; /* Muestra el botón */
+}
+
+.cardli:hover {
+  border-color: #B370B0; /* Cambia el borde al pasar el ratón */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25); /* Sombra más intensa */
+  transform: scale(1.05); /* Agranda toda la carta */
+}
 
   /*Modo responsive*/
 /* Pantallas pequeñas (móviles) */
