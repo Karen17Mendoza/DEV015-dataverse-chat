@@ -1,0 +1,100 @@
+/* Estilos generales del contenedor */
+.contact-container {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 30px;
+    margin: 0px auto;
+    border: 0px;
+    background-color: #D1C8E1; /* Fondo del contenedor principal */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo del título */
+.contact-title {
+    font-size: 2rem;
+    color: #33102E; /* Color del título */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo del subtítulo */
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #87255B; /* Color del subtítulo */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos de las etiquetas */
+.contact-label {
+    font-size: 1rem;
+    color: #33102E; /* Color de las etiquetas */
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilos de los campos de entrada */
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #33102E; /* Color del texto en los campos */
+    background-color: #F4F1F9; /* Fondo de los campos */
+    border: 1px solid #B370B0; /* Borde de los campos */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+    outline: none;
+    border-color: #87255B; /* Borde al enfocar */
+    box-shadow: 0 0 5px rgba(135, 37, 91, 0.3); /* Sombra al enfocar */
+}
+
+/* Estilo del botón */
+.contact-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #fff; /* Color del texto del botón */
+    background-color: #87255B; /* Fondo del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contact-button:hover {
+    background-color: #B370B0; /* Fondo del botón al pasar el ratón */
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-input,
+    .contact-textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-button {
+        font-size: 1rem;
+    }
+}

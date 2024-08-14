@@ -1,0 +1,221 @@
+/*Estilos de contenedores option, select, button*/
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .button-row {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .filter-row{
+    max-width: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .filter-container select {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #D1C8E1; /* Fondo del select */
+    color: #33102E; /* Texto del select */
+    border: 1px solid #B370B0;
+    border-radius: 5px;
+    margin:auto;
+    width: 150px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .filter-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #33102E; /* Color de las Etiquetas */
+  }
+  
+  .button-average {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #87255B;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #87255B;
+  }
+  
+  .button-clear:hover, .metrics:hover, .button-average:hover{
+    color: #ffffff; /* Color del Botón al Pasar el Ratón */
+    transform: scale(1.1);
+    outline: 2px solid #B370B0;
+    box-shadow: 4px 5px 17px -4px #87255B;
+  }
+  
+  .button-clear::before, .metrics::before, .button-average::before{
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #87255B;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+
+  .button-average:hover::before {
+    width: 250%;
+  }
+
+  .block-average{
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center; /* Espacio entre los contenedores */
+    align-items: center; /* Alineación central de los contenedores */
+    gap: 20px; /* Espacio entre los contenedores */
+    padding: 2px;
+    margin:auto;
+  }
+  
+  /* Estilos iniciales */
+  .average-container {
+    display: none;
+    padding: 20px;
+    background: linear-gradient(to top, #BBA0CA 0%, #B370B0 100%); /* Gradiente usando los colores de la paleta */
+    border-radius: 15px;
+    color: #33102E;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 300px;
+    height: 110px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    transform: translateY(20px);
+   }
+  
+  /* Estilos cuando se muestra el contenedor */
+  .average-container.show,
+  .average-container.show1,
+  .average-container.show2 {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .button-clear, .metrics, .button-average {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #87255B; 
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #87255B;
+    background-color: #D1C8E1; 
+  }
+
+  .button-clear:hover::before {
+    width: 250%;
+  }
+
+  .metrics:hover::before {
+    width: 250%;
+  }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+    }
+  
+    .filter-container {
+      flex-direction: column;
+    }
+  
+    .filter-container select{
+      width: 100px;
+      max-width: 100%;
+    }
+  
+    .average-container.show,
+    .average-container.show1,
+    .average-container.show2 {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+  
+  /* Para móviles */
+  @media (max-width: 500px) {
+    .filter-row {
+      flex-direction: column;
+      margin: auto;
+    }
+  
+    .filter-row label {
+      display: flex;
+      text-align: left;
+      justify-content: space-between;
+    }
+  
+    .block-average {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .average-container {
+      margin-bottom: 5px;
+      width: 60%;
+    }
+  
+    .filter-container select {
+      width: auto;
+      max-width: 100%;
+    }
+  
+    .button-row {
+      margin: auto;
+    }
+    .button-clear, .metrics, .button-average {
+      margin: 0px;
+      letter-spacing: 0px;
+      padding: 7px;
+
+    }
+  
+    .average-container.show,
+    .average-container.show1,
+    .average-container.show2 {
+      width: auto;
+      max-width: 100%;
+    }
+
+
+
+  }

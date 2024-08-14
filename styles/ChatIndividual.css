@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.chat-content {
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 50px;
+    box-sizing: border-box;
+    margin-left: 50px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */
+    
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #B370B0;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el área del círculo */
+    margin-right: 10px;
+}
+
+.chat-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-status {
+    font-size: 0.8em;
+    color: #ddd;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.message-profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    background-color: #D1C8E1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.user-message .message-content {
+    background-color: #87255B;
+    color: white;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.send-button {
+    background-color: #BBA0CA;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.send-button .material-icons {
+    font-size: 18px;
+}
+/* Contenedor de la imagen y el indicador de estado */
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Imagen de perfil */
+  .profile-pic {
+    border-radius: 50%;
+    width: 50px; /* Ajusta este valor según el tamaño de la imagen */
+    height: 50px; /* Ajusta este valor según el tamaño de la imagen */
+  }
+  
+  /* Indicador de estado (punto verde) */
+  .status-indicator {
+    position: absolute;
+    top: 100;
+    bottom: 0; /* Posiciona el punto verde en la parte inferior */
+    right: 100; /* Posiciona el punto verde en la parte derecha */
+    width: 15px; /* Tamaño del punto verde */
+    height: 15px; /* Tamaño del punto verde */
+    background-color: #4CAF50; /* Color verde */
+    border: 2px solid white; /* Borde blanco para separarlo de la imagen */
+    border-radius: 50%; /* Para hacer el punto verde redondo */
+  }
+  /* Estilo base para todos los mensajes */
+  .message {
+    max-width: 60%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+    word-wrap: break-word;
+    font-size: 18px; /* Ajusta el tamaño de la fuente aquí */
+  }
+  
+  /* Estilo para los mensajes del usuario */
+  .user-message {
+    background-color: #B370B0;
+    color: black;
+    align-self: flex-end; /* Alinea el mensaje del usuario a la derecha */
+    border-radius: 10px;
+  }
+  
+  /* Estilo para los mensajes de la IA */
+  .ai-message {
+    background-color: #C3C3E6;
+    color: #000000;
+    align-self: flex-start; /* Alinea el mensaje de la IA a la izquierda */
+    border-radius: 10px;
+
+  }
+  
+  /* Estilo para el contenedor de los mensajes */
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }

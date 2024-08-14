@@ -1,0 +1,105 @@
+/* Contenedor del contenido de la API key */
+.api-key-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7; /* Fondo claro */
+  }
+
+/* Estilo del contenedor de la API */
+.api {
+  background-color: #c3c3e6; /* Fondo del contenedor */
+  border-radius: 10px; /* Esquinas redondeadas */
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto elevado */
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para mantener el diseño centrado */
+}
+
+/* Estilo del título */
+.api__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #33102E; /* Color principal del título */
+  margin-bottom: 10px;
+  text-align: center; /* Centrar el texto */
+}
+
+/* Estilo del subtítulo */
+.api__subtitle {
+  font-size: 16px;
+  color: #662962; /* Color secundario para el subtítulo */
+  margin-bottom: 20px;
+  text-align: center; /* Centrar el texto */
+}
+
+/* Estilo de la etiqueta de entrada */
+.api__label {
+  display: block;
+  font-size: 14px;
+  color: #33102E; /* Color de la etiqueta */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilo del campo de entrada */
+.api__input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a987ab; /* Borde con un color tenue */
+  border-radius: 5px;
+  font-size: 16px;
+  color: #33102E; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+  outline: none; /* Quitar el borde por defecto al hacer focus */
+  box-sizing: border-box; /* Asegura que el padding no expanda el campo de entrada */
+}
+
+/* Estilo al enfocar el campo de entrada */
+.api__input:focus {
+  border-color: #b370b0; /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(179, 112, 176, 0.5); /* Sombra suave al enfocar */
+}
+
+/* Estilo del botón */
+.api__button {
+  width: 100%;
+  padding: 12px;
+  background-color: #87255B; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Quitar el borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave en el cambio de color */
+}
+
+/* Estilo del botón al pasar el ratón */
+.api__button:hover {
+  background-color: #b370b0; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilo del botón al hacer clic */
+.api__button:active {
+  background-color: #a987ab; /* Color más oscuro al hacer clic */
+}
+
+  /* Asegura que el diseño sea responsivo */
+@media (max-width: 480px) {
+  .api {
+    padding: 20px; /* Reduce el padding en pantallas más pequeñas */
+  }
+
+  .api__title {
+    font-size: 20px; /* Reduce el tamaño del título */
+  }
+
+  .api__subtitle {
+    font-size: 14px; /* Reduce el tamaño del subtítulo */
+  }
+
+  .api__button {
+    padding: 10px; /* Reduce el padding del botón */
+  }
+}

@@ -1,0 +1,211 @@
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.navSidebar {
+  background-color: #BBA0CA;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 285px;
+  box-sizing: border-box;
+  color: #33102E;
+  transition: all 0.3s ease;
+  transform: translateX(0); /* Asegura que la barra lateral esté visible */
+  left: 0;
+  top: 0;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
+
+.navSidebar.closed {
+  transform: translateX(-100%); /* Mueve la barra lateral fuera de la vista */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.chat-sidebar{
+  background-color: #BBA0CA;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 285px;
+  box-sizing: border-box;
+  color: #33102E;
+  transition: all 0.3s ease;
+  transform: translateX(0); /* Asegura que la barra lateral esté visible */
+  left: 0;
+  position: fixed;
+  height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
+
+.chat-sidebar.closed {
+  transform: translateX(-100%); /* Mueve la barra lateral fuera de la vista */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.sidebar__button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  display: none;
+  font-size: 32px; /* Aumenta el tamaño del icono para mayor visibilidad */
+  cursor: pointer;
+  color: #87255B;
+}
+
+.header__button {
+  position: fixed; /* Fijado para que esté fuera de la barra lateral */
+  top: 0px;
+  left: 285px; /* Posicionado en la esquina superior derecha */
+  border: none;
+  background-color: #BBA0CA;
+  outline: none;
+  padding: 16px;
+  font-size: 26px; /* Tamaño del icono */
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+  z-index: 1001; /* Asegura que el botón esté siempre encima de la barra lateral */
+}
+
+.sidebar__copyright,
+.sidebar__title {
+  margin: 0;
+}
+
+.sidebar__title {
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Serif', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: #33102E;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__nav-links>.sidebar__link:hover {
+  font-weight: 900;
+  transform: scale(1.05);
+}
+
+.sidebar__nav-links {
+  gap: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.sidebar__link {
+  color: #33102E;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar__nav-social {
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-direction: row;
+  transition: all 0.3s ease;
+}
+
+.nav__social {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #33102E; /* Ajusta el color de acuerdo a tu paleta */
+}
+
+/*RESPONSIVO*/
+
+/* Pantallas pequeñas (móviles) */
+/* 768px */
+@media screen and (width < 768px) {
+  .navSidebar {
+    padding: 28px 24px;
+    max-width: 200px;
+  }
+
+  .sidebar__nav-social {
+    flex-direction: column;
+  }
+
+  .sidebar__button {
+    display: block;
+  }
+}
+
+/* 480px */
+@media screen and (width < 480px) {
+  .navSidebar {
+    position: fixed;
+    height: 100dvh;
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
+  }
+
+  .sidebar__button {
+    display: block;
+  }
+}
+
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navSidebar {
+    padding: 28px 24px;
+    max-width: 200px;
+  }
+  .sidebar__button {
+    display: block;
+  }
+  .sidebar__nav-social {
+    flex-direction: column;
+  }
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navSidebar {
+    padding: 28px;
+    max-width: 285px;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
+  }
+}
+
+/* Pantallas extra grandes (laptops grandes y desktops) */
+@media (min-width: 1025px) {
+  .navSidebar {
+    padding: 56px;
+    max-width: 285px;
+  }
+
+  .sidebar__copyright {
+    display: block;
+    margin-top: auto;
+  }
+}
