@@ -4,7 +4,7 @@ export const Header = (updateView) => {
   headerEl.classList.add('header');  
 
   const img = document.createElement('img');
-  img.src = '../images/header-image-removebg-preview.png'; // Ruta relativa correcta
+  img.src = '../images/header-image-1.png'; // Ruta relativa correcta
   img.alt = 'Logo del header';
   img.classList.add('header-logo');
 

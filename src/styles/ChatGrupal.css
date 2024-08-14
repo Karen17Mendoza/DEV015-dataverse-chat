@@ -78,7 +78,7 @@
   }
 /* Contenedor de la lista de doramas */
 .dorama-list-container {
-    background-color: #f9f9f9; /* Color de fondo suave */
+    background-color: #eceaea; /* Color de fondo suave */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
@@ -88,7 +88,7 @@
   .dorama-item {
     display: flex;
     align-items: center;
-    background-color: #efefdf; /* Fondo blanco para los ítems */
+    background-color: #D1C8E1; /* Fondo blanco para los ítems */
     border-radius: 8px;
     margin-bottom: 10px; /* Espacio entre ítems */
     padding: 10px;
@@ -98,7 +98,7 @@
   
   /* Efecto hover para los ítems */
   .dorama-item:hover {
-    background-color: #bde2c2; /* Fondo gris claro en hover */
+    background-color: #B370B0; /* Fondo gris claro en hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
   }
   
