@@ -2,12 +2,16 @@ import { setRootEl, setRoutes, onURLChange} from './router.js';
 import { Home } from './views/Home.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 import { apiKeyView } from './views/apiKeyView.js';
+import { ChatGrupal } from './views/ChatGrupal.js';
+import { Contact } from './views/Contact.js';
 
 // Define your routes and their associated views
 const routes = {
   '/': Home,
   '/ChatIndividual/': ChatIndividual,
   '/apiKey/': apiKeyView,
+  '/chatGrupal/': ChatGrupal,
+  '/Contact/': Contact,
   '/error': () => {
     const container = document.createElement('div');
     container.innerHTML = '<p>Error Page not found</p>';

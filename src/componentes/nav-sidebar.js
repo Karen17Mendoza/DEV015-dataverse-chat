@@ -13,9 +13,9 @@ export const createSidebar = (updateView) => {
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
         <a id="homeButton" class="sidebar__link">Home</a>
-        <a href="#" class="sidebar__link">Chat Grupal</a>
+        <a id="grupalButton" class="sidebar__link">Chat Grupal</a>
         <a id="apiKeyButton" class="sidebar__link">API Key</a>
-        <a href="#" class="sidebar__link">Contact</a>
+        <a id="contactButton" class="sidebar__link">Contact</a>
       </nav>
     </div>
     <div>
@@ -151,6 +151,20 @@ export const createSidebar = (updateView) => {
   homeButton.addEventListener('click', () => {
   // Llama a la función navigateTo para redirigir a la vista de Api Key
     navigateTo('/');
+  });
+
+  const grupalButton = sidebar.querySelector('#grupalButton');
+  // Agrega un event listener para el clic
+  grupalButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/chatGrupal/');
+  });
+  // Selecciona el botón usando su ID
+  const contactButton = sidebar.querySelector('#contactButton');
+  // Agrega un event listener para el clic
+  contactButton.addEventListener('click', () => {
+  // Llama a la función navigateTo para redirigir a la vista de Api Key
+    navigateTo('/Contact/');
   });
 
   return sidebar;

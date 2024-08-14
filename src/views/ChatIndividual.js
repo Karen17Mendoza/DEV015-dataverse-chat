@@ -27,7 +27,7 @@ export const ChatIndividual = (props) => {
     imagAndDescription.innerHTML = `
       <h2 class="card__title__chat" itemprop="name">${item.name}</h2>
       <img src="${item.imageUrl}" alt="${item.name}" class="item-image" />
-      <p class="card__description" itemprop="description">${item.shortDescription}</p>
+      <p class="card__description__chat" itemprop="description">${item.shortDescription}</p>
       <div class="card__list">
         <p class="card__gender"><strong>Género:</strong> <span itemprop="gender">${item.facts.gender}</span></p>
         <p class="card__year"><strong>Año:</strong> <span itemprop="datePublished">${item.facts.year}</span></p>
