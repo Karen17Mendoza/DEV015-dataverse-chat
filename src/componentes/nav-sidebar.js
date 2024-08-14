@@ -167,5 +167,17 @@ export const createSidebar = (updateView) => {
     navigateTo('/Contact/');
   });
 
+  // Añadir el event listener para cerrar la barra lateral
+  const closeButton = sidebar.querySelector('.sidebar__button');
+  closeButton.addEventListener('click', () => {
+    sidebar.classList.add('closed');
+  });
+
+  // Añadir el event listener para desplegar la barra lateral
+  const menuButton = sidebar.querySelector('.header__button');
+  menuButton.addEventListener('click', () => {
+    sidebar.classList.remove('closed'); // Remueve la clase para desplegar la barra lateral
+  });
+
   return sidebar;
 };
