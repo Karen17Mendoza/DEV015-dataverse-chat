@@ -95,7 +95,7 @@
   .average-container {
     display: none;
     padding: 20px;
-    background: linear-gradient(to top, #D9A9E3 0%, #8F4898 100%); /* Gradiente usando los colores de la paleta */
+    background: linear-gradient(to top, #BBA0CA 0%, #B370B0 100%); /* Gradiente usando los colores de la paleta */
     border-radius: 15px;
     color: #33102E;
     margin: auto;
@@ -121,6 +121,7 @@
     width: auto;
     max-width: 100%;
     height: auto;
+    margin-top: 20px;
   }
   
   .button-clear, .metrics, .button-average {
