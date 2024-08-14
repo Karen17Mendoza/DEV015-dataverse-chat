@@ -11,24 +11,39 @@
   box-sizing: border-box;
   color: #33102E;
   transition: all 0.3s ease;
+  transform: translateX(0); /* Asegura que la barra lateral esté visible */
   left: 0;
+  top: 0;
   position: fixed;
   height: 100%;
   z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
 }
+
+.navSidebar.closed {
+  transform: translateX(-100%); /* Mueve la barra lateral fuera de la vista */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
 .chat-sidebar{
   background-color: #BBA0CA;
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 260px;
+  max-width: 285px;
   box-sizing: border-box;
-  color: white;
+  color: #33102E;
   transition: all 0.3s ease;
+  transform: translateX(0); /* Asegura que la barra lateral esté visible */
   left: 0;
   position: fixed;
   height: 100%;
+  z-index: 1000; /* Asegura que la barra lateral esté siempre encima */
+}
+
+.chat-sidebar.closed {
+  transform: translateX(-100%); /* Mueve la barra lateral fuera de la vista */
+  transition: transform 0.3s ease; /* Transición suave */
 }
 
 .sidebar__button {
@@ -40,9 +55,9 @@
   outline: none;
   padding: 0;
   display: none;
-  font-size: 29px; /* Aumenta el tamaño del icono para mayor visibilidad */
+  font-size: 32px; /* Aumenta el tamaño del icono para mayor visibilidad */
   cursor: pointer;
-  color: 87255B;
+  color: #87255B;
 }
 
 .header__button {
@@ -50,7 +65,7 @@
   top: 0px;
   left: 285px; /* Posicionado en la esquina superior derecha */
   border: none;
-  background-color: #C3C3E6;
+  background-color: #BBA0CA;
   outline: none;
   padding: 16px;
   font-size: 26px; /* Tamaño del icono */
