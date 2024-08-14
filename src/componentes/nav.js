@@ -6,6 +6,7 @@ export const createSidebarnav = () => {
     
   sidebarNav.innerHTML = `
     <button class="material-icons sidebar__button">close</button>
+    <button class="material-icons header__button">menu</button>
     <div>
       <h1 class="sidebar__title">F&K.</h1>
       <nav class="nav sidebar__nav-links">
@@ -64,8 +65,17 @@ export const createSidebarnav = () => {
     navigateTo('/Contact/');
   });
 
-  
+  // Añadir el event listener para cerrar la barra lateral
+  const closeButton = sidebarNav.querySelector('.sidebar__button');
+  closeButton.addEventListener('click', () => {
+    sidebarNav.classList.add('closed');
+  });
 
+  // Añadir el event listener para desplegar la barra lateral
+  const menuButton = sidebarNav.querySelector('.header__button');
+  menuButton.addEventListener('click', () => {
+    sidebarNav.classList.remove('closed'); // Remueve la clase para desplegar la barra lateral
+  });
 
   return sidebarNav;
 };

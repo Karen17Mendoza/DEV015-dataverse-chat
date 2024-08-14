@@ -1,6 +1,7 @@
 import data from '../data/dataset.js';
 import { createSidebarnav } from '../componentes/nav.js';
 
+
 export const ChatGrupal = () => {
   const chatElement = document.createElement('div');
   chatElement.classList.add('chatGrupal-container');
@@ -59,5 +60,6 @@ export const ChatGrupal = () => {
   // Añadir el contenedor de contenido al contenedor principal
   chatElement.appendChild(contentContainer);
 
+  
   return chatElement;
 };

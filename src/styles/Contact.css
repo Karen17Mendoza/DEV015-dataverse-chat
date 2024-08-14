@@ -1,11 +1,15 @@
 /* Estilos generales del contenedor */
 .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 600px;
+    max-width: 100%;
+    margin-top: 30px;
+    margin: 0px auto;
+    border: 0px;
     background-color: #D1C8E1; /* Fondo del contenedor principal */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
 }
 
 /* Estilo del título */

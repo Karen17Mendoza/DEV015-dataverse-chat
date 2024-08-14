@@ -41,16 +41,11 @@ h1{
       max-width: 100%;
     }
   
-    .header__description {
-      display: none; /* Ocultar descripción en pantallas pequeñas */
-    }
   }
   
   /* Para móviles */
   @media (max-width: 500px) {
-    .header__description {
-      display: none; /* Ocultar descripción en pantallas pequeñas */
-    }
+
   
     h1 {
       max-width: 100%;
