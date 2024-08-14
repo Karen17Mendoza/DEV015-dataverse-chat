@@ -101,33 +101,19 @@ h2 {
   transform: scale(1.05); /* Agranda toda la carta */
 }
 
+  /*Modo responsive*/
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
   .card-container ul {
     display: grid;
     grid-template-columns: 1fr;
-    margin-left: 0;
-    gap: 20px; /* Añadir espacio entre las tarjetas */
-    padding: 10px;
+    margin-left: 0; /* Asegura que las cartas estén centradas */
   }
 
   .cardli {
-    width: 100%; /* Asegura que la tarjeta ocupe todo el ancho disponible */
+    width: auto;
     height: auto;
-    padding: 15px; /* Ajustar el padding para pantallas pequeñas */
-  }
-
-  .card__title {
-    font-size: 1.2rem; /* Reducir el tamaño del texto */
-  }
-
-  .card__description {
-    font-size: 0.9rem; /* Reducir el tamaño del texto */
-  }
-
-  .card__button {
-    font-size: 0.9rem; /* Ajustar el tamaño del botón */
-    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
   }
 }
 
@@ -136,58 +122,31 @@ h2 {
   .card-container ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 0;
-    gap: 25px; /* Espacio entre las tarjetas */
-    padding: 15px;
+    margin-left: 0; /* Asegura que las cartas estén centradas */
   }
 
   .cardli {
-    width: 100%; /* Asegura que la tarjeta ocupe todo el ancho disponible */
+    width: auto;
     height: auto;
-    padding: 20px;
-  }
-
-  .card__title {
-    font-size: 1.4rem; /* Ajustar el tamaño del texto */
-  }
-
-  .card__description {
-    font-size: 1rem;
-  }
-
-  .card__button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
   }
 }
 
 /* Pantallas grandes (tablets grandes y laptops pequeñas) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .header{
+    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
+
+  }
   .card-container ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: 285px;
-    gap: 30px;
-    padding: 20px;
+    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
   }
 
   .cardli {
     width: 270px;
     height: auto;
-    padding: 20px;
-  }
-
-  .card__title {
-    font-size: 1.5rem;
-  }
-
-  .card__description {
-    font-size: 1.1rem;
-  }
-
-  .card__button {
-    font-size: 1.1rem;
-    padding: 0.6rem 1.2rem;
+    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
   }
 }
-
