@@ -116,35 +116,5 @@
     font-weight: bold; /* Fuente en negrita */
     color: #333; /* Color del texto */
   }
-/* Estilos específicos para pantallas pequeñas */
-@media (max-width: 768px) {
-  .chatGrupal-container {
-    padding: 5px;
-  }
 
-  .content-container {
-    flex-direction: column; /* Cambia a columna en móviles */
-  }
-
-  .dorama-list-container {
-    order: 2; /* Mueve la lista de doramas hacia abajo */
-    margin-bottom: 10px;
-  }
-
-  .chat-content {
-    order: 1; /* Mueve el chat hacia arriba */
-  }
-
-  .chat-header h2 {
-    font-size: 18px; /* Tamaño de texto más pequeño para el título del chat */
-  }
-
-  .chat-input input {
-    font-size: 14px; /* Ajuste del tamaño de la fuente en el input */
-  }
-
-  .send-button {
-    padding: 5px 8px; /* Tamaño más pequeño para el botón de enviar */
-  }
-}
   
