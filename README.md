@@ -16,17 +16,23 @@
 
 ## 1. Resumen del proyecto
 
-**KDRAMA CHAT** es 
+**KDRAMA CHAT** es una aplicación web interactiva creada para fans de los Kdramas que itegra una experiencia de chat interactiva. Los usuarios pueden filtrar Kdramas por género, año de lanzamiento y número de episodios, además de visualizar estadísticas clave. La aplicación permite interactuar con los Kdramas mediante chats personalizados, tanto a nivel individual como grupal, gracias a la integración de la API de OpenAI que mejora la interacción, proporcionando respuestas inteligentes y contextualizadas para cada Kdrama. La interacción se gestiona de manera segura a través de una API Key, garantizando una experiencia fluida y adaptada a cada usuario.
 
 ## 2. Definición de producto
 
+La aplicación está diseñada especialmente para los fanáticos de los Kdramas, ofreciendo una forma única de conectarse con sus series favoritas. Su objetivo es proporcionar una experiencia envolvente que permita a los usuarios descubrir nuevas recomendaciones, explorar a fondo cada Korama y disfrutar de un chat interactivo que enriquece la experiencia con detalles exclusivos sobre personajes y tramas.
 
 ### Necesidades:
 
+**Interacción Personalizada:** 
+Ofrece una experiencia de chat interactivo donde los usuarios pueden comunicarse directamente con los Kdramas, obteniendo respuestas personalizadas y sumergiéndose en la trama y los personajes.
+
+**Experiencia de Usuario Enriquecida**
+Incorpora la API de OpenAI para mejorar la interacción y personalización del chat, garantizando respuestas relevantes y adaptadas a las consultas de los usuarios.
 
 ## 3. Historias de Usuario
 
-### Historia de Usuario 1: Filtro por Genero
+### Historia de Usuario 1: 
 
 **Definición de Terminado (DoD):**
 
@@ -37,7 +43,7 @@
 **Criterios de Aceptación (AC):**
 
 
-### Historia de Usuario 2: Filtro por Año
+### Historia de Usuario 2: 
 
 **Definición de Terminado (DoD):**
 
@@ -48,7 +54,7 @@
 **Criterios de Aceptación (AC):**
 
 
-### Historia de Usuario 3: Filtro por Número de Capítulos
+### Historia de Usuario 3: 
 
 **Definición de Terminado (DoD):**
 
@@ -59,7 +65,7 @@
 **Criterios de Aceptación (AC):**
 
 
-### Historia de Usuario 4: Ordenar Kdramas por Nombre
+### Historia de Usuario 4: 
 
 **Definición de Terminado (DoD):**
 
@@ -76,6 +82,11 @@
 ## 4. Diseño de Interfaz y Prototipos
 
 La interfaz de **KDRAMA CHAT** está diseñada para ofrecer ...
+
+Las vistas principales incluyen:
+- **Vista Home:** Lista de Kdramas con opciones de filtrado y ordenación.
+- **Chat Individual:** Vista detallada de un Kdrama con interacción de chat.
+- **Chat Grupal:** Interfaz para enviar mensajes a todos los Kdramas y ver respuestas en tiempo real.
 
 ### Prototipos de Alta Fidelidad:
 
