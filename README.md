@@ -8,7 +8,7 @@
 - [4. Diseño de Interfaz y Prototipos](#5-diseño-de-interfaz-y-prototipos)
 - [5. Lenguajes y Herramientas Utilizadas](#6-lenguajes-y-herramientas-utilizadas)
 - [6. Responsividad](#7-responsividad)
-- [7. Responsividad](#7-responsividad)
+- [7. Testeos de usabilidad](#7-responsividad)
 - [8. Trabajo Colaborativo](#8-trabajo-colaborativo)
 
 
