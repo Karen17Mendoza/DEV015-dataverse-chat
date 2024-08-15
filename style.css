@@ -54,7 +54,6 @@ body {
   .header{
     margin: 0 auto; /* Centra el logo horizontalmente */
   }
-
 }
 
 /* Pantallas medianas (tablets y móviles grandes) */
@@ -64,9 +63,6 @@ body {
     padding: 20px;
   }
 
-  .chatIndividual-container {
-    height: auto;
-  }
   .header{
     margin: 0 auto; /* Centra el logo horizontalmente */
   }
@@ -79,7 +75,4 @@ body {
     flex-direction: row; /* Mantener fila para pantallas más grandes */
   }
 
-  .chatIndividual-container {
-    height: 100vh;
-  }
 }
