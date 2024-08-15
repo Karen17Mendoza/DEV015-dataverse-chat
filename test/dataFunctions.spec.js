@@ -1,8 +1,8 @@
 // test/dataFunctions.spec.js
 // test/dataFunctions.spec.js
 
-import { filterData, sortData, metricsData } from '../src/lib/dataFunctions';
-import { filterTestData, sortTestData, metricsTestData } from './data';
+import { filterData, sortData, metricsData } from '../src/lib/dataFunctions.js';
+import { filterTestData, sortTestData, metricsTestData } from './data.js';
 
 describe('filterData', () => {
   const data = filterTestData;
