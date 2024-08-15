@@ -39,3 +39,39 @@ body {
   margin: auto;
   max-width: 100%;
 }
+/* Modo responsive */
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 500px) {
+  .maincontainer, .chatIndividual-container, .chatGrupal-container {
+    flex-direction: column; /* Organizar en columna */
+    padding: 10px;
+  }
+
+  .chatIndividual-container {
+    height: auto; /* Ajustar altura al contenido */
+  }
+  .header{
+    margin: 0 auto; /* Centra el logo horizontalmente */
+  }
+}
+
+/* Pantallas medianas (tablets y móviles grandes) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .maincontainer, .chatIndividual-container, .chatGrupal-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header{
+    margin: 0 auto; /* Centra el logo horizontalmente */
+  }
+
+}
+
+/* Pantallas grandes (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .maincontainer, .chatIndividual-container, .chatGrupal-container {
+    flex-direction: row; /* Mantener fila para pantallas más grandes */
+  }
+
+}

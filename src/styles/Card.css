@@ -27,6 +27,7 @@ h2 {
     position: relative; /* Necesario para el botón */
     overflow: hidden; /* Oculta elementos fuera de la tarjeta */
     transition: all 0.3s ease; /* Transición suave para todo */  
+    
   }
   
   .card__title {
@@ -61,6 +62,7 @@ h2 {
     height: 400px;
     object-fit: cover;
     transition: transform 0.3s ease; /* Transición para el efecto de zoom */
+    
   }
 
   .card__details {
@@ -132,6 +134,10 @@ h2 {
 
 /* Pantallas grandes (tablets grandes y laptops pequeñas) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .header{
+    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
+
+  }
   .card-container ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
