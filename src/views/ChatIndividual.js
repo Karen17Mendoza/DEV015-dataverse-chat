@@ -92,7 +92,12 @@ export const ChatIndividual = (props) => {
   const addAIMessage = (message) => {
     const aiMessageElement = document.createElement('div');
     aiMessageElement.classList.add('message', 'ai-message');
-    aiMessageElement.textContent = message;
+    aiMessageElement.innerHTML = `
+    <div class="ai-message-container">
+      <img src="${item.imageUrl}" alt="${item.name}" class="ai-profile-pic" />
+      <div class="ai-message-content">${message}</div>
+    </div>
+  `;
     chatMessages.appendChild(aiMessageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight; // Desplazarse al final del chat
   };
