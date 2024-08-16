@@ -7,6 +7,7 @@ const getAllDoramaDetails = () => {
   return data.map(item => ({
     name: item.name,
     shortDescription: item.shortDescription,
+    imageUrl: item.imageUrl // Añadido para mostrar la imagen junto a la respuesta
   }));
 };
 
@@ -39,7 +40,7 @@ export const ChatGrupal = () => {
     doramaItem.style.margin = '5px 0';
 
     doramaItem.innerHTML = `
-      <img src="${dorama.imageUrl}" alt="${dorama.name}" class="dorama-image" />
+      <img src="${dorama.imageUrl}" src="${dorama.imageUrl}" alt="${dorama.name}" class="dorama-image" />
       <p class="dorama-title" style="margin-left: 20px; font-size: 17px;">${dorama.name}</p>
     `;
     doramaListContainer.appendChild(doramaItem);
@@ -85,10 +86,13 @@ export const ChatGrupal = () => {
   };
 
   // Función para añadir un mensaje de la IA al chat
-  const addAIMessage = (message) => {
+  const addAIMessage = (message, imageUrl) => {
     const aiMessageElement = document.createElement('div');
     aiMessageElement.classList.add('message', 'ai-message');
-    aiMessageElement.textContent = message;
+    aiMessageElement.innerHTML = `
+      <img src="${imageUrl}" alt="profile" class="message-profile-pic">
+      <div class="message-content">${message}</div>
+    `;
     chatMessages.appendChild(aiMessageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight; // Desplazarse al final del chat
   };
@@ -101,25 +105,22 @@ export const ChatGrupal = () => {
       chatInput.value = '';  // Limpiar el input
 
       const doramaDetailsArray = getAllDoramaDetails();
+      // Enviar un mensaje individual a cada dorama
+      doramaDetailsArray.forEach(dorama => {
+        const messages = [
+          { role: 'system', content: `You are now speaking to a character from the dorama titled ${dorama.name}. The story is about: ${dorama.shortDescription}. Please respond with information relevant to this dorama.` },
+          { role: 'user', content: userMessage }
+        ];
 
-      const messages = [
-        { role: 'system', content: 'You are now in a group chat with multiple characters from various doramas. Respond as if you were all these characters discussing the topic.' },
-        { role: 'user', content: userMessage },
-        ...doramaDetailsArray.map(dorama => ({
-          role: 'assistant',
-          content: `Character from ${dorama.name}: ${dorama.shortDescription}`
-        }))
-      ];
-
-      communicateWithOpenAI(messages)
-        .then(response => {
-          addAIMessage(response);  // Añadir respuesta de la IA
-        })
-        .catch(error => {
-          console.error('Error en el chat grupal:', error);
-        });
+        communicateWithOpenAI(messages)
+          .then(response => {
+            addAIMessage(`Kdrama ${dorama.name}: ${response}`, dorama.imageUrl);  // Añadir respuesta de la IA con imagen
+          })
+          .catch(error => {
+            console.error(`Error interacting with ${dorama.name}:`, error);
+          });
+      });
     }
   });
-  
   return chatElement;
 };
