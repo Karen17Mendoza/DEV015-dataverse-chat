@@ -40,4 +40,53 @@
     margin-top: 10px;
     padding: 20px;
 }
+/* Estilos para pantallas medianas */
+@media screen and (max-width: 1024px) {
+    .content-container {
+        margin-left: 150px; /* Reducir el margen para pantallas más pequeñas */
+        flex-direction: column;
+        align-items: center;
+    }
   
+    .image-description {
+        display: none;
+    }
+  
+    .item-image {
+        width: 200px; /* Ajusta el tamaño de la imagen */
+    }
+  
+    .card__title__chat {
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+    }
+  
+    .card__description__chat {
+        font-size: 16px; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    .content-container {
+        margin-left: 0; /* Elimina el margen lateral */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+  
+    .image-description {
+        display: none;
+    }
+  
+    .item-image {
+        width: 150px; /* Tamaño de la imagen más pequeño */
+    }
+  
+    .card__title__chat {
+        font-size: 20px; /* Fuente más pequeña */
+    }
+  
+    .card__description__chat {
+        font-size: 14px; /* Fuente más pequeña */
+    }
+}
