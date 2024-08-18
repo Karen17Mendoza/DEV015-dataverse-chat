@@ -117,36 +117,111 @@ h2 {
   }
 }
 
-/* Pantallas medianas (tablets y móviles grandes) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Pantallas pequeñas (móviles, max-width: 320px a 480px) */
+@media (max-width: 480px) {
   .card-container ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     margin-left: 0; /* Asegura que las cartas estén centradas */
+    padding: 10px; /* Reduce el padding para pantallas pequeñas */
   }
 
   .cardli {
     width: auto;
     height: auto;
+    padding: 15px; /* Reduce el padding para ajustarse a pantallas pequeñas */
     transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+  }
+
+  .card__title {
+    font-size: 1.2rem; /* Ajusta el tamaño del título */
+  }
+
+  .card__description {
+    font-size: 1rem; /* Ajusta el tamaño de la descripción */
+  }
+
+  .card_image {
+    width: 100%; /* Ajusta la imagen al ancho completo de la tarjeta */
+    height: auto; /* Ajusta la altura de la imagen automáticamente */
+  }
+
+  .chat-content {
+    width: 100%;
+    margin-left: 0; /* Elimina el margen para pantallas pequeñas */
+    padding: 10px; /* Ajusta el padding para pantallas pequeñas */
   }
 }
 
-/* Pantallas grandes (tablets grandes y laptops pequeñas) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .header{
-    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
-
-  }
+/* Pantallas medianas (teléfonos medianos y grandes, max-width: 481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   .card-container ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 285px; /* Asegura que las cartas no sean tapadas por la barra lateral */
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0; /* Asegura que las cartas estén centradas */
+    gap: 20px; /* Ajusta el espacio entre las cartas */
+    padding: 15px; /* Reduce el padding para pantallas medianas */
   }
 
   .cardli {
-    width: 270px;
+    width: auto;
     height: auto;
-    transition: all 0.5s ease; /* Aplicar transición a todas las propiedades */
+    padding: 20px; /* Ajusta el padding para pantallas medianas */
+  }
+
+  .card__title {
+    font-size: 1.3rem; /* Ajusta el tamaño del título */
+  }
+
+  .card__description {
+    font-size: 1.1rem; /* Ajusta el tamaño de la descripción */
+  }
+
+  .card_image {
+    width: 100%; /* Ajusta la imagen al ancho completo de la tarjeta */
+    height: auto; /* Ajusta la altura de la imagen automáticamente */
+  }
+
+  .chat-content {
+    width: 100%;
+    margin-left: 0; /* Elimina el margen para pantallas medianas */
+    padding: 15px; /* Ajusta el padding para pantallas medianas */
   }
 }
+
+/* Pantallas grandes (tablets y laptops pequeñas, max-width: 769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 0; /* Asegura que las cartas estén centradas */
+    gap: 25px; /* Ajusta el espacio entre las cartas */
+    padding: 20px; /* Ajusta el padding para pantallas grandes */
+  }
+
+  .cardli {
+    width: auto;
+    height: 750px;
+    padding: 25px; /* Ajusta el padding para pantallas grandes */
+  }
+
+  .card__title {
+    font-size: 1.4rem; /* Ajusta el tamaño del título */
+  }
+
+  .card__description {
+    font-size: 1.2rem; /* Ajusta el tamaño de la descripción */
+  }
+
+  .card_image {
+    width: 100%; /* Ajusta la imagen al ancho completo de la tarjeta */
+    height: auto; /* Ajusta la altura de la imagen automáticamente */
+  }
+
+  .chat-content {
+    width: 100%;
+    margin-left: 0; /* Elimina el margen para pantallas grandes */
+    padding: 20px; /* Ajusta el padding para pantallas grandes */
+  }
+}
+

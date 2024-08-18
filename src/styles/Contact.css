@@ -1,15 +1,14 @@
-/* Estilos generales del contenedor */
 .contact-container {
-    width: 600px;
-    max-width: 100%;
-    margin-top: 30px;
-    margin: 0px auto;
-    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vh;
+    margin: 0 auto;
     background-color: #D1C8E1; /* Fondo del contenedor principal */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
+    height: 100vh;
 }
 
 /* Estilo del título */
@@ -75,26 +74,87 @@
     background-color: #B370B0; /* Fondo del botón al pasar el ratón */
 }
 
-/* Responsivo para pantallas pequeñas */
+/* Pantallas pequeñas (max-width: 320px a 480px) */
 @media (max-width: 480px) {
     .contact-container {
-        padding: 15px;
+      width: 100%; /* Ajusta el ancho al 100% */
+      padding: 15px; /* Reduce el padding para dispositivos pequeños */
+      box-shadow: none; /* Elimina la sombra para dispositivos más pequeños */
     }
-
+  
     .contact-title {
-        font-size: 1.5rem;
+      font-size: 1.5rem; /* Reduce el tamaño del título */
     }
-
+  
     .contact-subtitle {
-        font-size: 1rem;
+      font-size: 1rem; /* Reduce el tamaño del subtítulo */
     }
-
+  
     .contact-input,
     .contact-textarea {
-        font-size: 0.9rem;
+      font-size: 0.9rem; /* Ajusta el tamaño de la fuente de los campos de entrada */
+      padding: 8px; /* Reduce el padding */
     }
-
+  
     .contact-button {
-        font-size: 1rem;
+      font-size: 1rem; /* Reduce el tamaño de la fuente del botón */
+      padding: 8px; /* Reduce el padding del botón */
     }
-}
+  }
+  
+  /* Pantallas medianas (min-width: 481px a max-width: 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .contact-container {
+      width: 100%; /* Ajusta el ancho al 100% */
+      padding: 20px; /* Mantén un padding moderado */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    }
+  
+    .contact-title {
+      font-size: 1.75rem; /* Ajusta el tamaño del título */
+    }
+  
+    .contact-subtitle {
+      font-size: 1.1rem; /* Ajusta el tamaño del subtítulo */
+    }
+  
+    .contact-input,
+    .contact-textarea {
+      font-size: 1rem; /* Mantiene el tamaño de la fuente de los campos de entrada */
+      padding: 9px; /* Ajusta el padding */
+    }
+  
+    .contact-button {
+      font-size: 1.1rem; /* Ajusta el tamaño de la fuente del botón */
+      padding: 9px; /* Ajusta el padding del botón */
+    }
+  }
+  
+  /* Pantallas grandes (min-width: 769px a max-width: 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .contact-container {
+      width: 100%; /* Mantén el ancho al 100% */
+      padding: 25px; /* Mantén el padding adecuado */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mantén la sombra */
+    }
+  
+    .contact-title {
+      font-size: 2rem; /* Mantén el tamaño del título */
+    }
+  
+    .contact-subtitle {
+      font-size: 1.2rem; /* Mantén el tamaño del subtítulo */
+    }
+  
+    .contact-input,
+    .contact-textarea {
+      font-size: 1rem; /* Mantén el tamaño de la fuente de los campos de entrada */
+      padding: 10px; /* Mantén el padding */
+    }
+  
+    .contact-button {
+      font-size: 1.2rem; /* Mantén el tamaño de la fuente del botón */
+      padding: 10px; /* Mantén el padding del botón */
+    }
+  }
+  
