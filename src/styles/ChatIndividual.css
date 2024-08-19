@@ -188,14 +188,40 @@
   }
 
 /* Estilo para pantallas muy pequeñas (hasta 500px) */
-@media (max-width: 500px) {
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
     .chat-content {
         width: 100%;
         padding: 10px;
         margin-left: 0;
-        border-radius: 8px;
-        box-shadow: none; /* Eliminar sombra para simplificar en pantallas pequeñas */
+    }
 
+    .chat-header, .chat-input {
+        padding: 5px;
+    }
+
+    .profile-pic, .message-profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-input input {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .send-button {
+        padding: 5px;
+    }
+
+    .send-button .material-icons {
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}
 /* Estilos para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
     .chat-content {
@@ -348,4 +374,4 @@
     .message {
         font-size: 14px;
     }
-}
+}}
