@@ -16,11 +16,11 @@
 
 ## 1. Resumen del proyecto
 
-**KDRAMA CHAT** es una aplicación web interactiva creada para fans de los Kdramas que itegra una experiencia de chat interactiva. Los usuarios pueden filtrar Kdramas por género, año de lanzamiento y número de episodios, además de visualizar estadísticas clave. La aplicación permite interactuar con los Kdramas mediante chats personalizados, tanto a nivel individual como grupal, gracias a la integración de la API de OpenAI que mejora la interacción, proporcionando respuestas inteligentes y contextualizadas para cada Kdrama. La interacción se gestiona de manera segura a través de una API Key, garantizando una experiencia fluida y adaptada a cada usuario.
+**KDRAMA CHAT** es una innovadora aplicación web interactiva diseñada para los fans de los Kdramas. Esta plataforma integra una experiencia de chat inmersiva, permitiendo a los usuarios interactuar con sus doramas favoritos. A través de filtros por género, año de lanzamiento y número de episodios, los usuarios pueden explorar y descubrir Kdramas. Además, la aplicación ofrece chats personalizados, tanto a nivel individual como grupal, utilizando la API de OpenAI para proporcionar respuestas contextuales y relevantes. La interacción con la API está gestionada de manera segura mediante una clave API, garantizando una experiencia de usuario fluida y personalizada.
 
 ## 2. Definición de producto
 
-La aplicación está diseñada especialmente para los fanáticos de los Kdramas, ofreciendo una forma única de conectarse con sus series favoritas. Su objetivo es proporcionar una experiencia envolvente que permita a los usuarios descubrir nuevas recomendaciones, explorar a fondo cada Korama y disfrutar de un chat interactivo que enriquece la experiencia con detalles exclusivos sobre personajes y tramas.
+**KDRAMA CHAT** está diseñado para ofrecer a los aficionados de los Kdramas una experiencia única, permitiéndoles conectarse de una manera interactiva y significativa con sus series favoritas. El objetivo es proporcionar una plataforma envolvente donde los usuarios puedan explorar nuevos doramas, obtener información detallada sobre cada uno, y disfrutar de interacciones personalizadas a través de un chat inteligente.
 
 ### Necesidades:
 
@@ -36,12 +36,12 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 
   **Definición de Terminado (DoD):** 
 
-  - **Quién:** Como usuario.
-  - **Qué:** Quiero poder navegar a diferentes vistas dentro de una sola página sin que se recargue el navegador.
-  - **Para:** Facilitar una experiencia de usuario fluida y rápida.
+- **Quién:** Como usuario.
+- **Qué:** Quiero navegar por diferentes vistas dentro de una sola página sin recargar el navegador.
+- **Para:** Facilitar una experiencia de usuario fluida y rápida.
 
   **Criterios de Aceptación (AC):**
-
+  
   - **AC1:** Al hacer clic en un boton o tarjeta, la vista correspondiente se carga dinámicamente sin recargar toda la página. 
   - **AC2:** La URL se actualiza de acuerdo a la vista cargada, reflejando la sección actual en la que se encuentra el usuario.
   - **AC3:** El historial de navegación del navegador se actualiza correctamente, permitiendo al usuario utilizar los botones de retroceso y avance para moverse entre las vistas visitadas.
@@ -75,7 +75,7 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 - **AC3:** Las respuestas en el chat deben ser generadas utilizando la API de OpenAI, proporcionando información contextual y relevante sobre el Kdrama.
 - **AC4:** La interfaz del chat debe mostrar de manera clara el nombre y la imagen del Kdrama con el que se está interactuando.
 
-### Historia de Usuario 4: 
+### Historia de Usuario 4:
 
 **Definición de Terminado (DoD):**
 
@@ -91,20 +91,25 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 
 ### Resolución de Necesidades del Usuario:
 
-
 ## 4. Diseño de Interfaz y Prototipos
 
-La interfaz de **KDRAMA CHAT** está diseñada para ofrecer ...
+La interfaz de **KDRAMA CHAT** está diseñada para ofrecer una experiencia visual y funcional centrada en la interacción y la personalización. Las vistas principales incluyen:
 
 Las vistas principales incluyen:
-- **Vista Home:** Lista de Kdramas con opciones de filtrado y ordenación.
-- **Chat Individual:** Vista detallada de un Kdrama con interacción de chat.
-- **Chat Grupal:** Interfaz para enviar mensajes a todos los Kdramas y ver respuestas en tiempo real.
+- **Vista Home:** Presenta una lista de Kdramas con opciones de filtrado y ordenación.
+- **Chat Individual:** Muestra una vista detallada de un Kdrama con la posibilidad de interactuar mediante un chat.
+- **Chat Grupal:** Permite enviar mensajes a todos los Kdramas y ver las respuestas en tiempo real.
 
-### Prototipos de Alta Fidelidad:
+### Prototipos de baja Fidelidad:
 
-El prototipo de alta fidelidad de **KDRAMA CHAT** es una versión ...
+Vista Home de baja fidelidad:
+[aquí](./src/images/1440PX.jpg) 
 
+Vista de Chat Individual:
+[aquí](./src/images/Chatbot%20dekstop.png) 
+
+Vista de Chat Grupal
+[aquí](./src/images/Chatbot.png) 
 
 ## 5. Lenguajes y Herramientas Utilizadas
 
@@ -124,24 +129,25 @@ En el desarrollo de nuestro proyecto, hemos utilizado un lenguaje de programaci�
 
 - **Control de Versiones (Git):** Esencial para el seguimiento eficiente de cambios en el código, facilitando la colaboración entre desarrolladores en nuestro proyecto de Kdramas.
 - **Pruebas Unitarias(Jest):** Utilizado para asegurar la calidad y robustez del código JavaScript mediante pruebas exhaustivas, garantizando su funcionamiento y rendimiento en el contexto de nuestra aplicación de Kdramas.
-- **Prototipado y Diseño de Interfaz (Figma):** Utilizado para el prototipado y diseño de la interfaz, permitiendo la creación de maquetas visuales y la planificación de la experiencia de usuario. [Prototipo-figma](https://www.figma.com/design/FTDSJu9RwT1XYvCmNSnuVO/KDRAMA-DATABASE?node-id=0-1&t=rOTVIOuAeiHudXf6-1)
-- **Historias de Usuario:** Utilizadas para definir claramente los requisitos y expectativas de los usuarios finales en nuestro proyecto de Kdramas. Aseguran que el desarrollo esté alineado con las necesidades y deseos de los usuarios. -**Visual Studio Code:** Se ha utilizado Visual Studio Code como entorno de desarrollo para la implementación del diseño y la gestión del código. -**Colorimetria:** Utilizado para la paleta de colores de la página web. [Colores](https://webgradients.com/)
+- **Prototipado y Diseño de Interfaz (Figma):** Utilizado para el prototipado y diseño de la interfaz, permitiendo la creación de maquetas visuales y la planificación de la experiencia de usuario. [Prototipo-figma](https://www.figma.com/design/FTDSJu9RwT1XYvCmNSnuVO/KDRAMA-DATABASE?node-id=0-1&t=qF9LVe7A0hoBrumW-1)
+- **Historias de Usuario:** Utilizadas para definir claramente los requisitos y expectativas de los usuarios finales en nuestro proyecto de Kdramas. Aseguran que el desarrollo esté alineado con las necesidades y deseos de los usuarios. 
+-**Visual Studio Code:** Se ha utilizado Visual Studio Code como entorno de desarrollo para la implementación del diseño y la gestión del código. -**Colorimetria:** Utilizado para la paleta de colores de la página web. [Colores](https://coolors.co/palettes/trending)
+-**Estilos:** Se han utilizado elementos de [Estilos](https://uiverse.io/elements) en el diseño CSS de las tarjetas y los botones.
 
 Este lenguaje y herramientas nos han permitido desarrollar una aplicación web completa y funcional para Kdramas, con un diseño atractivo y una experiencia de usuario optimizada. La combinación de HTML semántico, CSS responsive, JavaScript y herramientas como Git, Jest y Figma ha sido crucial para lograr un producto robusto, interactivo y de alta calidad.
 
 ## 6. Responsividad
 
-La web es completamente responsiva, adaptándose a diferentes resoluciones, desde pantallas grandes hasta dispositivos móviles.
-
-Utilizamos Media Queries en CSS para aplicar estilos personalizados según el tamaño de la pantalla, optimizando así la presentación de la información y la navegación en distintos dispositivos.
+**KDRAMA CHAT** es completamente responsiva, adaptándose a diferentes resoluciones y dispositivos. Se han utilizado Media Queries, Flexbox y Grid para optimizar la visualización y la navegación en distintos dispositivos.
 
 ## Instrucciones de Uso
 
 1. Clona el repositorio.
-2. Abre el archivo `index.html` en tu navegador para explorar la Galería de Arte Practicum y conocer las historias de cada ciudad.
-3. Disfruta de la experiencia inmersiva y aprende más sobre tus colegas en línea.
+2. Abre los archivos `js` en tu navegador para explorar DATAVERSE-CHAT.
+3. Disfruta de la experiencia inmersiva y mira como se desarrollo el poryecto.
 
-## 8. Testeos de usabilidad
+## 7. Testeos de usabilidad
+El proyecto ha pasado por varias rondas de pruebas de usabilidad para garantizar que la experiencia del usuario sea intuitiva, fluida y libre de errores.
 
 ## 8. Trabajo Colaborativo
 
@@ -157,4 +163,4 @@ Este proyecto fue desarrollado por:
 Como parte de un proyecto práctico como estudiantes de desarrollo web de Laboratoria. Si tienes preguntas o comentarios, no dudes en ponerte en contacto al correo electrónico: fatimapolgar2001@gmail.com y melanie171095@gmail.com
 
 ## Visita la web:
-
+- [Página Web](dev-015-dataverse-chat-rho.vercel.app)

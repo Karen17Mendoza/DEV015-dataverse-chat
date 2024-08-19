@@ -149,73 +149,77 @@
     width: 250%;
   }
 
-  @media (min-width: 501px) and (max-width: 768px) {
-    .button-container {
-      flex-direction: column;
-    }
-  
-    .filter-container {
-      flex-direction: column;
-    }
-  
-    .filter-container select{
-      width: 100px;
-      max-width: 100%;
-    }
-  
-    .average-container.show,
-    .average-container.show1,
-    .average-container.show2 {
-      width: auto;
-      max-width: 100%;
-    }
+  /* Pantallas pequeñas (max-width: 320px a 480px) */
+@media (max-width: 480px) {
+  .button-row {
+    flex-direction: column; /* Apilar los botones en lugar de alinearlos en fila */
+    gap: 10px; /* Espacio reducido entre los botones */
   }
-  
-  /* Para móviles */
-  @media (max-width: 500px) {
-    .filter-row {
-      flex-direction: column;
-      margin: auto;
-    }
-  
-    .filter-row label {
-      display: flex;
-      text-align: left;
-      justify-content: space-between;
-    }
-  
-    .block-average {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .average-container {
-      margin-bottom: 5px;
-      width: 60%;
-    }
-  
-    .filter-container select {
-      width: auto;
-      max-width: 100%;
-    }
-  
-    .button-row {
-      margin: auto;
-    }
-    .button-clear, .metrics, .button-average {
-      margin: 0px;
-      letter-spacing: 0px;
-      padding: 7px;
 
-    }
-  
-    .average-container.show,
-    .average-container.show1,
-    .average-container.show2 {
-      width: auto;
-      max-width: 100%;
-    }
-
-
-
+  .block-average {
+    flex-direction: column; /* Apilar los contenedores en lugar de alinearlos en fila */
+    gap: 15px; /* Reduce el espacio entre los contenedores */
   }
+
+  .average-container {
+    width: 100%; /* Ocupa el ancho completo */
+    height: auto; /* Ajusta la altura automáticamente */
+    font-size: 14px; /* Reduce el tamaño de fuente */
+  }
+
+  .button-clear, .metrics, .button-average {
+    padding: 0.8em 1.5em; /* Reduce el padding para botones */
+    font-size: 14px; /* Reduce el tamaño de fuente */
+  }
+}
+
+/* Pantallas medianas (min-width: 481px a max-width: 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .button-row {
+    flex-direction: column; /* Apilar los botones en lugar de alinearlos en fila */
+    gap: 15px; /* Espacio ajustado entre los botones */
+  }
+
+  .block-average {
+    flex-direction: column; /* Apilar los contenedores en lugar de alinearlos en fila */
+    gap: 18px; /* Ajusta el espacio entre los contenedores */
+  }
+
+  .average-container {
+    width: 90%; /* Ocupa el 90% del ancho */
+    height: auto; /* Ajusta la altura automáticamente */
+    font-size: 15px; /* Ajusta el tamaño de fuente */
+  }
+
+  .button-clear, .metrics, .button-average {
+    padding: 0.9em 1.8em; /* Ajusta el padding para botones */
+    font-size: 14px; /* Ajusta el tamaño de fuente */
+  }
+}
+
+/* Pantallas grandes (min-width: 769px a max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .button-row {
+    flex-direction: row; /* Mantiene los botones alineados en fila */
+    gap: 20px; /* Mantiene el espacio entre los botones */
+  }
+
+  .block-average {
+    flex-direction: row; /* Mantiene los contenedores alineados en fila */
+    gap: 20px; /* Mantiene el espacio entre los contenedores */
+  }
+
+  .average-container {
+    width: auto; /* Ancho automático */
+    height: auto; /* Ajusta la altura automáticamente */
+    font-size: 16px; /* Mantiene el tamaño de fuente */
+  }
+
+  .button-clear, .metrics, .button-average {
+    padding: 1em 2em; /* Mantiene el padding para botones */
+    font-size: 15px; /* Mantiene el tamaño de fuente */
+  }
+}
+
+

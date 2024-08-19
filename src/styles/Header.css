@@ -33,24 +33,68 @@ h1{
   margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
-  @media (min-width: 501px) and (max-width: 768px) {
-    h1 {
-      font-size: 70px;
-      line-height: 60px;
-      width: auto;
-      max-width: 100%;
-    }
-  
+/* Pantallas pequeñas (320px a 480px) */
+@media (max-width: 480px) {
+  header {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    padding: 15px; /* Reduce el padding para que el header no ocupe demasiado espacio */
   }
-  
-  /* Para móviles */
-  @media (max-width: 500px) {
 
-  
-    h1 {
-      max-width: 100%;
-      font-size: 45px;
-      line-height: 40px;
-    }
-
+  h1 {
+    font-size: 48px; /* Reduce el tamaño del título */
+    line-height: 52px; /* Ajusta la altura de la línea */
   }
+
+  .header__description {
+    font-size: 1em; /* Reduce el tamaño de la fuente */
+    line-height: 24px; /* Ajusta la altura de la línea */
+  }
+
+  .header-logo {
+    width: 300px; /* Ajusta el ancho de la imagen para pantallas pequeñas */
+  }
+}
+
+/* Pantallas medianas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas medianas */
+    padding: 20px; /* Mantiene un padding medio */
+  }
+
+  h1 {
+    font-size: 72px; /* Ajusta el tamaño del título */
+    line-height: 76px; /* Ajusta la altura de la línea */
+  }
+
+  .header__description {
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente */
+    line-height: 28px; /* Ajusta la altura de la línea */
+  }
+
+  .header-logo {
+    width: 400px; /* Ajusta el ancho de la imagen para pantallas medianas */
+  }
+}
+
+/* Pantallas grandes (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    margin-left: 150px; /* Reduce el margen izquierdo en pantallas grandes */
+    padding: 25px; /* Mantiene un padding mayor */
+  }
+
+  h1 {
+    font-size: 84px; /* Ajusta el tamaño del título */
+    line-height: 88px; /* Ajusta la altura de la línea */
+  }
+
+  .header__description {
+    font-size: 1.2em; /* Mantiene el tamaño de la fuente */
+    line-height: 30px; /* Mantiene la altura de la línea */
+  }
+
+  .header-logo {
+    width: 450px; /* Ajusta el ancho de la imagen para pantallas grandes */
+  }
+}

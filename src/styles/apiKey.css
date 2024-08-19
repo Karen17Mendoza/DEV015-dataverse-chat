@@ -85,21 +85,80 @@
   background-color: #a987ab; /* Color más oscuro al hacer clic */
 }
 
-  /* Asegura que el diseño sea responsivo */
+/* Pantallas pequeñas (móviles, max-width: 320px a 480px) */
 @media (max-width: 480px) {
   .api {
-    padding: 20px; /* Reduce el padding en pantallas más pequeñas */
+    padding: 20px; /* Reducir el padding para pantallas pequeñas */
+    max-width: 90%; /* Asegurar que el contenedor no ocupe todo el ancho */
   }
 
   .api__title {
-    font-size: 20px; /* Reduce el tamaño del título */
+    font-size: 20px; /* Reducir el tamaño del título */
   }
 
   .api__subtitle {
-    font-size: 14px; /* Reduce el tamaño del subtítulo */
+    font-size: 14px; /* Reducir el tamaño del subtítulo */
+  }
+
+  .api__input {
+    font-size: 14px; /* Reducir el tamaño del texto en el input */
+    padding: 8px; /* Reducir el padding del input */
   }
 
   .api__button {
-    padding: 10px; /* Reduce el padding del botón */
+    padding: 10px; /* Ajustar el padding del botón */
+    font-size: 14px; /* Reducir el tamaño del texto del botón */
+  }
+}
+
+/* Pantallas medianas (teléfonos medianos y grandes, max-width: 481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .api {
+    padding: 30px; /* Ajustar el padding para pantallas medianas */
+    max-width: 100%; /* Mantener el contenedor dentro del ancho completo */
+  }
+
+  .api__title {
+    font-size: 22px; /* Ajustar el tamaño del título */
+  }
+
+  .api__subtitle {
+    font-size: 15px; /* Ajustar el tamaño del subtítulo */
+  }
+
+  .api__input {
+    font-size: 15px; /* Ajustar el tamaño del texto en el input */
+    padding: 9px; /* Ajustar el padding del input */
+  }
+
+  .api__button {
+    padding: 11px; /* Ajustar el padding del botón */
+    font-size: 15px; /* Ajustar el tamaño del texto del botón */
+  }
+}
+
+/* Pantallas grandes (tablets y laptops pequeñas, max-width: 769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .api {
+    padding: 40px; /* Mantener el padding para pantallas grandes */
+    max-width: 400px; /* Mantener el ancho máximo */
+  }
+
+  .api__title {
+    font-size: 24px; /* Mantener el tamaño del título */
+  }
+
+  .api__subtitle {
+    font-size: 16px; /* Mantener el tamaño del subtítulo */
+  }
+
+  .api__input {
+    font-size: 16px; /* Mantener el tamaño del texto en el input */
+    padding: 10px; /* Mantener el padding del input */
+  }
+
+  .api__button {
+    padding: 12px; /* Mantener el padding del botón */
+    font-size: 16px; /* Mantener el tamaño del texto del botón */
   }
 }

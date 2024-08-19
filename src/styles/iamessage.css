@@ -19,3 +19,59 @@
     color: #000;
   }
   
+  /* Pantallas pequeñas (320px a 480px) */
+@media (max-width: 480px) {
+  .ai-message-container {
+    margin-bottom: 8px; /* Reduce el margen inferior para pantallas pequeñas */
+  }
+
+  .ai-profile-pic {
+    width: 30px; /* Reduce el tamaño de la imagen de perfil */
+    height: 30px;
+    margin-right: 8px; /* Ajusta el margen derecho */
+  }
+
+  .ai-message-content {
+    padding: 8px; /* Reduce el padding del mensaje */
+    max-width: 100%; /* Asegura que el mensaje ocupe el ancho disponible */
+    font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+  }
+}
+
+/* Pantallas medianas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .ai-message-container {
+    margin-bottom: 10px; /* Mantiene un margen inferior moderado */
+  }
+
+  .ai-profile-pic {
+    width: 35px; /* Ajusta el tamaño de la imagen de perfil */
+    height: 35px;
+    margin-right: 10px; /* Mantiene el margen derecho */
+  }
+
+  .ai-message-content {
+    padding: 9px; /* Ajusta el padding del mensaje */
+    max-width: 80%; /* Ajusta el ancho máximo del mensaje */
+    font-size: 16px; /* Ajusta el tamaño de la fuente para pantallas medianas */
+  }
+}
+
+/* Pantallas grandes (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ai-message-container {
+    margin-bottom: 10px; /* Mantiene el margen inferior para pantallas grandes */
+  }
+
+  .ai-profile-pic {
+    width: 40px; /* Mantiene el tamaño de la imagen de perfil */
+    height: 40px;
+    margin-right: 10px; /* Mantiene el margen derecho */
+  }
+
+  .ai-message-content {
+    padding: 10px; /* Mantiene el padding del mensaje */
+    max-width: 70%; /* Ajusta el ancho máximo del mensaje */
+    font-size: 18px; /* Mantiene el tamaño de la fuente para pantallas grandes */
+  }
+}
