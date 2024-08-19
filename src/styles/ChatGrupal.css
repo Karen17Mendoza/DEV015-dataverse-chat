@@ -140,9 +140,7 @@ gap: 15px; /* Mayor espacio entre mensajes */
 }
 
 .dorama-list-container {
-    width: 100%;
-    margin-bottom: 20px;
-}
+display: none;}
 
 .chat-content {
     margin-left: 0;
@@ -160,10 +158,7 @@ gap: 15px; /* Mayor espacio entre mensajes */
   }
 
   .dorama-list-container {
-    width: 100%;
-    order: 2;
-    flex-direction: row;
-    overflow-x: auto;
+display: none;
   }
 
   .dorama-item {
@@ -180,47 +175,8 @@ gap: 15px; /* Mayor espacio entre mensajes */
   }
 }
 
-/* Estilo para pantallas muy pequeñas (hasta 500px) */
-@media (max-width: 500px) {
-  .chatGrupal-container {
-      flex-direction: column;
-      height: auto;
-  }
-
-  .dorama-list-container {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 10px;
-      box-shadow: none; /* Eliminar sombra para simplificar en pantallas pequeñas */
-  }
-
-  .chat-content {
-      margin-left: 0;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: none; /* Eliminar sombra para simplificar en pantallas pequeñas */
-  }
-
-  .chat-header, .chat-input {
-      padding: 8px;
-  }
-
-  .chat-input input {
-      padding: 8px;
-  }
-
-  .send-button {
-      padding: 8px 16px;
-  }
-
-  .dorama-image {
-      width: 50px;
-      height: 50px;
-  }
-
-  .dorama-title {
-      font-size: 1rem;
-  }
+/* Estilos para pantallas muy pequeñas (ej. móviles en vertical) */
+@media screen and (max-width: 480px) {
   .chatGrupal-container {
     padding: 5px;
   }
@@ -237,45 +193,8 @@ gap: 15px; /* Mayor espacio entre mensajes */
   .send-button {
     font-size: 14px;
   }
-}
-
-/* Estilo para pantallas pequeñas y medianas (501px a 768px) */
-@media (min-width: 501px) and (max-width: 768px) {
-  .chatGrupal-container {
-      flex-direction: column;
-      height: auto;
-  }
-
   .dorama-list-container {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 15px;
+    display: none;
   }
 
-  .chat-content {
-      margin-left: 0;
-      padding: 30px;
-      border-radius: 8px;
-  }
-
-  .chat-header, .chat-input {
-      padding: 10px;
-  }
-
-  .chat-input input {
-      padding: 10px;
-  }
-
-  .send-button {
-      padding: 10px 18px;
-  }
-
-  .dorama-image {
-      width: 55px;
-      height: 55px;
-  }
-
-  .dorama-title {
-      font-size: 1.1rem;
-  }
 }
