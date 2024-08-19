@@ -54,23 +54,3 @@ export const interactWithCharacter = (characterName, userMessage, doramaDetails)
       console.error('Error al interactuar con el personaje:', error);
     });
 };
-
-export const interactWithGroupChat = (userMessage, doramaDetailsArray) => {
-  const messages = [
-    { role: 'system', content: 'You are now in a group chat with multiple characters from various doramas. Respond as if you were all these characters discussing the topic.' },
-    { role: 'user', content: userMessage },
-  ];
-
-  doramaDetailsArray.forEach(dorama => {
-    messages.push({ role: 'assistant', content: `Character from ${dorama.name}: ${dorama.shortDescription}` });
-  });
-
-  communicateWithOpenAI(messages)
-    .then((response) => {
-      console.log('Group chat response:', response);
-      // Aquí puedes manejar la respuesta, como mostrarla en la UI
-    })
-    .catch((error) => {
-      console.error('Error en el chat grupal:', error);
-    });
-};

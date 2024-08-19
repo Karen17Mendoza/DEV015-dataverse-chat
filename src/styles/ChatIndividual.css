@@ -77,8 +77,11 @@
     background-color: #D1C8E1;
     padding: 10px;
     border-radius: 10px;
-    max-width: 70%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para los mensajes */
+    width: 90%; /* Ajusta el ancho del mensaje */
+    max-width: 90%; /* Asegura que no exceda el 90% del ancho del contenedor padre */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 10px; /* Ajusta el relleno interno para dar más espacio al texto */
 }
 
 .user-message .message-content {
@@ -171,6 +174,10 @@
     color: #000000;
     align-self: flex-start; /* Alinea el mensaje de la IA a la izquierda */
     border-radius: 10px;
+    width: 90%; /* Ajusta el ancho del mensaje */
+    max-width: 90%; /* Asegura que no exceda el 90% del ancho del contenedor padre */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 10px; /* Ajusta el relleno interno para dar más espacio al texto */
   }
   
   /* Estilo para el contenedor de los mensajes */
@@ -188,6 +195,17 @@
         margin-left: 0;
         border-radius: 8px;
         box-shadow: none; /* Eliminar sombra para simplificar en pantallas pequeñas */
+
+/* Estilos para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .chat-content {
+        width: 80%;
+        padding: 15px;
+        margin-left: 20px;
+    }
+
+    .chat-header, .chat-input {
+        padding: 8px;
     }
   
     .chat-header {
@@ -294,4 +312,40 @@
         font-size: 18px;
     }
   }
-  
+
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .chat-content {
+        width: 100%;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .chat-header, .chat-input {
+        padding: 5px;
+    }
+
+    .profile-pic, .message-profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-input input {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .send-button {
+        padding: 5px;
+    }
+
+    .send-button .material-icons {
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}

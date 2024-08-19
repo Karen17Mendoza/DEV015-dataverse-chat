@@ -1,4 +1,4 @@
-# 🌸 KDRAMA CHAT 🌸
+# 🌸 KDRAMA CHAT 
 
 ## Índice
 
@@ -34,62 +34,62 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 
 ### Historia de Usuario 1: 
 
-**Definición de Terminado (DoD):**
+  **Definición de Terminado (DoD):** 
 
 - **Quién:** Como usuario.
 - **Qué:** Quiero navegar por diferentes vistas dentro de una sola página sin recargar el navegador.
 - **Para:** Facilitar una experiencia de usuario fluida y rápida.
 
-**Criterios de Aceptación (AC):**
-
-- **AC1:** Al hacer clic en un botón o tarjeta, la vista correspondiente se carga dinámicamente sin recargar toda la página.
-- **AC2:** La URL se actualiza según la vista cargada, reflejando la sección actual en la que se encuentra el usuario.
-- **AC3:** El historial de navegación se actualiza correctamente, permitiendo el uso de los botones de retroceso y avance.
+  **Criterios de Aceptación (AC):**
+  
+  - **AC1:** Al hacer clic en un boton o tarjeta, la vista correspondiente se carga dinámicamente sin recargar toda la página. 
+  - **AC2:** La URL se actualiza de acuerdo a la vista cargada, reflejando la sección actual en la que se encuentra el usuario.
+  - **AC3:** El historial de navegación del navegador se actualiza correctamente, permitiendo al usuario utilizar los botones de retroceso y avance para moverse entre las vistas visitadas.
 
 ### Historia de Usuario 2: 
 
 **Definición de Terminado (DoD):**
 
 - **Quién:** Como usuario.
-- **Qué:** Quiero configurar mi API Key para interactuar con la API de OpenAI.
-- **Para:** Habilitar la funcionalidad de chat interactivo con los doramas.
+- **Qué:**  Quiero configurar mi API Key para interactuar con la API de OpenAI.
+- **Para:** Poder habilitar la funcionalidad de chat interactivo con los doramas, asegurando que las solicitudes a la API se manejen correctamente.
 
 **Criterios de Aceptación (AC):**
 
-- **AC1:** Debe haber una vista o sección donde el usuario pueda ingresar su API Key de manera segura.
-- **AC2:** La API Key debe almacenarse de forma persistente en el navegador (por ejemplo, en Local Storage).
-- **AC3:** El sistema debe validar que la API Key ingresada es válida antes de su uso.
-- **AC4:** Después de guardar la API Key, la interfaz debe mostrar un mensaje de confirmación indicando que la configuración fue exitosa.
-
+  - **AC1:** Debe haber una vista o sección donde el usuario pueda ingresar su API Key de forma segura.
+  - **AC2:** Al guardar la API Key, esta se almacena de forma persistente en el navegador (por ejemplo, en Local Storage).
+  - **AC3:** El sistema debe validar que la API Key ingresada es válida antes de permitir su uso en la aplicación.
+  - **AC4:** Después de guardar la API Key, la interfaz debe mostrar un mensaje de confirmación indicando que la configuración ha sido exitosa.
+  
 ### Historia de Usuario 3: 
 
 **Definición de Terminado (DoD):**
 
-- **Quién:** Como usuario.
+- **Quién:** Como usuario 
 - **Qué:** Quiero interactuar con cada Kdrama en un chat individual.
-- **Para:** Obtener respuestas personalizadas y aprender más sobre el Kdrama que me interesa.
+- **Para:** Obtener respuestas personalizadas y aprender más sobre el Kdrama específico que me interesa.
 
 **Criterios de Aceptación (AC):**
-
 - **AC1:** Debe existir una vista de chat individual para cada Kdrama, accesible desde la lista o tarjetas de doramas.
-- **AC2:** En el chat individual, el usuario debe poder enviar mensajes y recibir respuestas relacionadas exclusivamente con el Kdrama seleccionado.
-- **AC3:** Las respuestas en el chat deben ser generadas utilizando la API de OpenAI, proporcionando información contextual y relevante.
+- **AC2:** Al ingresar al chat individual, el usuario debe poder enviar mensajes y recibir respuestas relacionadas exclusivamente con el Kdrama seleccionado.
+- **AC3:** Las respuestas en el chat deben ser generadas utilizando la API de OpenAI, proporcionando información contextual y relevante sobre el Kdrama.
 - **AC4:** La interfaz del chat debe mostrar de manera clara el nombre y la imagen del Kdrama con el que se está interactuando.
 
 ### Historia de Usuario 4:
 
 **Definición de Terminado (DoD):**
 
-- **Quién:** Como usuario.
+- **Quién:**Como usuario.
 - **Qué:** Quiero interactuar en un chat grupal con todos los Kdramas.
-- **Para:** Enviar mensajes a todos los Kdramas simultáneamente y recibir respuestas diferenciadas de cada uno.
+- **Para:** Enviar mensajes a todos los kdramas simultáneamente y recibir respuestas diferenciadas de cada uno.
 
 **Criterios de Aceptación (AC):**
-
 - **AC1:** Debe haber una vista de chat grupal accesible desde la interfaz principal, donde se puedan ver todos los Kdramas en una lista o columna.
-- **AC2:** Al enviar un mensaje en el chat grupal, este debe ser transmitido a todos los Kdramas, y cada uno debe responder individualmente.
-- **AC3:** Las respuestas deben ser generadas utilizando la API de OpenAI y ser relevantes para cada Kdrama.
-- **AC4:** La interfaz debe permitir identificar fácilmente de qué Kdrama proviene cada respuesta, usando nombres e imágenes.
+- **AC2:** Al enviar un mensaje en el chat grupal, este debe ser transmitido a todos los Kdramas, y cada kdrama debe responder de manera individual dentro del mismo chat.
+- **AC3:** Las respuestas deben ser generadas utilizando la API de OpenAI, y deben ser relevantes para cada Kdrama en particular, asegurando una interacción rica y variada.
+- **AC4:** La interfaz debe permitir identificar fácilmente de qué Kdrama proviene cada respuesta, usando nombres y posiblemente imágenes.
+
+### Resolución de Necesidades del Usuario:
 
 ## 4. Diseño de Interfaz y Prototipos
 

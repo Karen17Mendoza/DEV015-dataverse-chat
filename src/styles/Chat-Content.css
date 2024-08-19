@@ -40,7 +40,14 @@
     margin-top: 10px;
     padding: 20px;
 }
-  
+/* Estilos para pantallas medianas */
+@media screen and (max-width: 1024px) {
+    .content-container {
+        margin-left: 150px; /* Reducir el margen para pantallas más pequeñas */
+        flex-direction: column;
+        align-items: center;
+    }
+ 
 /* Para pantallas pequeñas (Teléfonos móviles pequeños, max-width: 320px a 480px) */
 @media (max-width: 480px) {
     .content-container {
@@ -105,6 +112,28 @@
         font-size: 16px;
         padding: 20px;
     }
+  .content-container {
+        margin-left: 0; /* Elimina el margen lateral */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+  
+    .image-description {
+        display: none;
+    }
+  
+    .item-image {
+        width: 150px; /* Tamaño de la imagen más pequeño */
+    }
+  
+    .card__title__chat {
+        font-size: 20px; /* Fuente más pequeña */
+    }
+  
+    .card__description__chat {
+        font-size: 14px; /* Fuente más pequeña */
+    }
 }
 
 /* Para pantallas grandes (Tablets y laptops pequeñas, max-width: 769px a 1024px) */
@@ -137,5 +166,21 @@
     .card__description__chat {
         font-size: 18px;
         padding: 20px;
+    }
+  
+    .image-description {
+        display: none;
+    }
+  
+    .item-image {
+        width: 200px; /* Ajusta el tamaño de la imagen */
+    }
+  
+    .card__title__chat {
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+    }
+  
+    .card__description__chat {
+        font-size: 16px; /* Ajusta el tamaño de la fuente */
     }
 }

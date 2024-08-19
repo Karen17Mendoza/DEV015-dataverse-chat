@@ -1,137 +1,184 @@
 .chatGrupal-container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh; /* Altura completa de la ventana del navegador */
-  }
-  
-  .content-container {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    overflow: hidden; /* Ocultar el desbordamiento del contenedor principal */
-  }
-  
-  .dorama-list-container {
-    width: 500px; /* Ajusta el ancho según sea necesario */
-    overflow-y: auto; /* Permitir el desplazamiento vertical si es necesario */
-    background-color: #F4F1F9; /* Fondo suave para la lista de doramas */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
-
-  }
-  
-  .chat-content {
-    width: 400px;
-    max-width: 100%;
-    height: 100%;
-    border: 1px solid #BBA0CA;
-    border-radius: 10px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 50px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más profesional */
-    margin-left: 50px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */
-  }
-  
-.chat-header {
   display: flex;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 2px solid #B370B0; /* Borde inferior para destacar el header */
-  background-color: #B370B0; /* Fondo acorde a la paleta */
-  color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el header */
+  flex-direction: row;
+  height: 100vh; /* Altura completa de la ventana del navegador */
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden; /* Ocultar el desbordamiento del contenedor principal */
+}
+
+.dorama-list-container {
+  width: 500px; /* Ajusta el ancho según sea necesario */
+  overflow-y: auto; /* Permitir el desplazamiento vertical si es necesario */
+  background-color: #F4F1F9; /* Fondo suave para la lista de doramas */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
 
 }
-  
-.chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
+
+.chat-content {
+  width: 400px;
+  max-width: 100%;
+  height: 100%;
+  border: 1px solid #BBA0CA;
+  border-radius: 10px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Mayor espacio entre mensajes */
+  flex: 1;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más profesional */
+  margin-left: 50px; /* Ajusta el margen izquierdo para que no se superponga con la imagen y descripción */
 }
-  
-  .chat-input {
-    padding: 10px;
-    background: #F4F1F9; /* Color de fondo de la entrada del chat */
-    border-top: 1px solid #B370B0;
-    display: flex;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  
-  .chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #BBA0CA;
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el input */
-  }
-  
-  .send-button {
-    background: #87255B; /* Color de fondo del botón de enviar */
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-left: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el botón */
-    transition: background 0.3s ease;
-  }
-  
-  .send-button:hover {
-    background: #B370B0; /* Color de fondo del botón en estado hover */
-  }
+
+.chat-header {
+display: flex;
+align-items: center;
+padding: 10px;
+border-bottom: 2px solid #B370B0; /* Borde inferior para destacar el header */
+background-color: #B370B0; /* Fondo acorde a la paleta */
+color: white;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el header */
+
+}
+
+.chat-messages {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+gap: 15px; /* Mayor espacio entre mensajes */
+}
+
+.chat-input {
+  padding: 10px;
+  background: #F4F1F9; /* Color de fondo de la entrada del chat */
+  border-top: 1px solid #B370B0;
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #BBA0CA;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el input */
+}
+
+.send-button {
+  background: #87255B; /* Color de fondo del botón de enviar */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera en el botón */
+  transition: background 0.3s ease;
+}
+
+.send-button:hover {
+  background: #B370B0; /* Color de fondo del botón en estado hover */
+}
 /* Contenedor de la lista de doramas */
 .dorama-list-container {
-    background-color: #eceaea; /* Color de fondo suave */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
+  background-color: #eceaea; /* Color de fondo suave */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
+}
+
+/* Elemento individual de la lista de doramas */
+.dorama-item {
+  display: flex;
+  align-items: center;
+  background-color: #D1C8E1; /* Fondo blanco para los ítems */
+  border-radius: 8px;
+  margin-bottom: 10px; /* Espacio entre ítems */
+  padding: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Efecto hover para los ítems */
+.dorama-item:hover {
+  background-color: #B370B0; /* Fondo gris claro en hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Imagen del dorama */
+.dorama-image {
+  width: 60px; /* Ancho de la imagen */
+  height: 60px; /* Altura de la imagen */
+  border-radius: 50%; /* Mantiene la imagen circular */
+  border: 2px solid #87255B; /* Borde azul alrededor de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}  
+/* Título del dorama */
+.dorama-title {
+  font-size: 1.2rem; /* Tamaño de fuente del título */
+  font-weight: bold; /* Fuente en negrita */
+  color: #33102E; /* Color del texto */
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+.chatGrupal-container {
+    flex-direction: column;
+}
+
+.dorama-list-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.chat-content {
+    margin-left: 0;
+}
+}
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .chatGrupal-container {
+    flex-direction: column;
   }
-  
-  /* Elemento individual de la lista de doramas */
+
+  .sidebar-nav {
+    width: 100%;
+    order: 1;
+  }
+
+  .dorama-list-container {
+    width: 100%;
+    order: 2;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
   .dorama-item {
-    display: flex;
-    align-items: center;
-    background-color: #D1C8E1; /* Fondo blanco para los ítems */
-    border-radius: 8px;
-    margin-bottom: 10px; /* Espacio entre ítems */
-    padding: 10px;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin-right: 10px;
   }
-  
-  /* Efecto hover para los ítems */
-  .dorama-item:hover {
-    background-color: #B370B0; /* Fondo gris claro en hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+
+  .chat-content {
+    width: 100%;
+    order: 3;
   }
-  
-  /* Imagen del dorama */
-  .dorama-image {
-    width: 60px; /* Ancho de la imagen */
-    height: 60px; /* Altura de la imagen */
-    border-radius: 50%; /* Mantiene la imagen circular */
-    border: 2px solid #87255B; /* Borde azul alrededor de la imagen */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
-  }  
-  /* Título del dorama */
-  .dorama-title {
-    font-size: 1.2rem; /* Tamaño de fuente del título */
-    font-weight: bold; /* Fuente en negrita */
-    color: #33102E; /* Color del texto */
+
+  .chat-header {
+    text-align: center;
   }
+}
 
 /* Estilo para pantallas muy pequeñas (hasta 500px) */
 @media (max-width: 500px) {
@@ -173,6 +220,22 @@
 
   .dorama-title {
       font-size: 1rem;
+  }
+  .chatGrupal-container {
+    padding: 5px;
+  }
+
+  .dorama-title {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .chat-input input {
+    font-size: 14px;
+  }
+
+  .send-button {
+    font-size: 14px;
   }
 }
 
@@ -216,5 +279,3 @@
       font-size: 1.1rem;
   }
 }
-
-  
