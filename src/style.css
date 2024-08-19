@@ -6,8 +6,7 @@
 @import "./styles/ChatIndividual.css";
 @import "./styles/apiKey.css";
 @import "./styles/ChatGrupal.css";
-
-
+@import "./styles/iamessage.css";
 @import "./styles/Contact.css";
 
 
@@ -43,14 +42,12 @@ body {
 /* Modo responsive */
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 500px) {
-  .maincontainer, .chatIndividual-container, .chatGrupal-container {
+  .maincontainer, .chatGrupal-container {
     flex-direction: column; /* Organizar en columna */
     padding: 10px;
   }
 
-  .chatIndividual-container {
-    height: auto; /* Ajustar altura al contenido */
-  }
+
   .header{
     margin: 0 auto; /* Centra el logo horizontalmente */
   }

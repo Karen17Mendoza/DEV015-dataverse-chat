@@ -16,7 +16,7 @@ export const communicateWithOpenAI = (messages) => {
     body: JSON.stringify({
       model: 'gpt-4o', // o el modelo que estés utilizando
       messages: messages,
-      max_tokens: 150
+      max_tokens: 200
     })
   })
     .then(response => {

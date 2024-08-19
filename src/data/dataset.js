@@ -2,7 +2,7 @@ const data = [
   {
     "id": "coffee-prince",
     "name": "Coffee Prince",
-    "shortDescription": "Historia de amor en una cafetería.",
+    "shortDescription": "Narra la historia de Choi Han-kyul, un joven encargado de una cafetería, y Go Eun-chan, una chica que se hace pasar por un chico.",
     "description": "Coffee Prince es una serie que sigue a Go Eun-chan, una joven que se hace pasar por un hombre para trabajar en una cafetería. Choi Han-kyul, el dueño de la cafetería, no sabe que Eun-chan es una mujer y comienza a desarrollar sentimientos por ella, lo que le causa mucha confusión. La serie explora temas de identidad, amor y aceptación, ofreciendo tanto momentos divertidos como conmovedores. La dinámica entre los personajes principales y el desarrollo de sus relaciones es el corazón de esta encantadora comedia romántica.",
     "imageUrl": "https://m.media-amazon.com/images/M/MV5BYTI2ODliYjYtNWQwZS00OWNlLWFiYTEtNDNhOTgyMjRkNTE2XkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_FMjpg_UX1000_.jpg",
     "facts": {
@@ -18,7 +18,7 @@ const data = [
   {
     "id": "boys-over-flowers",
     "name": "Boys Over Flowers",
-    "shortDescription": "Chica pobre en una escuela de ricos.",
+    "shortDescription": "Sigue la vida de Geum Jan-di, una joven de origen humilde que asiste a una prestigiosa escuela secundaria",
     "description": "Boys Over Flowers sigue a Geum Jan-di, una chica de familia humilde que recibe una beca para asistir a una prestigiosa escuela secundaria. Allí, se enfrenta al F4, un grupo de los chicos más ricos y populares de la escuela, liderado por el arrogante Goo Jun-pyo. A pesar de las dificultades y el acoso, Jan-di mantiene su espíritu fuerte y pronto se encuentra atrapada en un triángulo amoroso. La serie es conocida por sus giros dramáticos, momentos románticos y la evolución de los personajes principales, especialmente el crecimiento de Jun-pyo.",
     "imageUrl": "https://1.bp.blogspot.com/-95M-YzoFbGI/W-gomFRmsNI/AAAAAAAAoJs/y6PZ4UruQtES0RlLoV_kwfLpMWg0IuzgwCLcBGAs/s1600/Boys-Before-Flowers.jpg",
     "facts": {
@@ -34,7 +34,7 @@ const data = [
   {
     "id": "secret-garden",
     "name": "Secret Garden",
-    "shortDescription": "Intercambio de cuerpos entre un CEO y una doble.",
+    "shortDescription": "Cuenta la historia de Kim Joo-won, un frío y arrogante CEO, y Gil Ra-im, una humilde y talentosa doble de acción.",
     "description": "Secret Garden narra la historia de Kim Joo-won, un arrogante CEO, y Gil Ra-im, una valiente doble de acción. Sus vidas se entrelazan de manera inesperada cuando misteriosamente intercambian cuerpos después de beber una extraña bebida en una misteriosa tienda. A medida que intentan adaptarse a sus nuevas vidas, desarrollan sentimientos profundos el uno por el otro. La serie destaca por su mezcla de romance, comedia y elementos fantásticos, además de su exploración de la identidad y el amor verdadero, con una química notable entre los protagonistas.",
     "imageUrl": "https://asianwiki.com/images/f/f3/Secret_Garden_%28SBS-2010-Korean_Drama%29-p3.jpg",
     "facts": {
@@ -50,7 +50,7 @@ const data = [
   {
     "id": "city-hunter",
     "name": "City Hunter",
-    "shortDescription": "Un hombre busca venganza contra los corruptos.",
+    "shortDescription": "Lee Yoon-sung, un joven altamente entrenado que busca vengar la muerte de su padre infiltrándose en la Casa Azul bajo una identidad secreta.",
     "description": "City Hunter sigue a Lee Yoon-sung, un joven que busca venganza por la muerte de su padre, quien fue traicionado por sus compañeros durante una misión secreta. Trabajando en la Casa Azul, la residencia presidencial, Yoon-sung se convierte en un vigilante conocido como 'City Hunter', desentrañando la corrupción y luchando contra la injusticia. La serie combina acción, drama y romance, destacándose por sus emocionantes escenas de combate y la complejidad emocional de sus personajes, mientras Yoon-sung se enfrenta a dilemas morales y desarrolla una relación amorosa complicada con Kim Na-na.",
     "imageUrl": "https://i.pinimg.com/736x/9c/72/7e/9c727ea92074fe2e729f6f9c93116045.jpg",
     "facts": {
@@ -66,7 +66,7 @@ const data = [
   {
     "id": "the-moon-that-embraces",
     "name": "The Moon That Embraces the Sun",
-    "shortDescription": "Historia de amor entre un rey y una chamana.",
+    "shortDescription": "Drama histórico que narra el trágico y apasionado romance entre el rey Lee Hwon y una joven chamán llamada Wol",
     "description": "The Moon That Embraces the Sun cuenta la historia de amor entre el rey Lee Hwon y Wol, una chamán que en realidad es su primer amor, Yeon-woo, quien perdió la memoria después de un complot político. Ambientada en la dinastía Joseon, la serie explora temas de amor, traición y destino, mientras el rey lucha por descubrir la verdad sobre el pasado de Wol y los oscuros secretos de la corte. Con su rica narrativa y personajes complejos, el drama ha sido aclamado por su combinación de romance y elementos históricos.",
     "imageUrl": "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_840/https://doonetflix.com/wp-content/uploads/2020/10/zr6XJUtT61gWhWwjPIraY13SkAE.jpg",
     "facts": {
@@ -82,7 +82,7 @@ const data = [
   {
     "id": "reply-1988",
     "name": "Reply 1988",
-    "shortDescription": "La vida de cinco familias en 1988.",
+    "shortDescription": "Retrata la vida de cinco amigos y sus familias que viven en un vecindario de Seúl durante la década de los 80.",
     "description": "Reply 1988 es una serie nostálgica que sigue la vida de cinco amigos y sus familias en un vecindario de Seúl durante la década de 1980. La serie mezcla comedia, drama y romance, mostrando los altibajos de la adolescencia y la transición a la adultez. A través de su narrativa cálida y realista, explora las relaciones familiares, la amistad y el primer amor, capturando la esencia de la época. Cada personaje tiene su propio viaje personal, haciendo que los espectadores se conecten emocionalmente con sus historias y recuerdos compartidos.",
     "imageUrl": "https://i.pinimg.com/originals/9a/b9/60/9ab9606eea3331370af2680e593a5734.jpg",
     "facts": {
@@ -98,7 +98,7 @@ const data = [
   {
     "id": "descendants-of-the-sun",
     "name": "Descendants of the Sun",
-    "shortDescription": "Un soldado y una doctora se enamoran en zona de conflicto.",
+    "shortDescription": "Historia de amor entre Yoo Si-jin, un capitán de las fuerzas especiales surcoreanas, y Kang Mo-yeon, una cirujana talentosa.",
     "description": "Descendants of the Sun sigue la historia de amor entre Yoo Si-jin, un capitán de las fuerzas especiales, y Kang Mo-yeon, una médica. Sus caminos se cruzan en una misión de paz en un país devastado por la guerra, donde enfrentan juntos desafíos tanto personales como profesionales. La serie destaca por su emocionante combinación de romance, acción y drama, explorando temas de sacrificio, deber y el impacto de las decisiones en tiempos de crisis. La química entre los protagonistas y las impresionantes escenas de acción han capturado a audiencias de todo el mundo.",
     "imageUrl": "https://image.tmdb.org/t/p/original/1T3RFIarUIOz4X7czdoJEtVvFg3.jpg",
     "facts": {
@@ -114,7 +114,7 @@ const data = [
   {
     "id": "goblin",
     "name": "Goblin",
-    "shortDescription": "Un inmortal busca a su novia humana.",
+    "shortDescription": "Cuenta la historia de Kim Shin, un guerrero inmortal convertido en un Goblin que ha vivido siglos buscando a su novia humana",
     "description": "Goblin narra la historia de Kim Shin, un ser inmortal conocido como el 'Goblin', que busca a su novia humana, la única persona que puede romper su maldición y poner fin a su vida eterna. Ji Eun-tak, una estudiante de secundaria con la capacidad de ver fantasmas, es la elegida. A medida que su relación se desarrolla, ambos enfrentan desafíos sobrenaturales y secretos del pasado. La serie es aclamada por su cinematografía deslumbrante, su guión poético y la química entre los actores principales, ofreciendo una mezcla única de romance, fantasía y drama.",
     "imageUrl": "https://i.ebayimg.com/images/g/6CQAAOSwAUBeR430/s-l1200.webp",
     "facts": {
@@ -130,7 +130,7 @@ const data = [
   {
     "id": "weightlifting-fairy",
     "name": "Weightlifting Fairy Kim Bok-joo",
-    "shortDescription": "Vida de una levantadora de pesas.",
+    "shortDescription": "Sigue la vida de Kim Bok-joo, una joven y talentosa levantadora de pesas.",
     "description": "Weightlifting Fairy Kim Bok-joo sigue la vida de Kim Bok-joo, una talentosa levantadora de pesas universitaria, mientras navega por los desafíos del deporte, la amistad y el amor. En el camino, desarrolla una relación especial con Jung Joon-hyung, un nadador con su propio conjunto de problemas. La serie es conocida por su enfoque refrescante y realista de los jóvenes que persiguen sus sueños, abordando temas de autoestima, perseverancia y crecimiento personal. Con momentos cómicos y conmovedores, es una historia inspiradora sobre la superación personal y el poder del apoyo mutuo.",
     "imageUrl": "https://image.tmdb.org/t/p/original/4CrTjZ5MYdF5dtSockIStCkiX5C.jpg",
     "facts": {
@@ -146,7 +146,7 @@ const data = [
   {
     "id": "strong-woman",
     "name": "Strong Woman Do Bong-soon",
-    "shortDescription": "Mujer con fuerza sobrehumana trabaja de guardaespaldas.",
+    "shortDescription": "Sigue a Do Bong-soon, una joven con una fuerza sobrehumana heredada por las mujeres de su familia.",
     "description": "Strong Woman Do Bong-soon cuenta la historia de Do Bong-soon, una joven con una fuerza sobrehumana heredada de las mujeres de su familia. Sueña con diseñar videojuegos, pero su vida da un giro cuando es contratada como guardaespaldas de Ahn Min-hyuk, un CEO de una empresa de videojuegos que está siendo amenazado. Mientras lucha contra el crimen en su vecindario y navega por un complicado triángulo amoroso, Bong-soon aprende a aceptar y usar sus habilidades para el bien. La serie combina comedia, romance y acción de manera encantadora y entretenida.",
     "imageUrl": "https://image.tmdb.org/t/p/original/vLAyVkXMNYu0O9WpSV0UlsHSIKz.jpg",
     "facts": {
