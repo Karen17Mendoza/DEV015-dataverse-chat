@@ -141,6 +141,7 @@ Este lenguaje y herramientas nos han permitido desarrollar una aplicación web c
 3. Disfruta de la experiencia inmersiva y mira como se desarrollo el poryecto.
 
 ## 7. Testeos de usabilidad
+
 El proyecto ha pasado por varias rondas de pruebas de usabilidad para garantizar que la experiencia del usuario sea intuitiva, fluida y libre de errores.
 
 ## 8. Trabajo Colaborativo
