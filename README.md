@@ -1,4 +1,4 @@
-# 🌸 KDRAMA CHAT 
+# 🌸 KDRAMA CHAT 🌸
 
 ## Índice
 
