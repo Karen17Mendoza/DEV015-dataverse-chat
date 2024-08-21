@@ -37,8 +37,7 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 - **Qué:** Quiero navegar por diferentes vistas dentro de una sola página sin recargar el navegador.
 - **Para:** Facilitar una experiencia de usuario fluida y rápida.
 
-  **Criterios de Aceptación (AC):**
-  
+  **Criterios de Aceptación (AC):**  
   - **AC1:** Al hacer clic en un boton o tarjeta, la vista correspondiente se carga dinámicamente sin recargar toda la página. 
   - **AC2:** La URL se actualiza de acuerdo a la vista cargada, reflejando la sección actual en la que se encuentra el usuario.
   - **AC3:** El historial de navegación del navegador se actualiza correctamente, permitiendo al usuario utilizar los botones de retroceso y avance para moverse entre las vistas visitadas.
@@ -52,7 +51,6 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 - **Para:** Poder habilitar la funcionalidad de chat interactivo con los doramas, asegurando que las solicitudes a la API se manejen correctamente.
 
 **Criterios de Aceptación (AC):**
-
   - **AC1:** Debe haber una vista o sección donde el usuario pueda ingresar su API Key de forma segura.
   - **AC2:** Al guardar la API Key, esta se almacena de forma persistente en el navegador (por ejemplo, en Local Storage).
   - **AC3:** El sistema debe validar que la API Key ingresada es válida antes de permitir su uso en la aplicación.
