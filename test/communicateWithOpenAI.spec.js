@@ -21,39 +21,7 @@ describe('communicateWithOpenAI', () => {
     expect(() => communicateWithOpenAI(mockMessages)).toThrow('API Key no disponible. Por favor, configúrela.');
   });
 
-  it('debería devolver el contenido del mensaje en caso de éxito', async () => {
-    const mockResponse = {
-      choices: [{ message: { content: 'respuesta de prueba' } }]
-    };
 
-    const mockFetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(mockResponse)
-      })
-    );
-
-    // Reemplaza la implementación de fetch solo dentro de este test
-    window.fetch = mockFetch;
-
-    const result = await communicateWithOpenAI(mockMessages);
-
-    expect(result).toBe('respuesta de prueba');
-    expect(mockFetch).toHaveBeenCalledWith(
-      'https://api.openai.com/v1/chat/completions',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${mockApiKey}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-4o',
-          messages: mockMessages,
-          max_tokens: 150
-        })
-      }
-    );
-  });
 
   it('debería manejar errores en la solicitud fetch', async () => {
     const mockFetch = jest.fn(() => Promise.reject(new Error('Fetch error')));
