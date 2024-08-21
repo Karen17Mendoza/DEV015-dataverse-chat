@@ -89,8 +89,6 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 - **AC3:** Las respuestas deben ser generadas utilizando la API de OpenAI, y deben ser relevantes para cada Kdrama en particular, asegurando una interacción rica y variada.
 - **AC4:** La interfaz debe permitir identificar fácilmente de qué Kdrama proviene cada respuesta, usando nombres y posiblemente imágenes.
 
-### Resolución de Necesidades del Usuario:
-
 ## 4. Diseño de Interfaz y Prototipos
 
 La interfaz de **KDRAMA CHAT** está diseñada para ofrecer una experiencia visual y funcional centrada en la interacción y la personalización. Las vistas principales incluyen:
@@ -163,4 +161,4 @@ Este proyecto fue desarrollado por:
 Como parte de un proyecto práctico como estudiantes de desarrollo web de Laboratoria. Si tienes preguntas o comentarios, no dudes en ponerte en contacto al correo electrónico: fatimapolgar2001@gmail.com y melanie171095@gmail.com
 
 ## Visita la web:
-- [Página Web](dev-015-dataverse-chat-rho.vercel.app)
+- [Página Web](https://dev-015-dataverse-chat-6nl8.vercel.app/)
