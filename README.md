@@ -11,9 +11,6 @@
 - [7. Testeos de usabilidad](#7-responsividad)
 - [8. Trabajo Colaborativo](#8-trabajo-colaborativo)
 
-
----
-
 ## 1. Resumen del proyecto
 
 **KDRAMA CHAT** es una innovadora aplicación web interactiva diseñada para los fans de los Kdramas. Esta plataforma integra una experiencia de chat inmersiva, permitiendo a los usuarios interactuar con sus doramas favoritos. A través de filtros por género, año de lanzamiento y número de episodios, los usuarios pueden explorar y descubrir Kdramas. Además, la aplicación ofrece chats personalizados, tanto a nivel individual como grupal, utilizando la API de OpenAI para proporcionar respuestas contextuales y relevantes. La interacción con la API está gestionada de manera segura mediante una clave API, garantizando una experiencia de usuario fluida y personalizada.
