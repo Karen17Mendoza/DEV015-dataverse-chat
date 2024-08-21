@@ -89,6 +89,7 @@ Incorpora la API de OpenAI para mejorar la interacción y personalización del c
 La interfaz de **KDRAMA CHAT** está diseñada para ofrecer una experiencia visual y funcional centrada en la interacción y la personalización. Las vistas principales incluyen:
 
 Las vistas principales incluyen:
+
 - **Vista Home:** Presenta una lista de Kdramas con opciones de filtrado y ordenación.
 - **Chat Individual:** Muestra una vista detallada de un Kdrama con la posibilidad de interactuar mediante un chat.
 - **Chat Grupal:** Permite enviar mensajes a todos los Kdramas y ver las respuestas en tiempo real.
